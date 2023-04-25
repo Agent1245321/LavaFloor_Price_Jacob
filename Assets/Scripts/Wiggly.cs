@@ -9,7 +9,7 @@ public class Wiggly : MonoBehaviour
     private float scaleX;
     private float scaleY;
     private float scaleZ;
-    private float angle;
+    private static float angle;
     // Start is called before the first frame update
     void Start()
     {
