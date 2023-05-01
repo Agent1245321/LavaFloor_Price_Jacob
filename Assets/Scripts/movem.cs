@@ -15,9 +15,11 @@ public class movem : MonoBehaviour
     bool isGrouded;
     bool isOnWall;
     GameObject wall;
+    public int crystals;
 
     Vector3 lookingTransform;
     public GameObject cam;
+    private Vector3 spawn;
 
     bool stopping;
     // Start is called before the first frame update
@@ -27,6 +29,11 @@ public class movem : MonoBehaviour
 
         
 
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        spawn = GameObject.FindWithTag("spawn").transform.position;
     }
 
     // Update is called once per frame
@@ -61,6 +68,12 @@ public class movem : MonoBehaviour
         {
             ball.AddForce(new Vector3(0, 1000, 0), ForceMode.VelocityChange); 
             StartCoroutine(Ahaha());
+        }
+
+        if (other.name == "crystal")
+        {
+            Destroy(other.gameObject);
+            crystals++;
         }
 
         
