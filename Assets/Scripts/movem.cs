@@ -23,17 +23,29 @@ public class movem : MonoBehaviour
 
     bool stopping;
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         ball = this.GetComponent<Rigidbody>();
+    }
 
-        
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log($"Scene Loaded: Mode - {mode}");
         spawn = GameObject.FindWithTag("spawn").transform.position;
+        crystals = GameObject.FindWithTag("spawn").GetComponent<spawnScript>().crystalsInLevel;
+        Debug.Log("Spawn_Info-Pulled" + $" - {spawn}");
+        ball.transform.position = spawn;
     }
 
     // Update is called once per frame
@@ -58,8 +70,7 @@ public class movem : MonoBehaviour
     {
         ball.AddForce(lookingTransform * 1000 * Time.deltaTime);
         //lavaSound.volume = 1 / this.transform.position.y;
-        Debug.Log(isGrouded);
-        Debug.Log(isOnWall);
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -82,7 +93,7 @@ public class movem : MonoBehaviour
     private void OnCollisionEnter(Collision collided)
     {
         if (collided.gameObject.name == "lava")
-        { ball.transform.position = new Vector3(0, 2, 0); deathSound.Play(); ball.velocity = new Vector3(0, 0, 0); }
+        { ball.transform.position = spawn; deathSound.Play(); ball.velocity = new Vector3(0, 0, 0); }
         
         
     }
