@@ -14,7 +14,8 @@ public class movem : MonoBehaviour
     Wiggly wiggly;
     bool isGrouded;
     bool isOnWall;
-    GameObject wall;
+    Vector3 wallTouchPoint;
+    Vector3 wallOutVector;
     public int crystals;
 
     Vector3 lookingTransform;
@@ -103,8 +104,13 @@ public class movem : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Floor") isGrouded = true;
-        if (collision.gameObject.tag == "Wall") isOnWall = true;
-        wall = collision.gameObject;
+        if (collision.gameObject.tag == "Wall")
+        {
+            isOnWall = true;
+            wallTouchPoint = collision.GetContact(0).point;
+            wallOutVector = (ball.transform.position - wallTouchPoint).normalized;
+            Debug.Log(wallOutVector);
+        }
         if (stopping)
         {
             ball.velocity = new Vector3(ball.velocity.x / 1.1f, ball.velocity.y, ball.velocity.z / 1.1f);
@@ -129,12 +135,8 @@ public class movem : MonoBehaviour
     {
         if(isOnWall)
         {
-            if(ball.transform.position.x - wall.transform.position.x > 0)
-            { ball.AddForce(7, 5, 0, ForceMode.VelocityChange); }
-            else if (ball.transform.position.x - wall.transform.position.x < 0)
-            {
-                ball.AddForce(-7, 5, 0, ForceMode.VelocityChange);
-            }
+
+            ball.AddForce(wallOutVector * 10 + new Vector3(0, 7, 0), ForceMode.VelocityChange);
             
         }
        else if(isGrouded)
