@@ -15,6 +15,6 @@ public class Follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector3(ball.transform.position.x, ball.transform.position.y, ball.transform.position.z);
+       
     }
 }

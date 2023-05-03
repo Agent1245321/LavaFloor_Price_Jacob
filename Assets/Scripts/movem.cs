@@ -18,6 +18,7 @@ public class movem : MonoBehaviour
     public int crystals;
 
     Vector3 lookingTransform;
+    Vector3 lookingTransformNoY;
     public GameObject cam;
     private Vector3 spawn;
 
@@ -52,6 +53,7 @@ public class movem : MonoBehaviour
     void Update()
     {
         lookingTransform = (cam.transform.forward.normalized * yValue) + (cam.transform.right.normalized * xValue);
+        lookingTransformNoY = new Vector3(lookingTransform.x, 0, lookingTransform.z);
         if (Input.GetKey(KeyCode.W)) yValue = 1;
         else if (Input.GetKey(KeyCode.S)) yValue = -1;
         else yValue = 0;
@@ -68,7 +70,7 @@ public class movem : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ball.AddForce(lookingTransform * 1000 * Time.deltaTime);
+        ball.AddForce(lookingTransformNoY * 1000 * Time.deltaTime);
         //lavaSound.volume = 1 / this.transform.position.y;
         
     }
@@ -81,7 +83,7 @@ public class movem : MonoBehaviour
             StartCoroutine(Ahaha());
         }
 
-        if (other.name == "crystal")
+        if (other.tag == "crystal")
         {
             Destroy(other.gameObject);
             crystals++;
@@ -137,7 +139,7 @@ public class movem : MonoBehaviour
         }
        else if(isGrouded)
         {
-            ball.AddForce(0, 5, 0, ForceMode.VelocityChange);
+            ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
         }
 
     }
