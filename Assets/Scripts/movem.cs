@@ -96,7 +96,7 @@ public class movem : MonoBehaviour
 
     private void OnCollisionEnter(Collision collided)
     {
-        if (collided.gameObject.name == "lava")
+        if (collided.gameObject.tag == "lava")
         { ball.transform.position = spawn; deathSound.Play(); ball.velocity = new Vector3(0, 0, 0); }
         
         
@@ -134,7 +134,7 @@ public class movem : MonoBehaviour
 
      void Jump()
     {
-        Debug.Log("WTF");
+        
         if(isOnWall)
         {
 
@@ -145,6 +145,11 @@ public class movem : MonoBehaviour
         {
             ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
         }
+
+    }
+
+    void LevelComplete()
+    {
 
     }
 }

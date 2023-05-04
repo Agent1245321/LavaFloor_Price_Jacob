@@ -9,6 +9,7 @@ TagManager:
   - spawn
   - crystal
   - player
+  - lava
   layers:
   - Default
   - TransparentFX
