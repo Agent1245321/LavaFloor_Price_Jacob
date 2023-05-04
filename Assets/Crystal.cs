@@ -5,15 +5,26 @@ using UnityEngine;
 public class Crystal : MonoBehaviour
 {
     public ParticleSystem particles;
-    // Start is called before the first frame update
-    void Start()
+    public GameObject crystal;
+
+    public void Start()
     {
+        Debug.Log("AM I EVEN STARTING?!");
         
+        crystal = this.transform.Find("prism").gameObject;
+        Debug.Log(crystal.name);
+        particles = this.transform.root.GetComponentInChildren<ParticleSystem>();
+        particles.Pause();
+        Debug.Log(particles);
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator DestroySelf()
     {
-        
+        Debug.Log("Is starting");
+        crystal.SetActive(false);
+        particles.Play();
+        yield return new WaitForSeconds(3);
+        Destroy(this.gameObject);
+        yield return null;
     }
 }

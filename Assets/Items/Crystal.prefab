@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8968709520340128125}
   - component: {fileID: 8350437869110438136}
   m_Layer: 0
-  m_Name: Prism
+  m_Name: prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.43468, y: 0, z: -0.43468}
   m_LocalScale: {x: 0.86936, y: 0.86936, z: 0.86936}
-  m_Children: []
+  m_Children:
+  - {fileID: 2291434172997560167}
   m_Father: {fileID: 555563496392575185}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -393,7 +394,7 @@ Transform:
   m_LocalScale: {x: 0.74, y: 0.6, z: 0.95}
   m_Children: []
   m_Father: {fileID: 555563496392575185}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &1397715486404511628
 ParticleSystem:
@@ -478,7 +479,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.27
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -531,7 +532,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 16.72
+      scalar: 15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -969,7 +970,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5.54
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1030,7 +1031,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1.88, y: 2.09, z: 2.15}
+    m_Scale: {x: 0.3, y: 0.32, z: 0.44}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -1462,12 +1463,21 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 1
-          inSlope: -2
-          outSlope: -2
+          inSlope: 0.047472347
+          outSlope: 0.047472347
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0
+          outWeight: 0.9660515
+        - serializedVersion: 3
+          time: 0.30768472
+          value: 1
+          inSlope: -0.077509604
+          outSlope: -0.077509604
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.29868603
         - serializedVersion: 3
           time: 1
           value: 0
@@ -2885,7 +2895,7 @@ ParticleSystem:
       m_Bits: 4294967295
     influenceList: []
   ClampVelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -3100,13 +3110,13 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxis: 0
     inWorldSpace: 0
-    multiplyDragByParticleSize: 1
-    multiplyDragByParticleVelocity: 1
-    dampen: 0
+    multiplyDragByParticleSize: 0
+    multiplyDragByParticleVelocity: 0
+    dampen: 0.1
     drag:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 32.92
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4089,10 +4099,10 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     type: 1
-    collisionMode: 0
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -5314,7 +5324,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1180521989924081409}
-  - {fileID: 2291434172997560167}
   - {fileID: 2807508949686290805}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -5357,6 +5366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2298a25225f0f448a7ea967a1cd72ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particles: {fileID: 0}
+  crystal: {fileID: 0}
 --- !u!1 &1580375303482550756
 GameObject:
   m_ObjectHideFlags: 0
@@ -5385,11 +5396,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580375303482550756}
   m_LocalRotation: {x: -0, y: 0.4999996, z: -0, w: 0.8660257}
-  m_LocalPosition: {x: -0.33346128, y: 0, z: 0.08935294}
-  m_LocalScale: {x: 0.4882239, y: 0.4882239, z: 0.4882239}
+  m_LocalPosition: {x: 0.11642901, y: 0, z: 0.6027801}
+  m_LocalScale: {x: 0.56158996, y: 0.56159, z: 0.56158996}
   m_Children: []
-  m_Father: {fileID: 555563496392575185}
-  m_RootOrder: 1
+  m_Father: {fileID: 1180521989924081409}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
 --- !u!114 &166022684947833572
 MonoBehaviour:

@@ -86,7 +86,8 @@ public class movem : MonoBehaviour
 
         if (other.tag == "crystal")
         {
-            Destroy(other.gameObject);
+            Debug.Log("Trying to start");
+            StartCoroutine(other.GetComponent<Crystal>().DestroySelf());
             crystals++;
         }
 
