@@ -133,6 +133,7 @@ public class movem : MonoBehaviour
 
      void Jump()
     {
+        Debug.Log("WTF");
         if(isOnWall)
         {
 
