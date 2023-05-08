@@ -12,19 +12,19 @@ public class Crystal : MonoBehaviour
         
         
         crystal = this.transform.Find("prism").gameObject;
-       
-        particles = this.transform.root.GetComponentInChildren<ParticleSystem>();
+        particles = this.transform.GetComponentInChildren<ParticleSystem>();
         particles.Pause();
+        Debug.Log("Paused");
         
     }
 
     public IEnumerator DestroySelf()
     {
-        
+        this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         crystal.SetActive(false);
         particles.Play();
         yield return new WaitForSeconds(3);
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
         yield return null;
     }
 }

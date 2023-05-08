@@ -6,6 +6,7 @@ public class spawnScript : MonoBehaviour
 {
     public int crystalsInLevel;
     public Vector3 spawn;
+    public bool useCrystals;
 
     // Start is called before the first frame update
     void Awake()

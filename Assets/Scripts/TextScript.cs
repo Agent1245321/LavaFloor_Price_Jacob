@@ -11,7 +11,7 @@ public class TextScript : MonoBehaviour
     void Start()
     {
         playa = GameObject.FindWithTag("MainCamera");
-        Debug.Log(playa.name);
+        
     }
 
     // Update is called once per frame
@@ -24,17 +24,17 @@ public class TextScript : MonoBehaviour
         if (opacity == 1 && this.gameObject.GetComponent<TextMesh>().color.a != 1)
         {
             this.gameObject.GetComponent<TextMesh>().color = new Color(0, 0, 0, 1);
-            Debug.Log("Setting Alpha to 1");
+            
         }
         else if (opacity > .08 && opacity < 1 )
         {
             this.gameObject.GetComponent<TextMesh>().color = new Color(0, 0, 0, opacity);
-            Debug.Log("Updating Alpha");
+            
         }
         else if(this.gameObject.GetComponent<TextMesh>().color.a != 0 && opacity <= .08)
         {
             this.gameObject.GetComponent<TextMesh>().color = new Color(0, 0, 0, 0);
-            Debug.Log("Setting Alpha to 0");
+            
         }
     }
 

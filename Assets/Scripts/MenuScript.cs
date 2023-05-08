@@ -7,7 +7,7 @@ public class MenuScript : MonoBehaviour
 {
 
     public GameObject panel;
-    public GameObject ball;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class MenuScript : MonoBehaviour
     public void LoadScene0()
     {
         SceneManager.LoadScene(1);
-        ball.transform.position = new Vector3(0, 3, 0);
+        
         panel.SetActive(false);
     }
 
@@ -46,6 +46,6 @@ public class MenuScript : MonoBehaviour
     public IEnumerator LevelStart()
     {
         yield return new WaitForSeconds(3);
-        ball.transform.position = new Vector3(0, 3, 0);
+        
     }
 }

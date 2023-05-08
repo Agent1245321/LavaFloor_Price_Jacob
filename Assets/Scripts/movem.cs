@@ -22,6 +22,8 @@ public class movem : MonoBehaviour
     Vector3 lookingTransformNoY;
     public GameObject cam;
     private Vector3 spawn;
+    private spawnScript spawnData;
+    private bool collectedWin = false;
 
     bool stopping;
     // Start is called before the first frame update
@@ -43,9 +45,10 @@ public class movem : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        ball.velocity = new Vector3(0, 0, 0);
         Debug.Log($"Scene Loaded: Mode - {mode}");
+        spawnData = GameObject.FindWithTag("spawn").GetComponent<spawnScript>();
         spawn = GameObject.FindWithTag("spawn").transform.position;
-        crystals = GameObject.FindWithTag("spawn").GetComponent<spawnScript>().crystalsInLevel;
         Debug.Log("Spawn_Info-Pulled" + $" - {spawn}");
         ball.transform.position = spawn;
     }
@@ -78,17 +81,17 @@ public class movem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "win")
-        {
-            ball.AddForce(new Vector3(0, 1000, 0), ForceMode.VelocityChange); 
-            StartCoroutine(Ahaha());
-        }
 
         if (other.tag == "crystal")
         {
-            Debug.Log("Trying to start");
             StartCoroutine(other.GetComponent<Crystal>().DestroySelf());
+            Debug.Log("Collided");
             crystals++;
+            if(other.name == "win")
+            {
+                collectedWin = true;
+            }
+            StartCoroutine(Ahaha());
         }
 
         
@@ -126,10 +129,29 @@ public class movem : MonoBehaviour
 
     private IEnumerator Ahaha()
     {
-        Debug.Log("WIINNNER");
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Win");
-        yield return null;
+        if(spawnData.useCrystals)
+        {
+            if (crystals >= spawnData.crystalsInLevel) 
+            {
+                ball.velocity = new Vector3(0, 0, 0);
+;                Debug.Log("Level Complete");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                StopAllCoroutines();
+                yield return null;
+            }
+            
+        }
+        else
+        {
+            if(collectedWin)
+            {
+                ball.velocity = new Vector3(0, 0, 0);
+                Debug.Log("Level Complete");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                StopAllCoroutines();
+                yield return null;
+            }
+        }
     }
 
      void Jump()
