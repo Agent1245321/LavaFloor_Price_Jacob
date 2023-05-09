@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Crystal : MonoBehaviour
 {
-    public ParticleSystem particles;
-    public GameObject crystal;
-
+    private ParticleSystem particles;
+    private GameObject crystal;
+    private AudioSource sound;
     public void Start()
     {
         
@@ -14,6 +14,8 @@ public class Crystal : MonoBehaviour
         crystal = this.transform.Find("prism").gameObject;
         particles = this.transform.GetComponentInChildren<ParticleSystem>();
         particles.Pause();
+        sound = this.transform.GetComponentInChildren<AudioSource>();
+
         Debug.Log("Paused");
         
     }
@@ -23,6 +25,7 @@ public class Crystal : MonoBehaviour
         this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         crystal.SetActive(false);
         particles.Play();
+        sound.Play();
         yield return new WaitForSeconds(3);
         this.gameObject.SetActive(false);
         yield return null;

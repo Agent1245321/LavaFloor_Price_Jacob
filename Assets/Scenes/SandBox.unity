@@ -13527,8 +13527,8 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325437101}
-  m_Text: "Welcome to the tutorial. \nYou can use WASD to move around \nIf you collect
-    all five crystals in the \nlevel you might get a prize!"
+  m_Text: "Welcome to the tutorial. \nYou can use WASD to move around\nand the left
+    and right arrows to turn."
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
