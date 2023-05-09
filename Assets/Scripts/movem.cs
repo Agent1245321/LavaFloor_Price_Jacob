@@ -46,6 +46,7 @@ public class movem : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         ball.velocity = new Vector3(0, 0, 0);
+        crystals = 0;
         Debug.Log($"Scene Loaded: Mode - {mode}");
         spawnData = GameObject.FindWithTag("spawn").GetComponent<spawnScript>();
         spawn = GameObject.FindWithTag("spawn").transform.position;
@@ -66,7 +67,8 @@ public class movem : MonoBehaviour
         else xValue = 0;
 
         if (Input.GetKeyDown(KeyCode.Space)) Jump();
-        
+        if (Input.GetKeyDown(KeyCode.Backspace)) { ball.transform.position = spawn; deathSound.Play(); ball.velocity = new Vector3(0, 0, 0); }
+
 
         stopping = Input.GetKey(KeyCode.LeftShift) ? true : false;
 
