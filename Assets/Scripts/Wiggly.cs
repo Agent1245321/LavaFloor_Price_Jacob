@@ -19,7 +19,7 @@ public class Wiggly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        angle += 1f;
+        angle += 100f * Time.deltaTime;
         scaleX = 1 + (Mathf.Cos(angle * Mathf.PI / 180f)) / 10f;
         scaleY = 1 + (Mathf.Sin(angle * Mathf.PI / 180f)) / 10f;
         scaleZ = 1 + (Mathf.Sin(angle * Mathf.PI / 180f + 90))/ 10f;

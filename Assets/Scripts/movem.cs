@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class movem : MonoBehaviour
 {
-    //public AudioSource lavaSound;
+    private AudioSource lavaSound;
     public AudioSource deathSound;
     private Rigidbody ball;
     int xValue;
@@ -31,6 +31,7 @@ public class movem : MonoBehaviour
     private void Awake()
     {
         ball = this.GetComponent<Rigidbody>();
+        lavaSound = this.transform.root.Find("GameObject").GetComponentInChildren<AudioSource>();
     }
 
     private void OnEnable()
@@ -67,7 +68,7 @@ public class movem : MonoBehaviour
         else xValue = 0;
 
         if (Input.GetKeyDown(KeyCode.Space)) Jump();
-        if (Input.GetKeyDown(KeyCode.Backspace)) { ball.transform.position = spawn; deathSound.Play(); ball.velocity = new Vector3(0, 0, 0); }
+        if (Input.GetKeyDown(KeyCode.Backspace)) { Death(); }
 
 
         stopping = Input.GetKey(KeyCode.LeftShift) ? true : false;
@@ -77,7 +78,7 @@ public class movem : MonoBehaviour
     private void FixedUpdate()
     {
         ball.AddForce(lookingTransformNoY * 1000 * Time.deltaTime);
-        //lavaSound.volume = 1 / this.transform.position.y;
+        lavaSound.volume = 10 / this.transform.position.y; 
         
     }
 
@@ -102,7 +103,7 @@ public class movem : MonoBehaviour
     private void OnCollisionEnter(Collision collided)
     {
         if (collided.gameObject.tag == "lava")
-        { ball.transform.position = spawn; deathSound.Play(); ball.velocity = new Vector3(0, 0, 0); }
+        { Death(); }
         
         
     }
@@ -170,6 +171,14 @@ public class movem : MonoBehaviour
             ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
         }
 
+    }
+
+    void Death()
+    {
+        ball.transform.position = spawn;
+        deathSound.Play();
+        ball.velocity = new Vector3(0, 0, 0);
+        ball.angularVelocity = new Vector3(0, 0, 0);
     }
 
     void LevelComplete()

@@ -16,8 +16,9 @@ public class Gate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
 
+        ballScript = GameObject.FindGameObjectWithTag("player").GetComponent<movem>();
+        startData = GameObject.FindGameObjectWithTag("spawn").GetComponent<spawnScript>();
     }
     private void OnEnable()
     {
