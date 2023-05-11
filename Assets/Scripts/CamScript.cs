@@ -18,7 +18,7 @@ public class CamScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow)) camDegree += 100 * Time.deltaTime;
         if (Input.GetKey(KeyCode.RightArrow)) camDegree -= 100 * Time.deltaTime;
-        angles = new Vector3(15, camDegree, 0);
+        angles = new Vector3(25, camDegree, 0);
 
     }
 
