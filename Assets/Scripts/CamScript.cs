@@ -5,8 +5,11 @@ using UnityEngine;
 public class CamScript : MonoBehaviour
 {
     float camDegree;
+    float camDegreeY;
     public GameObject camFollower;
+    private Vector2 look;
     Vector3 angles;
+    public float sensitivity;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +19,12 @@ public class CamScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow)) camDegree += 100 * Time.deltaTime;
-        if (Input.GetKey(KeyCode.RightArrow)) camDegree -= 100 * Time.deltaTime;
-        angles = new Vector3(15, camDegree, 0);
+        look = Vector3.ClampMagnitude(movem.look, 1.0f);
+       camDegree += look.x * Time.deltaTime * sensitivity;
+       camDegreeY += look.y * Time.deltaTime * sensitivity;
+        if (camDegreeY > 90) camDegreeY = 89.9f;
+        if(camDegreeY < -90) camDegreeY = -89.9f;
+        angles = new Vector3(camDegreeY, camDegree, 0);
 
     }
 

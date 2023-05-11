@@ -43,7 +43,7 @@ public class Gate : MonoBehaviour
         void Update()
     {
         crystalsCollected = ballScript.crystals;
-        Debug.Log(crystalsCollected);
+        
         if (useStartData)
         {
 

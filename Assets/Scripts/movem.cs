@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class movem : MonoBehaviour
 {
@@ -24,8 +25,11 @@ public class movem : MonoBehaviour
     private Vector3 spawn;
     private spawnScript spawnData;
     private bool collectedWin = false;
+    private Vector2 move;
+    public static Vector2 look;
 
-    bool stopping;
+
+    private float stopping;
     // Start is called before the first frame update
 
     private void Awake()
@@ -37,6 +41,7 @@ public class movem : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        
     }
 
     private void OnDisable()
@@ -58,27 +63,72 @@ public class movem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lookingTransform = (cam.transform.forward.normalized * yValue) + (cam.transform.right.normalized * xValue);
+
+
+    }
+
+    public void OnSlow(InputValue value)
+    {
+       stopping = value.Get<float>();
+    }
+
+    private void SlowPlayer()
+    {
+        if (isGrouded)
+        {
+            ball.velocity = new Vector3(ball.velocity.x / (1 + stopping / 10), ball.velocity.y, ball.velocity.z / (1 + stopping / 10));
+            
+        }
+        
+        
+    }
+    
+    public void OnLook(InputValue value)
+    {
+        look = value.Get<Vector2>();
+        Debug.Log(Vector3.ClampMagnitude(look.normalized, 1.0f));
+    }
+    public void OnMove(InputValue value)
+    {
+        move = value.Get<Vector2>();
+        
+        
+    }
+
+    private void MovePlayer()
+    {
+        lookingTransform = (cam.transform.forward.normalized * move.y) + (cam.transform.right.normalized * move.x);
         lookingTransformNoY = new Vector3(lookingTransform.x, 0, lookingTransform.z);
-        if (Input.GetKey(KeyCode.W)) yValue = 1;
-        else if (Input.GetKey(KeyCode.S)) yValue = -1;
-        else yValue = 0;
-        if (Input.GetKey(KeyCode.A)) xValue = -1;
-        else if (Input.GetKey(KeyCode.D)) xValue = 1;
-        else xValue = 0;
+        ball.AddForce(lookingTransformNoY * 1000 * Time.deltaTime);
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space)) Jump();
-        if (Input.GetKeyDown(KeyCode.Backspace)) { Death(); }
+    public void OnJump()
+    {
 
+        if (isOnWall)
+        {
 
-        stopping = Input.GetKey(KeyCode.LeftShift) ? true : false;
+            ball.AddForce(wallOutVector * 10 + new Vector3(0, 7, 0), ForceMode.VelocityChange);
 
+        }
+        else if (isGrouded)
+        {
+            ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
+        }
+
+    }
+
+    public void OnReset()
+    {
+        Death();
     }
 
     private void FixedUpdate()
     {
-        ball.AddForce(lookingTransformNoY * 1000 * Time.deltaTime);
-        lavaSound.volume = 10 / this.transform.position.y; 
+       
+        lavaSound.volume = 10 / this.transform.position.y;
+        MovePlayer();
+        SlowPlayer();
         
     }
 
@@ -118,10 +168,11 @@ public class movem : MonoBehaviour
             wallOutVector = (ball.transform.position - wallTouchPoint).normalized;
             Debug.Log(wallOutVector);
         }
-        if (stopping)
+       /* if (stopping)
         {
             ball.velocity = new Vector3(ball.velocity.x / 1.1f, ball.velocity.y, ball.velocity.z / 1.1f);
         }
+       */
     }
 
     private void OnCollisionExit(Collision collision)
@@ -157,21 +208,8 @@ public class movem : MonoBehaviour
         }
     }
 
-     void Jump()
-    {
-        
-        if(isOnWall)
-        {
-
-            ball.AddForce(wallOutVector * 10 + new Vector3(0, 7, 0), ForceMode.VelocityChange);
-            
-        }
-       else if(isGrouded)
-        {
-            ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
-        }
-
-    }
+     
+    
 
     void Death()
     {
