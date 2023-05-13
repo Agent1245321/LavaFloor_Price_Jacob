@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnScript : MonoBehaviour
+public class SpawnScript : MonoBehaviour
 {
     public int crystalsInLevel;
     public Vector3 spawn;
