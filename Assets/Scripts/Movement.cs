@@ -160,7 +160,7 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Floor") isGrouded = true;
+        if (collision.gameObject.tag == "Wall") isGrouded = true;
         if (collision.gameObject.tag == "Wall")
         {
             isOnWall = true;

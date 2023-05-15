@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028359, g: 0.22571385, b: 0.30692258, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7183,11 +7183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2026417151893932668, guid: 0f9d8ec926a047643b0ba1e786571ad1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2026417151893932668, guid: 0f9d8ec926a047643b0ba1e786571ad1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 174
       objectReference: {fileID: 0}
     - target: {fileID: 2026417151893932668, guid: 0f9d8ec926a047643b0ba1e786571ad1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7231,7 +7231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5614793249037724032, guid: 0f9d8ec926a047643b0ba1e786571ad1, type: 3}
       propertyPath: useCrystals
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5614793249037724032, guid: 0f9d8ec926a047643b0ba1e786571ad1, type: 3}
       propertyPath: crystalsInLevel
