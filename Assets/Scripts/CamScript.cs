@@ -13,15 +13,15 @@ public class CamScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        look = Vector3.ClampMagnitude(movem.look, 1.0f);
+        look = Vector3.ClampMagnitude(Movement.look, 1.0f);
        camDegree += look.x * Time.deltaTime * sensitivity;
-       camDegreeY += look.y * Time.deltaTime * sensitivity;
+       camDegreeY += -look.y * Time.deltaTime * sensitivity;
         if (camDegreeY > 90) camDegreeY = 89.9f;
         if(camDegreeY < -90) camDegreeY = -89.9f;
         angles = new Vector3(camDegreeY, camDegree, 0);

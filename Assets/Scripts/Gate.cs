@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Gate : MonoBehaviour
 {
-    movem ballScript;
-    spawnScript startData;
+    Movement ballScript;
+    SpawnScript startData;
 
     public bool useStartData;
 
@@ -17,8 +17,8 @@ public class Gate : MonoBehaviour
     void Start()
     {
 
-        ballScript = GameObject.FindGameObjectWithTag("player").GetComponent<movem>();
-        startData = GameObject.FindGameObjectWithTag("spawn").GetComponent<spawnScript>();
+        ballScript = GameObject.FindGameObjectWithTag("player").GetComponent<Movement>();
+        startData = GameObject.FindGameObjectWithTag("spawn").GetComponent<SpawnScript>();
     }
     private void OnEnable()
     {
@@ -33,8 +33,8 @@ public class Gate : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Started?");
-        ballScript = GameObject.FindGameObjectWithTag("player").GetComponent<movem>();
-        startData = GameObject.FindGameObjectWithTag("spawn").GetComponent<spawnScript>();
+        ballScript = GameObject.FindGameObjectWithTag("player").GetComponent<Movement>();
+        startData = GameObject.FindGameObjectWithTag("spawn").GetComponent<SpawnScript>();
         Debug.Log(ballScript.name);
         Debug.Log(startData);
     }

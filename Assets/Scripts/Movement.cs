@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
-public class movem : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     private AudioSource lavaSound;
     public AudioSource deathSound;
@@ -23,7 +23,7 @@ public class movem : MonoBehaviour
     Vector3 lookingTransformNoY;
     public GameObject cam;
     private Vector3 spawn;
-    private spawnScript spawnData;
+    private SpawnScript spawnData;
     private bool collectedWin = false;
     private Vector2 move;
     public static Vector2 look;
@@ -54,7 +54,7 @@ public class movem : MonoBehaviour
         ball.velocity = new Vector3(0, 0, 0);
         crystals = 0;
         Debug.Log($"Scene Loaded: Mode - {mode}");
-        spawnData = GameObject.FindWithTag("spawn").GetComponent<spawnScript>();
+        spawnData = GameObject.FindWithTag("spawn").GetComponent<SpawnScript>();
         spawn = GameObject.FindWithTag("spawn").transform.position;
         Debug.Log("Spawn_Info-Pulled" + $" - {spawn}");
         ball.transform.position = spawn;
@@ -160,7 +160,7 @@ public class movem : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Floor") isGrouded = true;
+        if (collision.gameObject.tag == "Wall") isGrouded = true;
         if (collision.gameObject.tag == "Wall")
         {
             isOnWall = true;
