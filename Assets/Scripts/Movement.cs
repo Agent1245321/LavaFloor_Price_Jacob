@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     int zValue;
     Wiggly wiggly;
     bool isGrouded;
-    bool isOnWall;
+    public bool isOnWall;
     Vector3 wallTouchPoint;
     Vector3 wallOutVector;
     public int crystals;
@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
     Vector3 lookingTransform;
     Vector3 lookingTransformNoY;
     public GameObject cam;
-    private Vector3 spawn;
+    private GameObject spawn;
     private SpawnScript spawnData;
     private bool collectedWin = false;
     private Vector2 move;
@@ -30,12 +30,14 @@ public class Movement : MonoBehaviour
 
 
     private float stopping;
+    public GameObject panel;
     // Start is called before the first frame update
 
     private void Awake()
     {
         ball = this.GetComponent<Rigidbody>();
         lavaSound = this.transform.root.Find("GameObject").GetComponentInChildren<AudioSource>();
+        panel = GameObject.FindWithTag("panel");
     }
 
     private void OnEnable()
@@ -55,9 +57,9 @@ public class Movement : MonoBehaviour
         crystals = 0;
         Debug.Log($"Scene Loaded: Mode - {mode}");
         spawnData = GameObject.FindWithTag("spawn").GetComponent<SpawnScript>();
-        spawn = GameObject.FindWithTag("spawn").transform.position;
+        spawn = GameObject.FindWithTag("spawn");
         Debug.Log("Spawn_Info-Pulled" + $" - {spawn}");
-        ball.transform.position = spawn;
+        ball.transform.position = spawn.transform.position;
     }
 
     // Update is called once per frame
@@ -85,13 +87,21 @@ public class Movement : MonoBehaviour
     
     public void OnLook(InputValue value)
     {
+        
         look = value.Get<Vector2>();
-        Debug.Log(Vector3.ClampMagnitude(look.normalized, 1.0f));
+        
     }
     public void OnMove(InputValue value)
     {
         move = value.Get<Vector2>();
         
+        
+    }
+
+    public void OnPause()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        panel.SetActive(true);
         
     }
 
@@ -104,7 +114,7 @@ public class Movement : MonoBehaviour
 
     public void OnJump()
     {
-
+        Debug.Log("Jump!");
         if (isOnWall)
         {
 
@@ -113,6 +123,7 @@ public class Movement : MonoBehaviour
         }
         else if (isGrouded)
         {
+            Debug.Log("JUMPED");
             ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
         }
 
@@ -160,9 +171,10 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Wall") isGrouded = true;
+        if (collision.gameObject.tag == "Floor") isGrouded = true;
         if (collision.gameObject.tag == "Wall")
         {
+            Debug.Log("Touching Wall");
             isOnWall = true;
             wallTouchPoint = collision.GetContact(0).point;
             wallOutVector = (ball.transform.position - wallTouchPoint).normalized;
@@ -177,7 +189,7 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Wall") isOnWall = false;
+        
         if (collision.gameObject.tag == "Floor") isGrouded = false;
     }
 
@@ -213,7 +225,7 @@ public class Movement : MonoBehaviour
 
     void Death()
     {
-        ball.transform.position = spawn;
+        ball.transform.position = spawn.transform.position;
         deathSound.Play();
         ball.velocity = new Vector3(0, 0, 0);
         ball.angularVelocity = new Vector3(0, 0, 0);

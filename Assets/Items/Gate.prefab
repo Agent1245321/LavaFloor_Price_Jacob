@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b6803f0cd081754fb3ff58323fe628f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useStartData: 0
+  crystalcount: 0
 --- !u!1 &3551680689166428613
 GameObject:
   m_ObjectHideFlags: 0

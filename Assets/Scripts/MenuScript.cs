@@ -26,6 +26,8 @@ public class MenuScript : MonoBehaviour
 
     public void LoadScene0()
     {
+        Debug.Log("LoadingScene");
+        StartCoroutine(LevelStart());
         SceneManager.LoadScene(1);
         
         panel.SetActive(false);
@@ -33,6 +35,7 @@ public class MenuScript : MonoBehaviour
 
     public void LoadScene1()
     {
+        Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneManager.LoadScene(2);
         panel.SetActive(false);
@@ -41,12 +44,25 @@ public class MenuScript : MonoBehaviour
 
     public void Exit()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         panel.SetActive(false);
+        
     }
 
     public IEnumerator LevelStart()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         yield return new WaitForSeconds(3);
         
+    }
+
+    public void Clicked()
+    {
+        Debug.Log("Clicked");
+    }
+
+    public  void Open()
+    {
+        panel.SetActive(true);
     }
 }
