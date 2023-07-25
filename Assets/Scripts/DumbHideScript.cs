@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DumbHideScript : MonoBehaviour
 {
+    public static bool hide;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,10 +14,13 @@ public class DumbHideScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Escape))
+        if(hide == true)
         {
-            Debug.Log("HIDE");
             this.gameObject.SetActive(false);
+        }
+        else
+        {
+            this.gameObject.SetActive(true);
         }
     }
 }

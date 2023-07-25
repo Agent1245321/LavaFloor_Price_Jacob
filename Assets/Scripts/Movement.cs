@@ -102,6 +102,7 @@ public class Movement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Confined;
         panel.SetActive(true);
+        DumbHideScript.hide = !DumbHideScript.hide;
         
     }
 
@@ -225,6 +226,7 @@ public class Movement : MonoBehaviour
 
     void Death()
     {
+        Checkpoint.isDead = true;
         ball.transform.position = spawn.transform.position;
         deathSound.Play();
         ball.velocity = new Vector3(0, 0, 0);

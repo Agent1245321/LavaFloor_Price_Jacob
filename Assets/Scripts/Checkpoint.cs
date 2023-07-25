@@ -9,6 +9,7 @@ public class Checkpoint : MonoBehaviour
     [SerializeField]
     public static bool clear;
     private bool thisIsTrue;
+    public static bool isDead;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,12 @@ public class Checkpoint : MonoBehaviour
     void Update()
     {
         
+        if(isDead)
+        {
+            anim.SetBool("Did Die", true);
+            StartCoroutine(Died());
+
+        }
 
         if (clear == true) 
         {
@@ -35,6 +42,7 @@ public class Checkpoint : MonoBehaviour
             {
                 StartCoroutine(IDFK());
             }
+            
             
             
 
@@ -61,5 +69,14 @@ public class Checkpoint : MonoBehaviour
         clear = false;
         thisIsTrue = false;
        
+    }
+
+    public IEnumerator Died()
+    {
+        yield return new WaitForSeconds(1);
+        isDead = false;
+        anim.SetBool("Did Die", false);
+
+
     }
 }
