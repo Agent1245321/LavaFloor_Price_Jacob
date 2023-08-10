@@ -7,7 +7,9 @@ public class MenuScript : MonoBehaviour
 {
 
     public GameObject panel;
-    
+    private int screen;
+    public GameObject screen1;
+    public GameObject screen2;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,22 @@ public class MenuScript : MonoBehaviour
       */
     }
 
+    public void Next()
+    {
+        if(screen < 1) screen++;
+        UpdateScreen();
+    }
+
+    public void Back()
+    {
+       if(screen > 0) screen--;
+       UpdateScreen();
+    }
+
+    private void UpdateScreen()
+    {
+        
+    }
     public void LoadScene0()
     {
         Debug.Log("LoadingScene");
@@ -65,6 +83,42 @@ public class MenuScript : MonoBehaviour
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneManager.LoadScene(5);
+        panel.SetActive(false);
+
+    }
+
+    public void LoadScene5()
+    {
+        Debug.Log("LoadingScene");
+        StartCoroutine(LevelStart());
+        SceneManager.LoadScene(6);
+        panel.SetActive(false);
+
+    }
+
+    public void LoadScene6()
+    {
+        Debug.Log("LoadingScene");
+        StartCoroutine(LevelStart());
+        SceneManager.LoadScene(7);
+        panel.SetActive(false);
+
+    }
+
+    public void LoadScene7()
+    {
+        Debug.Log("LoadingScene");
+        StartCoroutine(LevelStart());
+        SceneManager.LoadScene(8);
+        panel.SetActive(false);
+
+    }
+
+    public void LoadScene8()
+    {
+        Debug.Log("LoadingScene");
+        StartCoroutine(LevelStart());
+        SceneManager.LoadScene(9);
         panel.SetActive(false);
 
     }

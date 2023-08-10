@@ -19,7 +19,7 @@ public class CamScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        look = Vector3.ClampMagnitude(Movement.look, 1.0f);
+        look = Vector3.ClampMagnitude(Movement.look, 5.0f);
        camDegree += look.x * Time.deltaTime * sensitivity;
        camDegreeY += -look.y * Time.deltaTime * sensitivity;
         if (camDegreeY > 90) camDegreeY = 89.9f;

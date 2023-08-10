@@ -12,17 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/SandBox.unity
     guid: 488e81d3402cb7d47a6ba2192c17b896
   - enabled: 1
+    path: Assets/Scenes/OgLevel.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
     path: Assets/Scenes/Level01.unity
     guid: c3b6f8749ce9c3e4a97a62d3d20d7ca3
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/LevelMorgan.unity
-    guid: 558c6c9923e82a842b7d4f3444f26057
+    path: Assets/Scenes/Level02.unity
+    guid: 7d9be50af47b5e246a3c13c3fe0fd954
   - enabled: 1
     path: Assets/Scenes/Colts Level.unity
     guid: a9406b4c4cb311e4db8a1aaa52bd10f1
+  - enabled: 1
+    path: Assets/Scenes/LevelMorgan.unity
+    guid: 558c6c9923e82a842b7d4f3444f26057
   - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: a928a634730471646adb5c528dc7891e
