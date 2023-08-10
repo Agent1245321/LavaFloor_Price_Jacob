@@ -30,17 +30,36 @@ public class MenuScript : MonoBehaviour
     {
         if(screen < 1) screen++;
         UpdateScreen();
+       
     }
 
     public void Back()
     {
        if(screen > 0) screen--;
        UpdateScreen();
+        
     }
 
     private void UpdateScreen()
     {
-        
+        screen1.SetActive(false);
+        screen2.SetActive(false);
+        Debug.Log($"Current Screen is {screen}");
+        switch (screen) 
+        {
+
+            case 0:
+                screen1.SetActive(true);
+                break;
+
+                case 1:
+                screen2.SetActive(true);
+                break;
+
+                default: 
+                screen1.SetActive(true);
+                break;
+        }
     }
     public void LoadScene0()
     {
