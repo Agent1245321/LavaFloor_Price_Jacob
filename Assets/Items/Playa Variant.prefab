@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6781436262376801883
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 641586707595271981, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_TagString
+      value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575936, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_Name
+      value: Playa Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575936, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 898.8923
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 552.1558
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1100.1489
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708911492801, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: sensitivity
+      value: 118.2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 641586707595271981, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5217919335147560166}
+  m_SourcePrefab: {fileID: 100100000, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+--- !u!1 &6267849527415806326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 641586707595271981, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+  m_PrefabInstance: {fileID: 6781436262376801883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5217919335147560166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6267849527415806326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f7aa53a4eda728445bfd3c83ea7d0fb0, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
