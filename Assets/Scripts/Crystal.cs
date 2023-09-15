@@ -5,13 +5,13 @@ using UnityEngine;
 public class Crystal : MonoBehaviour
 {
     private ParticleSystem particles;
-    private GameObject crystal;
+    public GameObject crystal;
     private AudioSource sound;
     public void Start()
     {
         
         
-        crystal = this.transform.Find("prism").gameObject;
+        //crystal = this.transform.Find("prism").gameObject;
         particles = this.transform.GetComponentInChildren<ParticleSystem>();
         particles.Pause();
         sound = this.transform.GetComponentInChildren<AudioSource>();
