@@ -10,6 +10,7 @@ public class MenuScript : MonoBehaviour
     private int screen;
     public GameObject screen1;
     public GameObject screen2;
+    public GameObject options;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +40,19 @@ public class MenuScript : MonoBehaviour
        UpdateScreen();
         
     }
+    public void Options()
+    {
+        if(screen != 2) screen = 2;
+        else screen = 0;
+        UpdateScreen();
+
+    }
 
     private void UpdateScreen()
     {
         screen1.SetActive(false);
         screen2.SetActive(false);
+        options.SetActive(false);
         Debug.Log($"Current Screen is {screen}");
         switch (screen) 
         {
@@ -56,7 +65,11 @@ public class MenuScript : MonoBehaviour
                 screen2.SetActive(true);
                 break;
 
-                default: 
+            case 2:
+                options.SetActive(true);
+                break;
+
+            default: 
                 screen1.SetActive(true);
                 break;
         }
