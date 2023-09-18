@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class LightLauncher : MonoBehaviour
 {
     GameObject player;
     public bool canCollide = true;
+    public float power;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,21 +26,23 @@ public class LightLauncher : MonoBehaviour
         if (other.gameObject.name == "PLAYER" && canCollide)
         {
             player = other.gameObject;
+            player.GetComponent<Movement>().cannon = this;
+          
             other.transform.parent.parent = transform;
             other.transform.position = transform.position;
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 
-    public void OnJump()
+    public void Launch()
     {
         if (player != null)
         {
-           
+            player.GetComponent<Movement>().cannon = null;
             canCollide = false;
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             player.transform.parent.parent = null;
-            player.GetComponent<Rigidbody>().AddForce(transform.parent.forward * -100, ForceMode.VelocityChange);
+            player.GetComponent<Rigidbody>().AddForce(transform.parent.forward * power, ForceMode.VelocityChange);
             StartCoroutine(Count());
             
             player = null;
@@ -50,4 +55,6 @@ public class LightLauncher : MonoBehaviour
         canCollide = true;
         yield return null; 
     }
+
+    
 }

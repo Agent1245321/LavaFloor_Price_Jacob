@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
+
 
 public class Movement : MonoBehaviour
 {
@@ -31,6 +33,7 @@ public class Movement : MonoBehaviour
 
     private float stopping;
     public GameObject panel;
+    public LightLauncher cannon;
     // Start is called before the first frame update
 
     private void Awake()
@@ -128,6 +131,7 @@ public class Movement : MonoBehaviour
             ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
         }
 
+        if(cannon != null) { cannon.Launch(); }
     }
 
     public void OnReset()
