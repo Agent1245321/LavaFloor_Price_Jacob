@@ -696,7 +696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &229804177
 RectTransform:
   m_ObjectHideFlags: 0
@@ -821,7 +821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &307248151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1389,19 +1389,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 428501813}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 677544665}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: LoadScene5
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &428501813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,7 +1485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 05
+  m_text: Tower
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
@@ -1764,7 +1752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 01
+  m_text: Stadium
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
@@ -1898,7 +1886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 11
+  m_text: ---
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
@@ -2126,7 +2114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &519864814
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2205,7 +2193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 02
+  m_text: Light-House
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
@@ -2976,19 +2964,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1156594125}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 677544665}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: LoadScene3
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1156594125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3162,7 +3138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: ---
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
@@ -3296,7 +3272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 09
+  m_text: ---
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
@@ -3490,19 +3466,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1474421770}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 677544665}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: LoadScene4
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1474421770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3598,7 +3562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 04
+  m_text: Ramp
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
@@ -3757,19 +3721,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1536770188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 677544665}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: LoadScene2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1536770188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3941,7 +3893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 03
+  m_text: Gymnastics
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
@@ -4075,7 +4027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 06
+  m_text: Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
@@ -4475,7 +4427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 08
+  m_text: ---
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
@@ -4742,7 +4694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 07
+  m_text: Pit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0440213376745014d9b4664561bdbfec, type: 2}
   m_sharedMaterial: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}

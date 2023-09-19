@@ -10,53 +10,67 @@ public class MenuScript : MonoBehaviour
     private int screen;
     public GameObject screen1;
     public GameObject screen2;
+    public GameObject options;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-      /*  if(Input.GetKey(KeyCode.Escape))
-        {
-            panel.SetActive(true);
-        }
-      */
+        /*  if(Input.GetKey(KeyCode.Escape))
+          {
+              panel.SetActive(true);
+          }
+        */
     }
 
     public void Next()
     {
-        if(screen < 1) screen++;
+        if (screen < 1) screen++;
         UpdateScreen();
-       
+
     }
 
     public void Back()
     {
-       if(screen > 0) screen--;
-       UpdateScreen();
-        
+        if (screen > 0) screen--;
+        UpdateScreen();
+
+    }
+    public void Options()
+    {
+        if (screen != 2) screen = 2;
+        else screen = 0;
+        UpdateScreen();
+
     }
 
     private void UpdateScreen()
     {
         screen1.SetActive(false);
         screen2.SetActive(false);
+        options.SetActive(false);
         Debug.Log($"Current Screen is {screen}");
-        switch (screen) 
+        switch (screen)
         {
 
             case 0:
                 screen1.SetActive(true);
                 break;
 
-                case 1:
+            case 1:
                 screen2.SetActive(true);
                 break;
 
-                default: 
+            
+            case 2:
+                options.SetActive(true);
+                break;
+
+            default:
                 screen1.SetActive(true);
                 break;
         }
@@ -66,7 +80,7 @@ public class MenuScript : MonoBehaviour
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneManager.LoadScene(1);
-        
+
         panel.SetActive(false);
     }
 
@@ -145,14 +159,14 @@ public class MenuScript : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         panel.SetActive(false);
-        
+
     }
 
     public IEnumerator LevelStart()
     {
         Cursor.lockState = CursorLockMode.Locked;
         yield return new WaitForSeconds(3);
-        
+
     }
 
     public void Clicked()
@@ -160,7 +174,7 @@ public class MenuScript : MonoBehaviour
         Debug.Log("Clicked");
     }
 
-    public  void Open()
+    public void Open()
     {
         panel.SetActive(true);
     }
