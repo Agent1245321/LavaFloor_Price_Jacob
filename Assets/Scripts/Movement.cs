@@ -206,6 +206,7 @@ public class Movement : MonoBehaviour
             {
                 ball.velocity = new Vector3(0, 0, 0);
 ;                Debug.Log("Level Complete");
+                DontDestroyOnLoad(this.transform.parent.gameObject);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 StopAllCoroutines();
                 yield return null;
@@ -216,6 +217,7 @@ public class Movement : MonoBehaviour
         {
             if(collectedWin)
             {
+                DontDestroyOnLoad(this.transform.parent.gameObject);
                 ball.velocity = new Vector3(0, 0, 0);
                 Debug.Log("Level Complete");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

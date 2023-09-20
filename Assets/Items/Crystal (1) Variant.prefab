@@ -256,6 +256,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal (1) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1397715486404511628, guid: bcd058af92412a44583e77437ab90b99, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397715486404511628, guid: bcd058af92412a44583e77437ab90b99, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397715486404511628, guid: bcd058af92412a44583e77437ab90b99, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.48627448
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397715486404511628, guid: bcd058af92412a44583e77437ab90b99, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397715486404511628, guid: bcd058af92412a44583e77437ab90b99, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.97018474
+      objectReference: {fileID: 0}
     - target: {fileID: 3605481212838860969, guid: bcd058af92412a44583e77437ab90b99, type: 3}
       propertyPath: m_MeshFormatVersion
       value: 2
@@ -460,6 +480,10 @@ PrefabInstance:
       propertyPath: m_Faces.Array.data[7].m_Uv.m_Offset.y
       value: -1.1180273
       objectReference: {fileID: 0}
+    - target: {fileID: 5504120399504386831, guid: bcd058af92412a44583e77437ab90b99, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 973877516759717424, guid: c874e57a932011e4b98377aef9ae3220, type: 3}
     - target: {fileID: 8541647757183088675, guid: bcd058af92412a44583e77437ab90b99, type: 3}
       propertyPath: crystal
       value: 

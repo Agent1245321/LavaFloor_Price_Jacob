@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MenuScript : MonoBehaviour
 {
@@ -11,10 +13,13 @@ public class MenuScript : MonoBehaviour
     public GameObject screen1;
     public GameObject screen2;
     public GameObject options;
+
+    
+    public AudioMixer masterMixer;
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -82,6 +87,23 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene(1);
 
         panel.SetActive(false);
+    }
+    public void UpdateVolume(float value)
+    {
+        
+        masterMixer.SetFloat("Master", value - 80);
+    }
+
+    public void UpdateEffectsVolume(float value)
+    {
+
+        masterMixer.SetFloat("Effects", value - 80);
+    }
+
+    public void UpdateLavaVolume(float value)
+    {
+
+        masterMixer.SetFloat("Lava", value - 80);
     }
 
     public void LoadScene1()
