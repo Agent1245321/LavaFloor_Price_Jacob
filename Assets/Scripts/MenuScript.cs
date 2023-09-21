@@ -84,7 +84,7 @@ public class MenuScript : MonoBehaviour
     {
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
-        SceneManager.LoadScene(1);
+        SceneLoader.LoadScene(1);
 
         panel.SetActive(false);
     }
@@ -110,7 +110,7 @@ public class MenuScript : MonoBehaviour
     {
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
-        SceneManager.LoadScene(2);
+        SceneLoader.LoadScene(2);
         panel.SetActive(false);
 
     }
@@ -119,7 +119,7 @@ public class MenuScript : MonoBehaviour
     {
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
-        SceneManager.LoadScene(3);
+        SceneLoader.LoadScene(3);
 
         panel.SetActive(false);
     }
@@ -128,7 +128,7 @@ public class MenuScript : MonoBehaviour
     {
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
-        SceneManager.LoadScene(4);
+        SceneLoader.LoadScene(4);
         panel.SetActive(false);
 
     }
@@ -137,7 +137,7 @@ public class MenuScript : MonoBehaviour
     {
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
-        SceneManager.LoadScene(5);
+        SceneLoader.LoadScene(5);
         panel.SetActive(false);
 
     }
@@ -146,7 +146,7 @@ public class MenuScript : MonoBehaviour
     {
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
-        SceneManager.LoadScene(6);
+        SceneLoader.LoadScene(6);
         panel.SetActive(false);
 
     }
@@ -155,7 +155,7 @@ public class MenuScript : MonoBehaviour
     {
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
-        SceneManager.LoadScene(7);
+        SceneLoader.LoadScene(7);
         panel.SetActive(false);
 
     }
@@ -164,7 +164,7 @@ public class MenuScript : MonoBehaviour
     {
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
-        SceneManager.LoadScene(8);
+        SceneLoader.LoadScene(8);
         panel.SetActive(false);
 
     }
@@ -173,7 +173,7 @@ public class MenuScript : MonoBehaviour
     {
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
-        SceneManager.LoadScene(9);
+        SceneLoader.LoadScene(9);
         panel.SetActive(false);
 
     }
