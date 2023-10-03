@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
-
+using System;
 
 public class Movement : MonoBehaviour
 {
@@ -242,8 +242,18 @@ public class Movement : MonoBehaviour
         ball.angularVelocity = new Vector3(0, 0, 0);
         ball.constraints = RigidbodyConstraints.None;
         ball.transform.position = spawn.transform.position;
+        
     }
 
+
+    public IEnumerator DoNotDestroy(int Scene)
+    {
+        Console.WriteLine("DO Destroy");
+        DontDestroyOnLoad (this.transform.parent.gameObject);
+        Console.WriteLine("DO NOT DESTROY");
+        SceneLoader.FinishLoading(Scene);
+        yield return null;
+    }
     void LevelComplete()
     {
 
