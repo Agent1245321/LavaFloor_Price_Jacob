@@ -164,6 +164,11 @@ public class Movement : MonoBehaviour
             StartCoroutine(Ahaha());
         }
 
+        if(other.tag == "lava")
+        {
+            Death();
+        }
+
         
     }
 
