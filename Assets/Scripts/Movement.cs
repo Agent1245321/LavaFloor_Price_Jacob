@@ -203,6 +203,7 @@ public class Movement : MonoBehaviour
     {
         
         if (collision.gameObject.tag == "Floor") isGrouded = false;
+        if(collision.gameObject.tag == "wall") isOnWall = false;
     }
 
     private IEnumerator Ahaha()
