@@ -57,6 +57,7 @@ public class Movement : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         ball.velocity = new Vector3(0, 0, 0);
+        isGrouded = false;
         crystals = 0;
         Debug.Log($"Scene Loaded: Mode - {mode}");
         spawnData = GameObject.FindWithTag("spawn").GetComponent<SpawnScript>();

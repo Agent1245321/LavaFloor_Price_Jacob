@@ -14,6 +14,7 @@ public static class SceneLoader
     {
 
         Movement move = GameObject.FindWithTag("player").GetComponent<Movement>();
+        
         move.StartCoroutine(move.DoNotDestroy(scene));
       
     }
@@ -21,6 +22,7 @@ public static class SceneLoader
    public static void FinishLoading(int scene)
     {
         Debug.Log("LoadingScene");
+       
         LevelToLoad = scene;
         Debug.Log($"Scene Index - {LevelToLoad}");
         SceneManager.LoadScene(10);
