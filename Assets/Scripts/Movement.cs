@@ -173,16 +173,18 @@ public class Movement : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collided)
-    {
-        if (collided.gameObject.tag == "lava")
-        { Death(); }
+   // private void OnCollisionEnter(Collision collided)
+  //  {
         
         
-    }
+   // }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "lava")
+        { Death(); }
+
+        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Floor") isGrouded = true;
         if (collision.gameObject.tag == "Wall")
         {
@@ -190,7 +192,7 @@ public class Movement : MonoBehaviour
             isOnWall = true;
             wallTouchPoint = collision.GetContact(0).point;
             wallOutVector = (ball.transform.position - wallTouchPoint).normalized;
-            Debug.Log(wallOutVector);
+            
         }
        /* if (stopping)
         {
@@ -203,7 +205,7 @@ public class Movement : MonoBehaviour
     {
         
         if (collision.gameObject.tag == "Floor") isGrouded = false;
-        if(collision.gameObject.tag == "wall") isOnWall = false;
+        
     }
 
     private IEnumerator Ahaha()

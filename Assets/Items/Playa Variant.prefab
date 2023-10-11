@@ -68,6 +68,18 @@ PrefabInstance:
       propertyPath: sensitivity
       value: 189
       objectReference: {fileID: 0}
+    - target: {fileID: 7020051874171373302, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2612182
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020051874171373302, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2612182
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020051874171373302, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2612182
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

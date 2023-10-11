@@ -19,10 +19,17 @@ public class Detector : MonoBehaviour
 
    public void OnTriggerExit(Collider other)
     {
-        Debug.Log("Triggered");
-        Debug.Log(other.gameObject.tag);
-        Debug.Log(other.name);
-        if (other.gameObject.tag == "Wall") move.isOnWall = false;
+
+        if (other.gameObject.tag == "Wall")
+        {
+            move.isOnWall = false;
+            Debug.Log($"Exiting Trigger from {other.name}");
+        }
         
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Wall")
+        { Debug.Log(other.name); }
     }
 }
