@@ -56,6 +56,7 @@ public class Movement : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        collectedWin = false;
         ball.velocity = new Vector3(0, 0, 0);
         isGrouded = false;
         crystals = 0;
@@ -64,6 +65,7 @@ public class Movement : MonoBehaviour
         spawn = GameObject.FindWithTag("spawn");
         Debug.Log("Spawn_Info-Pulled" + $" - {spawn}");
         ball.transform.position = spawn.transform.position;
+        Debug.Log(spawnData.useCrystals);
     }
 
     // Update is called once per frame

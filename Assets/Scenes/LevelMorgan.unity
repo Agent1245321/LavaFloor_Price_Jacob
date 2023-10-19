@@ -8044,7 +8044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3275243372786576197, guid: 0f9d8ec926a047643b0ba1e786571ad1, type: 3}
       propertyPath: useCrystals
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3275243372786576197, guid: 0f9d8ec926a047643b0ba1e786571ad1, type: 3}
       propertyPath: crystalsInLevel
@@ -22084,7 +22084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1009153902350454995, guid: bcd058af92412a44583e77437ab90b99, type: 3}
       propertyPath: m_Name
-      value: Crystal
+      value: win
       objectReference: {fileID: 0}
     - target: {fileID: 3605481212838860969, guid: bcd058af92412a44583e77437ab90b99, type: 3}
       propertyPath: m_Mesh
@@ -36032,7 +36032,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3799739251708831539, guid: e8e95f02afac37d4b9f006388d1119c2, type: 3}
       propertyPath: crystalcount
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3799739251708831539, guid: e8e95f02afac37d4b9f006388d1119c2, type: 3}
       propertyPath: useStartData
