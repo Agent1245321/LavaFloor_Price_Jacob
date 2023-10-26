@@ -9,6 +9,7 @@ public class MenuScript : MonoBehaviour
 {
 
     public GameObject panel;
+    public GameObject mobileControls;
     private int screen;
     public GameObject screen1;
     public GameObject screen2;
@@ -87,6 +88,8 @@ public class MenuScript : MonoBehaviour
         SceneLoader.LoadScene(1);
 
         panel.SetActive(false);
+        mobileControls.SetActive(true);
+
     }
     public void UpdateVolume(float value)
     {
@@ -112,6 +115,7 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(2);
         panel.SetActive(false);
+        mobileControls.SetActive(true);
 
     }
 
@@ -122,6 +126,7 @@ public class MenuScript : MonoBehaviour
         SceneLoader.LoadScene(3);
 
         panel.SetActive(false);
+        mobileControls.SetActive(true);
     }
 
     public void LoadScene3()
@@ -130,6 +135,7 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(4);
         panel.SetActive(false);
+        mobileControls.SetActive(true);
 
     }
 
@@ -139,6 +145,7 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(5);
         panel.SetActive(false);
+        mobileControls.SetActive(true);
 
     }
 
@@ -148,7 +155,7 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(6);
         panel.SetActive(false);
-
+        mobileControls.SetActive(true);
     }
 
     public void LoadScene6()
@@ -157,7 +164,7 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(7);
         panel.SetActive(false);
-
+        mobileControls.SetActive(true);
     }
 
     public void LoadScene7()
@@ -166,7 +173,7 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(8);
         panel.SetActive(false);
-
+        mobileControls.SetActive(true);
     }
 
     public void LoadScene8()
@@ -175,18 +182,19 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(9);
         panel.SetActive(false);
-
+        mobileControls.SetActive(true);
     }
     public void Exit()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+       // Cursor.lockState = CursorLockMode.Locked;
         panel.SetActive(false);
+        mobileControls.SetActive(true);
 
     }
 
     public IEnumerator LevelStart()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+       // Cursor.lockState = CursorLockMode.Locked;
         yield return new WaitForSeconds(3);
 
     }

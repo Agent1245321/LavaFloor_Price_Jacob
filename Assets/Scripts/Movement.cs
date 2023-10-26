@@ -33,6 +33,7 @@ public class Movement : MonoBehaviour
 
     private float stopping;
     public GameObject panel;
+    public GameObject MobileControls;
     public LightLauncher cannon;
     // Start is called before the first frame update
 
@@ -42,6 +43,7 @@ public class Movement : MonoBehaviour
         lavaSound = this.transform.root.Find("GameObject").GetComponentInChildren<AudioSource>();
         panel = GameObject.FindWithTag("panel");
     }
+
 
     private void OnEnable()
     {
@@ -75,6 +77,28 @@ public class Movement : MonoBehaviour
 
     }
 
+    ///These Are The Iputs For Mobile Touch
+    public void MoveInput(Vector2 newMoveDir) {   move = newMoveDir; }
+
+    public void LookInput(Vector2 newLookDir) { look = newLookDir; }
+
+    public void JumpInput()
+    {
+        OnJump();
+    }
+    
+    
+ 
+    public void SprintInput(bool ifTrue)
+    {
+        if(ifTrue) { stopping = 1f; }
+        else { stopping = 0f; }
+    }
+
+    /// -----------
+   
+    
+    
     public void OnSlow(InputValue value)
     {
        stopping = value.Get<float>();
@@ -108,14 +132,16 @@ public class Movement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Confined;
         panel.SetActive(true);
+        MobileControls.SetActive(false);
         DumbHideScript.hide = !DumbHideScript.hide;
         
     }
 
     private void MovePlayer()
     {
-        lookingTransform = (cam.transform.forward.normalized * move.y) + (cam.transform.right.normalized * move.x);
+        lookingTransform = (cam.transform.forward.normalized) + (cam.transform.right.normalized);
         lookingTransformNoY = new Vector3(lookingTransform.x, 0, lookingTransform.z);
+        Debug.Log(lookingTransformNoY);
         ball.AddForce(lookingTransformNoY * 1000 * Time.deltaTime);
     }
 

@@ -37,6 +37,11 @@ public class CamScript : MonoBehaviour
 
     }
 
+    public void UpdateSensitivity(float Sens)
+    {
+        sensitivity = Sens * 2f;
+    }
+
     private void LateUpdate()
     {
         transform.eulerAngles = angles;
