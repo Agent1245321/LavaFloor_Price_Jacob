@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 641586707595271973, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5939477213623021935, guid: 55739d379a6b7cc4e946ffea3fdf3773, type: 2}
     - target: {fileID: 641586707595271981, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       propertyPath: m_TagString
       value: player
@@ -26,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 898.8923
+      value: 898.9807
       objectReference: {fileID: 0}
     - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 552.1558
+      value: 552.35
       objectReference: {fileID: 0}
     - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1100.1489
+      value: -1099.9968
       objectReference: {fileID: 0}
     - target: {fileID: 641586708325575938, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -65,13 +69,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 641586708487870271, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_RenderingPath
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 641586708487870271, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 641586708911492801, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       propertyPath: sensitivity
-      value: 189
+      value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 6857640834020856257, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5385714900306036438, guid: 55739d379a6b7cc4e946ffea3fdf3773, type: 2}
     - target: {fileID: 7020051874171373302, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2612182

@@ -35,6 +35,8 @@ public class Movement : MonoBehaviour
     public GameObject panel;
     public GameObject MobileControls;
     public LightLauncher cannon;
+
+    public GameObject forwardObject;
     // Start is called before the first frame update
 
     private void Awake()
@@ -139,10 +141,9 @@ public class Movement : MonoBehaviour
 
     private void MovePlayer()
     {
-        lookingTransform = (cam.transform.forward.normalized) + (cam.transform.right.normalized);
-        lookingTransformNoY = new Vector3(lookingTransform.x, 0, lookingTransform.z);
+        lookingTransform = (forwardObject.transform.forward * move.y + forwardObject.transform.right * move.x);
         Debug.Log(lookingTransformNoY);
-        ball.AddForce(lookingTransformNoY * 1000 * Time.deltaTime);
+        ball.AddForce(lookingTransform * 1000 * Time.deltaTime);
     }
 
     public void OnJump()
@@ -207,7 +208,7 @@ public class Movement : MonoBehaviour
         
    // }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "lava")
         { Death(); }

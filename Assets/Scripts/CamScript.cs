@@ -12,6 +12,7 @@ public class CamScript : MonoBehaviour
     private Vector2 look;
     Vector3 angles;
     public float sensitivity;
+    public GameObject forwardObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,8 @@ public class CamScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        forwardObject.transform.localEulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
         int yInv;
         int xInv;
 
