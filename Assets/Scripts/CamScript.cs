@@ -23,7 +23,7 @@ public class CamScript : MonoBehaviour
     void Update()
     {
 
-        forwardObject.transform.localEulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
+       
         int yInv;
         int xInv;
 
@@ -37,6 +37,8 @@ public class CamScript : MonoBehaviour
         if (camDegreeY > 90) camDegreeY = 89.9f;
         if (camDegreeY < -90) camDegreeY = -89.9f;
         angles = new Vector3(camDegreeY, camDegree, 0);
+
+        forwardObject.transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
 
     }
 
