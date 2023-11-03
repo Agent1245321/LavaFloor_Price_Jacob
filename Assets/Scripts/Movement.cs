@@ -134,9 +134,13 @@ public class Movement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Confined;
         panel.SetActive(true);
-        MobileControls.SetActive(false);
-        DumbHideScript.hide = !DumbHideScript.hide;
         
+        DumbHideScript.hide = !DumbHideScript.hide;
+
+#if (UNITY_IOS || UNITY_ANDROID)
+
+        MobileControls.SetActive(false);
+#endif
     }
 
     private void MovePlayer()
