@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+
 
 public class MenuScript : MonoBehaviour
 {
@@ -14,13 +16,24 @@ public class MenuScript : MonoBehaviour
     public GameObject screen1;
     public GameObject screen2;
     public GameObject options;
+    public Slider masterVolumeSlider;
+    public Slider effectsVolumeSlider;
+    public Slider lavaVolumeSlider;
+    public Slider sensitivitySlider;
+    public Toggle invertYToggle;
+    public Toggle invertXToggle;
+
+    public CamScript cam;
 
     
     public AudioMixer masterMixer;
     // Start is called before the first frame update
     void Start()
     {
-       
+        UpdateVolume(masterVolumeSlider.value = PlayerPrefs.GetFloat("masterVolume", 80));
+        UpdateEffectsVolume(effectsVolumeSlider.value = PlayerPrefs.GetFloat("effectsVolume", 80));
+        UpdateLavaVolume(lavaVolumeSlider.value = PlayerPrefs.GetFloat("lavaVolume", 80));
+      cam.UpdateSensitivity(sensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity", 80));
     }
 
     // Update is called once per frame
@@ -31,6 +44,24 @@ public class MenuScript : MonoBehaviour
               panel.SetActive(true);
           }
         */
+    }
+
+    public void UpdateToggles()
+    {
+        if(cam.yInv == 1) {invertYToggle.isOn = false;}
+        else if(invertYToggle.isOn == false)
+        { 
+            
+            invertYToggle.isOn = true;
+            cam.ToggleY();
+        }
+
+        if (cam.xInv == 1) { invertXToggle.isOn = false; }
+        else if (invertXToggle.isOn == false)
+        { invertXToggle.isOn = true;
+            cam.ToggleX();
+        }
+
     }
 
     public void Next()
@@ -50,7 +81,10 @@ public class MenuScript : MonoBehaviour
     {
         if (screen != 2) screen = 2;
         else screen = 0;
+        
         UpdateScreen();
+        
+
 
     }
 
@@ -59,7 +93,7 @@ public class MenuScript : MonoBehaviour
         screen1.SetActive(false);
         screen2.SetActive(false);
         options.SetActive(false);
-        Debug.Log($"Current Screen is {screen}");
+       // Debug.Log($"Current Screen is {screen}");
         switch (screen)
         {
 
@@ -74,6 +108,7 @@ public class MenuScript : MonoBehaviour
             
             case 2:
                 options.SetActive(true);
+                UpdateToggles();
                 break;
 
             default:
@@ -83,7 +118,7 @@ public class MenuScript : MonoBehaviour
     }
     public void LoadScene0()
     {
-        Debug.Log("LoadingScene");
+        //Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(1);
 
@@ -95,18 +130,22 @@ public class MenuScript : MonoBehaviour
     {
         
         masterMixer.SetFloat("Master", value - 80);
+        PlayerPrefs.SetFloat("masterVolume", value);
+
     }
 
     public void UpdateEffectsVolume(float value)
     {
 
         masterMixer.SetFloat("Effects", value - 80);
+        PlayerPrefs.SetFloat("effectsVolume", value);
     }
 
     public void UpdateLavaVolume(float value)
     {
 
         masterMixer.SetFloat("Lava", value - 80);
+        PlayerPrefs.SetFloat("lavaVolume", value);
     }
 
     public void LoadScene1()

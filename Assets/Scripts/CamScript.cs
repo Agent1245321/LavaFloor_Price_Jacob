@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CamScript : MonoBehaviour
 {
@@ -13,9 +14,18 @@ public class CamScript : MonoBehaviour
     Vector3 angles;
     public float sensitivity;
     public GameObject forwardObject;
+
+    public int yInv = 1;
+    public int xInv = 1;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        yInv = PlayerPrefs.GetInt("yInv", 1);
+        xInv = PlayerPrefs.GetInt("xInv", 1);
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -24,11 +34,9 @@ public class CamScript : MonoBehaviour
     {
 
        
-        int yInv;
-        int xInv;
+       
 
-        yInv = invertY ? -1 : 1;
-        xInv = invertX ? -1 : 1;
+        
 
         look = Vector3.ClampMagnitude(Movement.look, 5.0f);
         
@@ -44,6 +52,7 @@ public class CamScript : MonoBehaviour
 
     public void UpdateSensitivity(float Sens)
     {
+        PlayerPrefs.SetFloat("sensitivity", Sens);
         sensitivity = Sens * 2f;
     }
 
@@ -55,11 +64,17 @@ public class CamScript : MonoBehaviour
 
     public void ToggleY()
     {
-        invertY = !invertY;
+        yInv = -yInv;
+        PlayerPrefs.SetInt("yInv", yInv);
+
+       
+       
     }
 
     public void ToggleX()
     {
-        invertX = !invertX;
+       xInv = -xInv;
+        PlayerPrefs.SetInt("xInv", xInv);
+
     }
 }

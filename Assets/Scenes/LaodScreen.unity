@@ -1371,6 +1371,14 @@ PrefabInstance:
       propertyPath: forwardObject
       value: 
       objectReference: {fileID: 424814023}
+    - target: {fileID: 6267849527104112794, guid: 24e283f7eef50284c8b7ce229c29ae43, type: 3}
+      propertyPath: invertXToggle
+      value: 
+      objectReference: {fileID: 2040527387}
+    - target: {fileID: 6267849527104112794, guid: 24e283f7eef50284c8b7ce229c29ae43, type: 3}
+      propertyPath: invertYToggle
+      value: 
+      objectReference: {fileID: 1966471998}
     - target: {fileID: 6267849527415806325, guid: 24e283f7eef50284c8b7ce229c29ae43, type: 3}
       propertyPath: forwardObject
       value: 
@@ -3261,6 +3269,13 @@ MonoBehaviour:
   screen1: {fileID: 229804176}
   screen2: {fileID: 307248150}
   options: {fileID: 519864813}
+  masterVolumeSlider: {fileID: 584965767}
+  effectsVolumeSlider: {fileID: 2083709634}
+  lavaVolumeSlider: {fileID: 418837109}
+  sensitivitySlider: {fileID: 1540335478}
+  invertYToggle: {fileID: 1966471998}
+  invertXToggle: {fileID: 2040527387}
+  cam: {fileID: 244500809}
   masterMixer: {fileID: 24100000, guid: 55739d379a6b7cc4e946ffea3fdf3773, type: 2}
 --- !u!114 &677544666
 MonoBehaviour:
