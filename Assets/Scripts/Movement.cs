@@ -64,12 +64,12 @@ public class Movement : MonoBehaviour
         ball.velocity = new Vector3(0, 0, 0);
         isGrouded = false;
         crystals = 0;
-        Debug.Log($"Scene Loaded: Mode - {mode}");
+        //Debug.Log($"Scene Loaded: Mode - {mode}");
         spawnData = GameObject.FindWithTag("spawn").GetComponent<SpawnScript>();
         spawn = GameObject.FindWithTag("spawn");
-        Debug.Log("Spawn_Info-Pulled" + $" - {spawn}");
+       // Debug.Log("Spawn_Info-Pulled" + $" - {spawn}");
         ball.transform.position = spawn.transform.position;
-        Debug.Log(spawnData.useCrystals);
+       // Debug.Log(spawnData.useCrystals);
     }
 
     // Update is called once per frame
@@ -146,22 +146,23 @@ public class Movement : MonoBehaviour
     private void MovePlayer()
     {
         lookingTransform = (forwardObject.transform.forward * move.y + forwardObject.transform.right * move.x);
-        Debug.Log(lookingTransformNoY);
+       // Debug.Log(lookingTransformNoY);
         ball.AddForce(lookingTransform * 1000 * Time.deltaTime);
     }
 
     public void OnJump()
     {
-        Debug.Log("Jump!");
+        Debug.Log("Pressed Space");
         if (isOnWall)
         {
-
+            
             ball.AddForce(wallOutVector * 10 + new Vector3(0, 7, 0), ForceMode.VelocityChange);
+            Debug.Log("Added Force");
 
         }
         else if (isGrouded)
         {
-            Debug.Log("JUMPED");
+           // Debug.Log("JUMPED");
             ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
         }
 
@@ -217,9 +218,9 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.tag == "lava")
         { Death(); }
 
-        Debug.Log(collision.gameObject.tag);
+        //Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Floor") isGrouded = true;
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Wall" && Detector.triggerOnWall == true)
         {
             Debug.Log("Touching Wall");
             isOnWall = true;
@@ -238,7 +239,10 @@ public class Movement : MonoBehaviour
     {
         
         if (collision.gameObject.tag == "Floor") isGrouded = false;
-        
+        if (collision.gameObject.tag == "Wall") Debug.Log("Collider Left Wall");
+
+
+
     }
 
     private IEnumerator Ahaha()

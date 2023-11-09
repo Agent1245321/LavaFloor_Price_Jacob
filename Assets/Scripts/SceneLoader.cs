@@ -21,10 +21,10 @@ public static class SceneLoader
 
    public static void FinishLoading(int scene)
     {
-        Debug.Log("LoadingScene");
+        //Debug.Log("LoadingScene");
        
         LevelToLoad = scene;
-        Debug.Log($"Scene Index - {LevelToLoad}");
+        //Debug.Log($"Scene Index - {LevelToLoad}");
         SceneManager.LoadScene(10);
     }
 
