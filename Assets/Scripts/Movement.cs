@@ -133,9 +133,20 @@ public class Movement : MonoBehaviour
     public void OnPause()
     {
         Cursor.lockState = CursorLockMode.Confined;
-        panel.SetActive(true);
+        if(panel.gameObject.activeSelf) 
+        {
+            panel.SetActive(false);
+            Time.timeScale = 1;
+            DumbHideScript.hide = !DumbHideScript.hide;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else {
+            panel.SetActive(true);
+            Time.timeScale = 0;
+            DumbHideScript.hide = !DumbHideScript.hide;
+        }
         
-        DumbHideScript.hide = !DumbHideScript.hide;
+        
 
 #if (UNITY_IOS || UNITY_ANDROID)
 

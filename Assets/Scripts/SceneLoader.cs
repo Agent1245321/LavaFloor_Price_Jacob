@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public static class SceneLoader
@@ -26,6 +27,11 @@ public static class SceneLoader
         LevelToLoad = scene;
         //Debug.Log($"Scene Index - {LevelToLoad}");
         SceneManager.LoadScene(10);
+        Time.timeScale = 1.0f;
+
+#if (UNITY_WSA) || (UNITY_STANDALONE_WIN) || (UNITY_WEBGL)
+    Cursor.lockState = CursorLockMode.Locked;
+#endif
     }
 
 }

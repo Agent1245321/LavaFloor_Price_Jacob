@@ -16,6 +16,7 @@ public class MenuScript : MonoBehaviour
     public GameObject screen1;
     public GameObject screen2;
     public GameObject options;
+    public GameObject bNButtons;
     public Slider masterVolumeSlider;
     public Slider effectsVolumeSlider;
     public Slider lavaVolumeSlider;
@@ -79,11 +80,22 @@ public class MenuScript : MonoBehaviour
     }
     public void Options()
     {
-        if (screen != 2) screen = 2;
-        else screen = 0;
-        
-        UpdateScreen();
-        
+        if (screen != 2) 
+        { 
+            screen = 2;
+            bNButtons.gameObject.SetActive(false); 
+        }
+
+
+        else 
+        {
+            screen = 0;
+            bNButtons.gameObject.SetActive(true); 
+        }
+
+            UpdateScreen();
+       
+
 
 
     }
@@ -225,10 +237,27 @@ public class MenuScript : MonoBehaviour
     }
     public void Exit()
     {
-       // Cursor.lockState = CursorLockMode.Locked;
-        panel.SetActive(false);
-        mobileControls.SetActive(true);
+        // Cursor.lockState = CursorLockMode.Locked;
 
+        if (screen == 2)
+        {
+            screen = 0;
+            bNButtons.gameObject.SetActive(true);
+#if (UNITY_WSA || UNITY_STANDALONE || UNITY_WEBGL)
+            Cursor.lockState = CursorLockMode.Confined;
+#endif
+        }
+        else
+        {
+            panel.SetActive(false); Time.timeScale = 1;
+#if (UNITY_ANDROID || UNITY_IOS)
+        mobileControls.SetActive(true);
+#endif
+#if (UNITY_WSA || UNITY_STANDALONE || UNITY_WEBGL)
+            Cursor.lockState = CursorLockMode.Locked;
+#endif
+        }
+        UpdateScreen();
     }
 
     public IEnumerator LevelStart()
@@ -245,6 +274,10 @@ public class MenuScript : MonoBehaviour
 
     public void Open()
     {
+#if (UNITY_WSA) || (UNITY_STANDALONE_WIN) || (UNITY_WEBGL)
+        Cursor.lockState = CursorLockMode.Confined;
+#endif
         panel.SetActive(true);
+        Time.timeScale = 0;
     }
 }
