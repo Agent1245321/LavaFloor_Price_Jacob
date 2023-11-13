@@ -5,7 +5,8 @@ using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-
+using UnityEngine.InputSystem.Composites;
+using System.IO;
 
 public class MenuScript : MonoBehaviour
 {
@@ -26,11 +27,27 @@ public class MenuScript : MonoBehaviour
 
     public CamScript cam;
 
+    public  bool[] levelData;
+    [SerializeField]
+    public Button[] buttons;
+
     
     public AudioMixer masterMixer;
     // Start is called before the first frame update
     void Start()
     {
+       if(File.Exists(Application.persistentDataPath + "/player.fun") != true)
+        {
+            SaveGame();
+            Debug.Log("Created New Player Save Data at:" + Application.persistentDataPath + "/player.fun");
+        }
+        else
+        {
+            loadGame();
+            
+        }
+        
+        setButtonsTF();
         UpdateVolume(masterVolumeSlider.value = PlayerPrefs.GetFloat("masterVolume", 80));
         UpdateEffectsVolume(effectsVolumeSlider.value = PlayerPrefs.GetFloat("effectsVolume", 80));
         UpdateLavaVolume(lavaVolumeSlider.value = PlayerPrefs.GetFloat("lavaVolume", 80));
@@ -131,6 +148,8 @@ public class MenuScript : MonoBehaviour
     public void LoadScene0()
     {
         //Debug.Log("LoadingScene");
+        
+        SaveGame();
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(1);
 
@@ -162,6 +181,8 @@ public class MenuScript : MonoBehaviour
 
     public void LoadScene1()
     {
+        
+        SaveGame();
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(2);
@@ -172,6 +193,8 @@ public class MenuScript : MonoBehaviour
 
     public void LoadScene2()
     {
+        
+        SaveGame();
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(3);
@@ -182,6 +205,8 @@ public class MenuScript : MonoBehaviour
 
     public void LoadScene3()
     {
+       
+        SaveGame();
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(4);
@@ -192,6 +217,8 @@ public class MenuScript : MonoBehaviour
 
     public void LoadScene4()
     {
+       
+        SaveGame();
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(5);
@@ -202,6 +229,8 @@ public class MenuScript : MonoBehaviour
 
     public void LoadScene5()
     {
+        
+        SaveGame();
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(6);
@@ -211,6 +240,8 @@ public class MenuScript : MonoBehaviour
 
     public void LoadScene6()
     {
+       
+        SaveGame();
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(7);
@@ -220,6 +251,8 @@ public class MenuScript : MonoBehaviour
 
     public void LoadScene7()
     {
+        
+        SaveGame();
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(8);
@@ -229,6 +262,8 @@ public class MenuScript : MonoBehaviour
 
     public void LoadScene8()
     {
+        
+        SaveGame();
         Debug.Log("LoadingScene");
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(9);
@@ -279,5 +314,38 @@ public class MenuScript : MonoBehaviour
 #endif
         panel.SetActive(true);
         Time.timeScale = 0;
+    }
+
+
+    public void loadGame()
+    {
+
+        levelData = PlayerData1.LoadGame().unlockedLevels;
+        Debug.Log("Loaded Player Save Data at:" + Application.persistentDataPath + "/player.fun");
+        setButtonsTF();
+    }
+
+    public void SaveGame() 
+    {
+        foreach (var level in levelData) { Debug.Log(level); }
+        
+        PlayerData1.SaveGame(this);
+        Debug.Log("Saved Game");
+    }
+
+    public void setButtonsTF()
+    {
+        Debug.Log("Setting Buttons");
+        Debug.Log(levelData.Length);
+        Debug.Log(buttons.Length);
+        int level = 0;
+        foreach (Button button in buttons)
+        {
+            
+            button.interactable = levelData[level];
+            level++;
+        };
+
+        
     }
 }

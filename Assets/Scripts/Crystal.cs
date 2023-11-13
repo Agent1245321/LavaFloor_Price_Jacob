@@ -18,7 +18,7 @@ public class Crystal : MonoBehaviour
         particles.Pause();
         sound = this.transform.GetComponentInChildren<AudioSource>();
 
-        Debug.Log("Paused");
+       
         
     }
 

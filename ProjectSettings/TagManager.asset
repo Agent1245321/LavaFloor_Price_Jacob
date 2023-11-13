@@ -12,6 +12,7 @@ TagManager:
   - lava
   - panel
   - glass
+  - Manager
   layers:
   - Default
   - TransparentFX

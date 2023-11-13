@@ -25,6 +25,7 @@ public static class SceneLoader
         //Debug.Log("LoadingScene");
        
         LevelToLoad = scene;
+        
         //Debug.Log($"Scene Index - {LevelToLoad}");
         SceneManager.LoadScene(10);
         Time.timeScale = 1.0f;

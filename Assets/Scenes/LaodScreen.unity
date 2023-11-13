@@ -3283,7 +3283,7 @@ GameObject:
   - component: {fileID: 677544665}
   m_Layer: 5
   m_Name: Manager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3313,6 +3313,16 @@ MonoBehaviour:
   invertYToggle: {fileID: 1966471998}
   invertXToggle: {fileID: 2040527387}
   cam: {fileID: 244500809}
+  levelData: 0100000000000000
+  buttons:
+  - {fileID: 1975125671}
+  - {fileID: 552629100}
+  - {fileID: 1985404707}
+  - {fileID: 1743385925}
+  - {fileID: 128296879}
+  - {fileID: 1058979551}
+  - {fileID: 2130029668}
+  - {fileID: 102235982}
   masterMixer: {fileID: 24100000, guid: 55739d379a6b7cc4e946ffea3fdf3773, type: 2}
 --- !u!114 &677544666
 MonoBehaviour:

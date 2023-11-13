@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class LoadNextScene : MonoBehaviour
 {
- 
+    public MenuScript manager;
     // Start is called before the first frame update
     void Start()
     {
+        manager = GameObject.FindWithTag("Manager").GetComponent<MenuScript>();
         Debug.Log("StartOnScene 0");
        StartCoroutine(LoadTheScene());
     }
@@ -23,10 +24,10 @@ public class LoadNextScene : MonoBehaviour
 
     IEnumerator LoadTheScene()
     {
-        Debug.Log("Creating ASync Operator");
+        
         AsyncOperation loading = SceneManager.LoadSceneAsync(SceneLoader.LevelToLoad);
-        Debug.Log("Created Async Opereator");
-        Debug.Log("Tracking Progress");
+
+        manager.levelData[SceneLoader.LevelToLoad - 1] = true;
         while (!loading.isDone)
         {
             Debug.Log(Mathf.Clamp01(loading.progress / .9f) * 100f);
