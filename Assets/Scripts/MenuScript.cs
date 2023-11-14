@@ -7,6 +7,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.InputSystem.Composites;
 using System.IO;
+using TMPro;
 
 public class MenuScript : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class MenuScript : MonoBehaviour
     [SerializeField]
     public float[] timers;
 
-    public float currentTimer;
+
 
 
 
@@ -65,14 +66,7 @@ public class MenuScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        /*  if(Input.GetKey(KeyCode.Escape))
-          {
-              panel.SetActive(true);
-          }
-        */
-    }
+   
 
     public void UpdateToggles()
     {
@@ -155,18 +149,7 @@ public class MenuScript : MonoBehaviour
                 break;
         }
     }
-    public void LoadScene0()
-    {
-        //Debug.Log("LoadingScene");
-        
-        SaveGame();
-        StartCoroutine(LevelStart());
-        SceneLoader.LoadScene(1);
-
-        panel.SetActive(false);
-        mobileControls.SetActive(true);
-
-    }
+    
     public void UpdateVolume(float value)
     {
         
@@ -189,97 +172,26 @@ public class MenuScript : MonoBehaviour
         PlayerPrefs.SetFloat("lavaVolume", value);
     }
 
-    public void LoadScene1()
+    
+    public void LoadScene(int indxOf)
     {
+
+        SaveGame();
+        Debug.Log("LoadingScene");
+        StartCoroutine(LevelStart());
+        SceneLoader.LoadScene(indxOf);
+        panel.SetActive(false);
         
-        SaveGame();
-        Debug.Log("LoadingScene");
-        StartCoroutine(LevelStart());
-        SceneLoader.LoadScene(2);
-        panel.SetActive(false);
+        StartTimer(indxOf  - 1);
+
+#if (UNITY_ANDROID || UNITY_IOS)
         mobileControls.SetActive(true);
+#endif
+
 
     }
 
-    public void LoadScene2()
-    {
-        
-        SaveGame();
-        Debug.Log("LoadingScene");
-        StartCoroutine(LevelStart());
-        SceneLoader.LoadScene(3);
-
-        panel.SetActive(false);
-        mobileControls.SetActive(true);
-    }
-
-    public void LoadScene3()
-    {
-       
-        SaveGame();
-        Debug.Log("LoadingScene");
-        StartCoroutine(LevelStart());
-        SceneLoader.LoadScene(4);
-        panel.SetActive(false);
-        mobileControls.SetActive(true);
-
-    }
-
-    public void LoadScene4()
-    {
-       
-        SaveGame();
-        Debug.Log("LoadingScene");
-        StartCoroutine(LevelStart());
-        SceneLoader.LoadScene(5);
-        panel.SetActive(false);
-        mobileControls.SetActive(true);
-
-    }
-
-    public void LoadScene5()
-    {
-        
-        SaveGame();
-        Debug.Log("LoadingScene");
-        StartCoroutine(LevelStart());
-        SceneLoader.LoadScene(6);
-        panel.SetActive(false);
-        mobileControls.SetActive(true);
-    }
-
-    public void LoadScene6()
-    {
-       
-        SaveGame();
-        Debug.Log("LoadingScene");
-        StartCoroutine(LevelStart());
-        SceneLoader.LoadScene(7);
-        panel.SetActive(false);
-        mobileControls.SetActive(true);
-    }
-
-    public void LoadScene7()
-    {
-        
-        SaveGame();
-        Debug.Log("LoadingScene");
-        StartCoroutine(LevelStart());
-        SceneLoader.LoadScene(8);
-        panel.SetActive(false);
-        mobileControls.SetActive(true);
-    }
-
-    public void LoadScene8()
-    {
-        
-        SaveGame();
-        Debug.Log("LoadingScene");
-        StartCoroutine(LevelStart());
-        SceneLoader.LoadScene(9);
-        panel.SetActive(false);
-        mobileControls.SetActive(true);
-    }
+   
     public void Exit()
     {
         // Cursor.lockState = CursorLockMode.Locked;
@@ -331,8 +243,17 @@ public class MenuScript : MonoBehaviour
     {
 
         levelData = PlayerData1.LoadGame().unlockedLevels;
+        timers = PlayerData1.LoadGame().timers;
         Debug.Log("Loaded Player Save Data at:" + Application.persistentDataPath + "/player.fun");
         setButtonsTF();
+        timerText = "Records:\n";
+        int i = 1;
+        foreach (float time in timers)
+        {
+            timerText += $"Level {i}: {time}\n";
+            i++;
+        }
+        Debug.Log(timerText);
     }
 
     public void SaveGame() 
@@ -343,11 +264,12 @@ public class MenuScript : MonoBehaviour
         Debug.Log("Saved Game");
     }
 
+
+    public TextMeshProUGUI recordsOutput;
     public void setButtonsTF()
     {
         Debug.Log("Setting Buttons");
-        Debug.Log(levelData.Length);
-        Debug.Log(buttons.Length);
+        
         int level = 0;
         foreach (Button button in buttons)
         {
@@ -356,9 +278,62 @@ public class MenuScript : MonoBehaviour
             level++;
         };
 
+        recordsOutput.text = timerText;
+
         
     }
 
-    IEnumerator StartTimer() 
-    { }
+
+
+
+    public static bool timerGo;
+    public float timeInSeconds = 0;
+    public int levelIndxTimer;
+    public void StartTimer(int levelIndx) 
+    {
+        levelIndxTimer = levelIndx;
+        timeInSeconds = 0;
+        timerGo = true;
+        Debug.Log("timer started");
+        Debug.Log("Previus Record: " + timers[levelIndxTimer]);
+    }
+
+    public string timerText = "Records:\n";
+    public void StopTimer()
+    {
+        timerGo = false;
+
+        if (timers[levelIndxTimer] == 0)
+        {
+            timers[levelIndxTimer] = timeInSeconds;
+            Debug.Log("Set the first Record:" + timeInSeconds);
+        }
+        else if (timers[levelIndxTimer] > timeInSeconds)
+        {
+            timers[levelIndxTimer] = timeInSeconds;
+            Debug.Log("Set a new Record:" + timeInSeconds + "... \n");
+        }
+        else
+        {
+            Debug.Log("Your time did not beat the record");
+        }
+
+        int i = 1;
+        timerText = "Records:\n";
+        foreach (float time in timers) { 
+            
+            timerText += $"Level {i}: {time}\n";
+            i++; }
+        Debug.Log(timerText);
+
+    }
+
+    void Update()
+    {
+        if (timerGo)
+        {
+            timeInSeconds += Time.deltaTime;
+            Debug.Log(timeInSeconds);
+        }
+    }
 }

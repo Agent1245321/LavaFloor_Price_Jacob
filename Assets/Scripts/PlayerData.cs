@@ -7,10 +7,12 @@ using UnityEngine;
 public class PlayerData
 {
     public bool[] unlockedLevels;
+    public float[] timers;
 
     public PlayerData(MenuScript manager) 
     {
-        unlockedLevels = manager.levelData;    
+        unlockedLevels = manager.levelData;  
+        timers = manager.timers;
     }
 
 }

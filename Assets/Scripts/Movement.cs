@@ -133,6 +133,7 @@ public class Movement : MonoBehaviour
 
     public void OnPause()
     {
+        menu.setButtonsTF();
         Cursor.lockState = CursorLockMode.Confined;
         if(panel.gameObject.activeSelf) 
         {
@@ -257,6 +258,7 @@ public class Movement : MonoBehaviour
 
     }
 
+    public MenuScript menu;
     private IEnumerator Ahaha()
     {
         if(spawnData.useCrystals)
@@ -265,9 +267,12 @@ public class Movement : MonoBehaviour
             {
                 ball.velocity = new Vector3(0, 0, 0);
 ;                Debug.Log("Level Complete");
+                menu.StopTimer();
+
                 DontDestroyOnLoad(this.transform.parent.gameObject);
                 SceneLoader.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 StopAllCoroutines();
+                
                 yield return null;
             }
             
@@ -279,6 +284,8 @@ public class Movement : MonoBehaviour
                 DontDestroyOnLoad(this.transform.parent.gameObject);
                 ball.velocity = new Vector3(0, 0, 0);
                 Debug.Log("Level Complete");
+                menu.StopTimer();
+
                 SceneLoader.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 StopAllCoroutines();
                 yield return null;
