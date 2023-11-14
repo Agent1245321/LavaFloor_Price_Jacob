@@ -28,6 +28,8 @@ public class LoadNextScene : MonoBehaviour
         AsyncOperation loading = SceneManager.LoadSceneAsync(SceneLoader.LevelToLoad);
 
         manager.levelData[SceneLoader.LevelToLoad - 1] = true;
+        manager.SaveGame();
+        manager.setButtonsTF();
         while (!loading.isDone)
         {
             Debug.Log(Mathf.Clamp01(loading.progress / .9f) * 100f);

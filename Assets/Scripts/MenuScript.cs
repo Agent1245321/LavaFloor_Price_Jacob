@@ -28,8 +28,18 @@ public class MenuScript : MonoBehaviour
     public CamScript cam;
 
     public  bool[] levelData;
+
     [SerializeField]
     public Button[] buttons;
+
+    [SerializeField]
+    public float[] timers;
+
+    public float currentTimer;
+
+
+
+    
 
     
     public AudioMixer masterMixer;
@@ -348,4 +358,7 @@ public class MenuScript : MonoBehaviour
 
         
     }
+
+    IEnumerator StartTimer() 
+    { }
 }
