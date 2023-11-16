@@ -19,6 +19,9 @@ public class MenuScript : MonoBehaviour
     private int screen;
     public GameObject screen1;
     public GameObject screen2;
+    public GameObject Leaderboard1;
+    public GameObject Leaderboard2;
+    public GameObject Leaderboard3;
     public GameObject options;
     public GameObject bNButtons;
     public Slider masterVolumeSlider;
@@ -90,14 +93,14 @@ public class MenuScript : MonoBehaviour
 
     public void Next()
     {
-        if (screen < 1) screen++;
+        if (screen < 1 || (screen >=5 && screen < 7)) screen++;
         UpdateScreen();
 
     }
 
     public void Back()
     {
-        if (screen > 0) screen--;
+        if (screen > 0 && 4 > screen || (screen > 5 && screen <= 7)) screen--;
         UpdateScreen();
 
     }
@@ -123,10 +126,37 @@ public class MenuScript : MonoBehaviour
 
     }
 
+    public void Leaderboards()
+    {
+        bNButtons.gameObject.SetActive(true);
+        if (screen != 5)
+        {
+            screen = 5;
+            
+        }
+
+        else
+        {
+            screen = 0;
+            
+        }
+
+        UpdateScreen();
+
+
+
+
+    }
+
     private void UpdateScreen()
     {
         screen1.SetActive(false);
         screen2.SetActive(false);
+        Leaderboard1.SetActive(false);
+        Leaderboard2.SetActive(false);
+        Leaderboard3.SetActive(false);
+        
+
         options.SetActive(false);
        // Debug.Log($"Current Screen is {screen}");
         switch (screen)
@@ -143,6 +173,21 @@ public class MenuScript : MonoBehaviour
             
             case 2:
                 options.SetActive(true);
+                UpdateToggles();
+                break;
+
+            case 5:
+                Leaderboard1.SetActive(true);
+                UpdateToggles();
+                break;
+
+            case 6:
+                Leaderboard2.SetActive(true);
+                UpdateToggles();
+                break;
+
+            case 7:
+                Leaderboard3.SetActive(true);
                 UpdateToggles();
                 break;
 
@@ -322,6 +367,7 @@ public class MenuScript : MonoBehaviour
         {
             timers[levelIndxTimer] = timeInSeconds;
             Debug.Log("Set the first Record:" + timeInSeconds);
+            StartCoroutine(leaderBoard.SubmitScoreRoutine(Mathf.RoundToInt(timeInSeconds), keys[levelIndxTimer]));
         }
         else if (timers[levelIndxTimer] > timeInSeconds)
         {
