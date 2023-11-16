@@ -8,9 +8,11 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem.Composites;
 using System.IO;
 using TMPro;
+using System;
 
 public class MenuScript : MonoBehaviour
 {
+    public LeaderBoard leaderBoard;
 
     public GameObject panel;
     public GameObject mobileControls;
@@ -262,6 +264,7 @@ public class MenuScript : MonoBehaviour
         
         PlayerData1.SaveGame(this);
         Debug.Log("Saved Game");
+        
     }
 
 
@@ -299,6 +302,18 @@ public class MenuScript : MonoBehaviour
     }
 
     public string timerText = "Records:\n";
+
+    //These are the keys for the leaderboards//
+    string[] keys = { 
+     "Level1Time",
+     "Level2Time",
+     "Level3Time",
+     "Level4Time",
+     "Level5Time",
+     "Level6Time",
+     "Level7Time",
+     "Level8Time" 
+    };
     public void StopTimer()
     {
         timerGo = false;
@@ -312,6 +327,7 @@ public class MenuScript : MonoBehaviour
         {
             timers[levelIndxTimer] = timeInSeconds;
             Debug.Log("Set a new Record:" + timeInSeconds + "... \n");
+            StartCoroutine(leaderBoard.SubmitScoreRoutine(Mathf.RoundToInt(timeInSeconds), keys[levelIndxTimer]));
         }
         else
         {
@@ -333,7 +349,7 @@ public class MenuScript : MonoBehaviour
         if (timerGo)
         {
             timeInSeconds += Time.deltaTime;
-            Debug.Log(timeInSeconds);
+           // Debug.Log(timeInSeconds);
         }
     }
 }
