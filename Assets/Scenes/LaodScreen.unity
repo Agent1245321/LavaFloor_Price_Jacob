@@ -1533,6 +1533,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 588203995588078662, guid: 24e283f7eef50284c8b7ce229c29ae43, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 37165
+      objectReference: {fileID: 0}
+    - target: {fileID: 588203995588078662, guid: 24e283f7eef50284c8b7ce229c29ae43, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6267849526685969241, guid: 24e283f7eef50284c8b7ce229c29ae43, type: 3}
       propertyPath: m_LocalPosition.x
       value: 898.9807
@@ -4656,6 +4664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dafb241624bc2c845828d6c54e6ad19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leaderboard: {fileID: 677544672}
 --- !u!114 &677544672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4668,6 +4677,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6955ba30703b74f45ba51e0749212e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leaderboardsNames: []
+  leaderboardsScores:
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &757663954
 GameObject:
   m_ObjectHideFlags: 0
@@ -5601,7 +5617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level X
+  m_text: 'Level 3
 
     1. Player: 15
 
@@ -6404,7 +6420,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level X
+  m_text: 'Level 4
 
     1. Player: 15
 
@@ -8061,7 +8077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level X
+  m_text: 'Level 1
 
     1. Player: 15
 
@@ -9415,7 +9431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level X
+  m_text: 'Level 2
 
     1. Player: 15
 
