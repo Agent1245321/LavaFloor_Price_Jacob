@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using LootLocker.Requests;
 using UnityEngine.Rendering;
+using System;
 
 public class LeaderBoard : MonoBehaviour
 {
@@ -66,7 +67,7 @@ public class LeaderBoard : MonoBehaviour
                         tempPlayerNames += members[i].player.id;
                     }
 
-                    tempPlayerScores += members[i].score + "\n";
+                    tempPlayerScores += Convert.ToDouble(members[i].score)/1000 + "\n";
                     tempPlayerNames += "\n";
                 }
                 done = true;

@@ -44,7 +44,7 @@ public class MenuScript : MonoBehaviour
 
 
 
-
+    public LeaderBoard leaderBoardi;
     
 
     
@@ -133,6 +133,7 @@ public class MenuScript : MonoBehaviour
         {
             screen = 5;
             
+            
         }
 
         else
@@ -179,16 +180,25 @@ public class MenuScript : MonoBehaviour
             case 5:
                 Leaderboard1.SetActive(true);
                 UpdateToggles();
+                UpdateLeaderboards(0);
+                UpdateLeaderboards(1);
+                UpdateLeaderboards(2);
                 break;
 
             case 6:
                 Leaderboard2.SetActive(true);
                 UpdateToggles();
+                UpdateLeaderboards(3);
+                UpdateLeaderboards(4);
+                UpdateLeaderboards(5);
                 break;
 
             case 7:
                 Leaderboard3.SetActive(true);
                 UpdateToggles();
+                UpdateLeaderboards(6);
+                UpdateLeaderboards(7);
+                
                 break;
 
             default:
@@ -331,6 +341,15 @@ public class MenuScript : MonoBehaviour
         
     }
 
+    public GameObject[] leaderboards;
+    void UpdateLeaderboards(int indx)
+    {
+        
+        
+            leaderboards[indx].transform.Find("Names").GetComponent<TextMeshProUGUI>().text = leaderBoardi.leaderboardsNames[indx];
+            leaderboards[indx].transform.Find("Scores").GetComponent<TextMeshProUGUI>().text = leaderBoardi.leaderboardsScores[indx];
+        
+    }
 
 
 
@@ -367,13 +386,13 @@ public class MenuScript : MonoBehaviour
         {
             timers[levelIndxTimer] = timeInSeconds;
             Debug.Log("Set the first Record:" + timeInSeconds);
-            StartCoroutine(leaderBoard.SubmitScoreRoutine(Mathf.RoundToInt(timeInSeconds), keys[levelIndxTimer]));
+            StartCoroutine(leaderBoard.SubmitScoreRoutine(Mathf.RoundToInt(timeInSeconds * 1000), keys[levelIndxTimer]));
         }
         else if (timers[levelIndxTimer] > timeInSeconds)
         {
             timers[levelIndxTimer] = timeInSeconds;
             Debug.Log("Set a new Record:" + timeInSeconds + "... \n");
-            StartCoroutine(leaderBoard.SubmitScoreRoutine(Mathf.RoundToInt(timeInSeconds), keys[levelIndxTimer]));
+            StartCoroutine(leaderBoard.SubmitScoreRoutine(Mathf.RoundToInt(timeInSeconds * 1000), keys[levelIndxTimer]));
         }
         else
         {
