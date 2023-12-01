@@ -6,37 +6,37 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LaodScreen.unity
+    path: Assets/Scenes/Main Menu.unity
     guid: 0c29643c2bfa0c142aedf5d89dfd2d1f
   - enabled: 1
-    path: Assets/Scenes/SandBox.unity
+    path: Assets/Scenes/Tutorial.unity
     guid: 488e81d3402cb7d47a6ba2192c17b896
   - enabled: 1
-    path: Assets/Scenes/OgLevel.unity
+    path: Assets/Scenes/Stadium.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Landons Level.unity
+    path: Assets/Scenes/LightHouse.unity
     guid: b744ac10505fb90489c054e96a8e55b5
   - enabled: 1
-    path: Assets/Scenes/LevelMorgan.unity
+    path: Assets/Scenes/Gymnastics.unity
     guid: 558c6c9923e82a842b7d4f3444f26057
   - enabled: 1
-    path: Assets/Scenes/Colts Level.unity
+    path: Assets/Scenes/Ramp.unity
     guid: a9406b4c4cb311e4db8a1aaa52bd10f1
   - enabled: 1
-    path: Assets/Scenes/Level02.unity
+    path: Assets/Scenes/Tower.unity
     guid: 7d9be50af47b5e246a3c13c3fe0fd954
   - enabled: 1
-    path: Assets/Scenes/Level01.unity
+    path: Assets/Scenes/Speed.unity
     guid: c3b6f8749ce9c3e4a97a62d3d20d7ca3
   - enabled: 1
-    path: Assets/Scenes/THEBESTSCENEOFALLTIME.unity
+    path: Assets/Scenes/Pit.unity
     guid: b9c9567c15079574dad901f127366e87
   - enabled: 1
-    path: Assets/Scenes/Win.unity
+    path: Assets/Scenes/Technical/Win.unity
     guid: a928a634730471646adb5c528dc7891e
   - enabled: 1
-    path: Assets/Scenes/Loading Scene.unity
+    path: Assets/Scenes/Technical/Loading Scene.unity
     guid: 3599d42917591834f8c95fdec36101f6
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 32b6f0211c748d34ea4102eff9da2bc6, type: 2}

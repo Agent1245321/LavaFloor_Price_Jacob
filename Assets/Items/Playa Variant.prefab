@@ -179,7 +179,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -216,6 +216,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -5939477213623021935, guid: 55739d379a6b7cc4e946ffea3fdf3773, type: 2}
+    - target: {fileID: 641586707595271976, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 23144b3f0978b9b4987d8f66ec03ea81, type: 2}
     - target: {fileID: 641586707595271981, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       propertyPath: m_TagString
       value: player

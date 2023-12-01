@@ -36,6 +36,8 @@ public class Movement : MonoBehaviour
     public GameObject MobileControls;
     public LightLauncher cannon;
 
+    private bool doubleJump;
+
     public GameObject forwardObject;
     // Start is called before the first frame update
 
@@ -178,6 +180,13 @@ public class Movement : MonoBehaviour
            // Debug.Log("JUMPED");
             ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
         }
+        else if (doubleJump)
+        {
+            doubleJump = false;
+            ball.velocity = new Vector3(ball.velocity.x, 0, ball.velocity.z);
+            ball.AddForce(0, 9, 0, ForceMode.VelocityChange);
+
+        }
 
         if(cannon != null) { cannon.Launch(); }
     }
@@ -232,7 +241,12 @@ public class Movement : MonoBehaviour
         { Death(); }
 
         //Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Floor") isGrouded = true;
+        if (collision.gameObject.tag == "Floor")
+        {
+            isGrouded = true;
+            doubleJump = true;
+        }
+
         if (collision.gameObject.tag == "Wall" && Detector.triggerOnWall == true)
         {
             Debug.Log("Touching Wall");
