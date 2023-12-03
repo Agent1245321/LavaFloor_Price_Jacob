@@ -36,7 +36,11 @@ public class Movement : MonoBehaviour
     public GameObject MobileControls;
     public LightLauncher cannon;
 
+    
+
     private bool doubleJump;
+
+    public int status = 1;
 
     public GameObject forwardObject;
     // Start is called before the first frame update
@@ -46,6 +50,7 @@ public class Movement : MonoBehaviour
         ball = this.GetComponent<Rigidbody>();
         lavaSound = this.transform.root.Find("GameObject").GetComponentInChildren<AudioSource>();
         panel = GameObject.FindWithTag("panel");
+        
     }
 
 
@@ -67,6 +72,8 @@ public class Movement : MonoBehaviour
         ball.velocity = new Vector3(0, 0, 0);
         isGrouded = false;
         crystals = 0;
+        //reset power up
+        this.gameObject.GetComponent<PowerUpManager>().SetStatus(0);
         //Debug.Log($"Scene Loaded: Mode - {mode}");
         spawnData = GameObject.FindWithTag("spawn").GetComponent<SpawnScript>();
         spawn = GameObject.FindWithTag("spawn");
@@ -170,17 +177,17 @@ public class Movement : MonoBehaviour
         Debug.Log("Pressed Space");
         if (isOnWall)
         {
-            
+
             ball.AddForce(wallOutVector * 10 + new Vector3(0, 7, 0), ForceMode.VelocityChange);
             Debug.Log("Added Force");
 
         }
         else if (isGrouded)
         {
-           // Debug.Log("JUMPED");
+            // Debug.Log("JUMPED");
             ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
         }
-        else if (doubleJump)
+        else if (doubleJump && status == 1) 
         {
             doubleJump = false;
             ball.velocity = new Vector3(ball.velocity.x, 0, ball.velocity.z);
@@ -282,7 +289,7 @@ public class Movement : MonoBehaviour
                 ball.velocity = new Vector3(0, 0, 0);
 ;                Debug.Log("Level Complete");
                 menu.StopTimer();
-
+                status = 0;
                 DontDestroyOnLoad(this.transform.parent.gameObject);
                 SceneLoader.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 StopAllCoroutines();

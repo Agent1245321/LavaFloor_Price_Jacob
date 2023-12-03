@@ -89,14 +89,13 @@ GameObject:
   - component: {fileID: 7278484725043070255}
   - component: {fileID: 8971266342380899143}
   - component: {fileID: 1443377748287255096}
-  - component: {fileID: 6168446669750518359}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5403671668519758903
 Transform:
   m_ObjectHideFlags: 0
@@ -140,7 +139,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d261c08678694784e87ec541ae62b011, type: 2}
+  - {fileID: 2100000, guid: fb68f6422d6c8624fac52111465b1b4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,27 +182,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &6168446669750518359
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8873871897147188978}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54e76464c3c104e4a894fbf130da72b7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6781436262376801883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,6 +303,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 641586707595271981, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5217919335147560166}
+    - targetCorrespondingSourceObject: {fileID: 641586707595271981, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5928740860284983702}
   m_SourcePrefab: {fileID: 100100000, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
 --- !u!1 &5041092243699242183 stripped
 GameObject:
@@ -371,3 +352,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &5928740860284983702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6267849527415806326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c75c3b779c2e104ea3461f8a723ddb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matts:
+  - {fileID: 2100000, guid: 23144b3f0978b9b4987d8f66ec03ea81, type: 2}
+  - {fileID: 2100000, guid: fb68f6422d6c8624fac52111465b1b4a, type: 2}
+  indicator: {fileID: 8873871897147188978}

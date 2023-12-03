@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5107132959747972551}
   - component: {fileID: 184061131679817405}
+  - component: {fileID: 4378118435716708680}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -94,6 +95,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4378118435716708680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105753369094113841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &217546895127653493
 GameObject:
   m_ObjectHideFlags: 0
@@ -5136,7 +5160,8 @@ GameObject:
   - component: {fileID: 5214964050464322583}
   - component: {fileID: 2129128231257097136}
   - component: {fileID: 3677641617506794218}
-  - component: {fileID: 1344732447275645615}
+  - component: {fileID: 4092494259700267948}
+  - component: {fileID: 4581426196475425318}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -5188,7 +5213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81f59c94ef534a74f98250dfc3a71da2, type: 2}
+  - {fileID: 2100000, guid: 9ae323b3308204c4098708e2e873223e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5231,7 +5256,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1344732447275645615
+--- !u!114 &4092494259700267948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5243,6 +5268,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea318304341a5a48b400965fd7dd3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4581426196475425318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613853694597013399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06704793c6d33ae40b00a1ba1511bd61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: 0
+  icons:
+  - {fileID: 3606955350865869113, guid: 1fa5ba1d9a391154c92063fa9b3e1a40, type: 3}
+  - {fileID: 21300000, guid: 76b363904077b89409dd2df2a8ffcb20, type: 3}
+  balls:
+  - {fileID: 2100000, guid: 9ae323b3308204c4098708e2e873223e, type: 2}
+  - {fileID: 2100000, guid: b8d5d5121dd251f49a3d7feaa67c5faf, type: 2}
 --- !u!1 &4529564746277611570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5295,7 +5339,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8225ae83bbb04c84c95f15cabe724cd8, type: 2}
+  - {fileID: 2100000, guid: 23144b3f0978b9b4987d8f66ec03ea81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5316,8 +5360,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 76b363904077b89409dd2df2a8ffcb20, type: 3}
-  m_Color: {r: 0.3949852, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 3606955350865869113, guid: 1fa5ba1d9a391154c92063fa9b3e1a40, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

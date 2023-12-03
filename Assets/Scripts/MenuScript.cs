@@ -9,6 +9,7 @@ using UnityEngine.InputSystem.Composites;
 using System.IO;
 using TMPro;
 using System;
+using UnityEditor.AnimatedValues;
 
 public class MenuScript : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class MenuScript : MonoBehaviour
 
     [SerializeField]
     public float[] timers;
+
+
 
 
 
@@ -238,6 +241,7 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(indxOf);
         panel.SetActive(false);
+        
         
         StartTimer(indxOf  - 1);
 
