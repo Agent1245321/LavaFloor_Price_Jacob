@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         ball = this.GetComponent<Rigidbody>();
-        lavaSound = this.transform.root.Find("GameObject").GetComponentInChildren<AudioSource>();
+        lavaSound = this.transform.root.GetComponentInChildren<AudioSource>();
         panel = GameObject.FindWithTag("panel");
         
     }
