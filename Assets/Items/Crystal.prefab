@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8578013526003936893}
   - component: {fileID: 8968709520340128125}
   - component: {fileID: 8350437869110438136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5522,7 +5522,7 @@ GameObject:
   - component: {fileID: 7040361938424315503}
   - component: {fileID: 4751601918701285853}
   - component: {fileID: 6640824418495998515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prism (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

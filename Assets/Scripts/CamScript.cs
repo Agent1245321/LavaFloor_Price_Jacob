@@ -46,7 +46,7 @@ public class CamScript : MonoBehaviour
         if (camDegreeY < -90) camDegreeY = -89.9f;
         angles = new Vector3(camDegreeY, camDegree, 0);
 
-        forwardObject.transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
+        
 
     }
 
@@ -60,6 +60,7 @@ public class CamScript : MonoBehaviour
     {
         transform.eulerAngles = angles;
         this.transform.position = new Vector3(camFollower.transform.position.x, camFollower.transform.position.y, camFollower.transform.position.z);
+        forwardObject.transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
     }
 
     public void ToggleY()
@@ -76,5 +77,23 @@ public class CamScript : MonoBehaviour
        xInv = -xInv;
         PlayerPrefs.SetInt("xInv", xInv);
 
+    }
+
+
+    public GameObject vCam;
+    public GameObject camera;
+    
+    public void ToggleVCam(bool b)
+    {
+        if (b) 
+        {
+            vCam.SetActive(true);
+        }
+        else 
+        {
+            vCam.SetActive(false);
+            camera.transform.localRotation = new Quaternion(0,0,0,0);
+            camera.transform.localPosition = new Vector3(0, 0, -6f);
+        }
     }
 }

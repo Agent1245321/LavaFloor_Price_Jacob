@@ -86,12 +86,33 @@ public class MenuScript : MonoBehaviour
             cam.ToggleY();
         }
 
-        if (cam.xInv == 1) { invertXToggle.isOn = false; }
+        if (cam.xInv == 1) 
+        { invertXToggle.isOn = false; }
         else if (invertXToggle.isOn == false)
         { invertXToggle.isOn = true;
             cam.ToggleX();
         }
 
+    }
+
+    public int vCamOn;
+    public void UseVirtualCamera()
+    {
+        if (cam.yInv == 1)
+        { invertYToggle.isOn = false; }
+        else if (invertYToggle.isOn == false)
+        {
+
+            invertYToggle.isOn = true;
+            cam.ToggleY();
+        }
+
+        if (cam.xInv == 1) { invertXToggle.isOn = false; }
+        else if (invertXToggle.isOn == false)
+        {
+            invertXToggle.isOn = true;
+            cam.ToggleX();
+        }
     }
 
     public void Next()
