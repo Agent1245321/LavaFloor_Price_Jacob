@@ -78,4 +78,22 @@ public class CamScript : MonoBehaviour
         PlayerPrefs.SetInt("xInv", xInv);
 
     }
+
+
+    public GameObject vCam;
+    public GameObject camera;
+    
+    public void ToggleVCam(bool b)
+    {
+        if (b) 
+        {
+            vCam.SetActive(true);
+        }
+        else 
+        {
+            vCam.SetActive(false);
+            camera.transform.localRotation = new Quaternion(0,0,0,0);
+            camera.transform.localPosition = new Vector3(0, 0, -6f);
+        }
+    }
 }
