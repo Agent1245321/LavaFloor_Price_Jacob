@@ -41,7 +41,7 @@ public class Gate : MonoBehaviour
 
         // Update is called once per frame
         void Update()
-    {
+        {
         crystalsCollected = ballScript.crystals;
         
         if (useStartData)
