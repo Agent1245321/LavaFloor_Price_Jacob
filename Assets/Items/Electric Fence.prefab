@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8005005194250944572}
   - component: {fileID: 1276454793425405249}
   - component: {fileID: 8168048910679617218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (20)
   m_TagString: lava
   m_Icon: {fileID: 0}
@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 2809147573090490607}
   - component: {fileID: 6667622817602474088}
   - component: {fileID: 360448920436932813}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1422,7 +1422,7 @@ GameObject:
   - component: {fileID: 8363189037896539148}
   - component: {fileID: 7175461077036447739}
   - component: {fileID: 6927364836903658089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (19)
   m_TagString: lava
   m_Icon: {fileID: 0}
@@ -2128,7 +2128,7 @@ GameObject:
   - component: {fileID: 3427421991650042148}
   - component: {fileID: 6298977735071882096}
   - component: {fileID: 4721727012308834342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (23)
   m_TagString: lava
   m_Icon: {fileID: 0}
@@ -2481,7 +2481,7 @@ GameObject:
   - component: {fileID: 7470260186322909495}
   - component: {fileID: 817638676327789732}
   - component: {fileID: 8296347692275486615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (21)
   m_TagString: lava
   m_Icon: {fileID: 0}
@@ -2834,7 +2834,7 @@ GameObject:
   - component: {fileID: 7886472437391499734}
   - component: {fileID: 3060038866951190530}
   - component: {fileID: 74479130043720761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (22)
   m_TagString: lava
   m_Icon: {fileID: 0}
@@ -3187,7 +3187,7 @@ GameObject:
   - component: {fileID: 3631555676520920021}
   - component: {fileID: 5410301037941016990}
   - component: {fileID: 1989290586092888578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (24)
   m_TagString: lava
   m_Icon: {fileID: 0}
@@ -3540,7 +3540,7 @@ GameObject:
   - component: {fileID: 3571874946103083956}
   - component: {fileID: 7556962293426322498}
   - component: {fileID: 7482261751575142406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (25)
   m_TagString: lava
   m_Icon: {fileID: 0}
