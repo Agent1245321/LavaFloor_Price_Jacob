@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using System;
+using LootLocker.Requests;
 
 public class Movement : MonoBehaviour
 {
@@ -204,6 +205,42 @@ public class Movement : MonoBehaviour
         }
 
         if(cannon != null) { cannon.Launch(); }
+    }
+
+    public void OnInteract()
+    {
+        switch(status)
+        {
+            case 2:
+                Debug.Log("PickUp");
+                break;
+
+                default:
+                Debug.Log("No Activatable Powerup");
+                break;
+
+        }
+    }
+
+    public GameObject targetObj;
+   
+    public void TryPickUp()
+    {
+        if (targetObj != null)
+        {
+            if (targetObj.TryGetComponent(out IPickUpAble targetPickupable))
+            {
+                targetPickupable.PickUp();
+            }
+            else
+            {
+                Debug.Log("cannotPickupObj");
+            }
+        }
+        else
+        {
+            Debug.Log("No Object To Pick Up");
+        }
     }
 
     public void OnReset()
