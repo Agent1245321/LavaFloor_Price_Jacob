@@ -9,12 +9,15 @@ public class KeyHoleObject : MonoBehaviour
     public GameObject Key;
     public KeyObject keyScript;
     public IEvent connected;
-    public bool isDoorOpen;
+    public Animator Gen;
+   
     public bool IsKeyInHole;
 
     public void Start()
     {
-       if( Connection.TryGetComponent(out IEvent target))
+        keyScript = Key.transform.GetChild(0).GetComponent<KeyObject>();
+        keyScript.Hole = this;
+        if ( Connection.TryGetComponent(out IEvent target))
         {
             connected = target;
         }
@@ -22,8 +25,7 @@ public class KeyHoleObject : MonoBehaviour
         {
             Debug.LogError("Could Not Get IEvent Script");
         }
-        keyScript = Key.GetComponent<KeyObject>();
-        keyScript.Hole = this;
+        
 }
 
     
@@ -33,7 +35,12 @@ public class KeyHoleObject : MonoBehaviour
         if(other.gameObject == Key) 
         {
             Debug.Log("Key Inserted");
-            isDoorOpen = true;
+            Gen.SetBool("IsOn", true);
+            connected.IsActive = true;
+            
+            IsKeyInHole = true;
+            
+            
             
             connected.Activate();
             keyScript.Lock(this.gameObject);
@@ -45,10 +52,11 @@ public class KeyHoleObject : MonoBehaviour
     
     public void Update()
     {
-        if(!IsKeyInHole && isDoorOpen) 
+        if(!IsKeyInHole && connected.IsActive) 
         {
-            isDoorOpen = false;
-            connected.Activate();   
+            connected.IsActive = false;
+            connected.Activate();
+            Gen.SetBool("IsOn", false);
         }
     }
 

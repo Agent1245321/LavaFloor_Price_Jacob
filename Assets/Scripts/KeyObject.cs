@@ -79,6 +79,10 @@ public class KeyObject : MonoBehaviour, IEnteractable
         {
             this.transform.parent.position = movement.transform.position + new Vector3 (0, HoverDistance, 0);
         }
+        if(Hole.IsKeyInHole)
+        {
+            this.transform.parent.rotation = Hole.transform.rotation;
+        }
     }
 
     public void Lock(GameObject hole)

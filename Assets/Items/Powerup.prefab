@@ -5213,7 +5213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ae323b3308204c4098708e2e873223e, type: 2}
+  - {fileID: 2100000, guid: cdb15f711aea74544b660388da61c2f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5280,13 +5280,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06704793c6d33ae40b00a1ba1511bd61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUp: 0
+  powerUp: 2
   icons:
   - {fileID: 3606955350865869113, guid: 1fa5ba1d9a391154c92063fa9b3e1a40, type: 3}
   - {fileID: 21300000, guid: 76b363904077b89409dd2df2a8ffcb20, type: 3}
+  - {fileID: -2432275023209190527, guid: 1fa5ba1d9a391154c92063fa9b3e1a40, type: 3}
   balls:
   - {fileID: 2100000, guid: 9ae323b3308204c4098708e2e873223e, type: 2}
   - {fileID: 2100000, guid: b8d5d5121dd251f49a3d7feaa67c5faf, type: 2}
+  - {fileID: 2100000, guid: cdb15f711aea74544b660388da61c2f8, type: 2}
 --- !u!1 &4529564746277611570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5360,7 +5362,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3606955350865869113, guid: 1fa5ba1d9a391154c92063fa9b3e1a40, type: 3}
+  m_Sprite: {fileID: -2432275023209190527, guid: 1fa5ba1d9a391154c92063fa9b3e1a40, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

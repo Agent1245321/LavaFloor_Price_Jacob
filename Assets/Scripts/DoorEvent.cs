@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class DoorEvent : MonoBehaviour, IEvent
 {
-    public bool isOpen = false;
+    public bool IsActive { get; set; } = false;
+    public Animator animator;
       public void Activate()
     {
-        if ( isOpen )
+       
+        if ( IsActive )
         {
             OpenDoor();
         }
@@ -20,13 +22,16 @@ public class DoorEvent : MonoBehaviour, IEvent
     public void OpenDoor()
     {
         Debug.Log("Opening Door");
-        isOpen = true;
+        IsActive = true;
+        animator.SetBool("IsOpen", true);
+
     }
 
     public void CloseDoor()
     {
         Debug.Log("Closing Door");
-        isOpen = false;
+        IsActive = false;
+        animator.SetBool("IsOpen", false);
     }
 
 }

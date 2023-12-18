@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943cb5af4fdf0384cb854bffebdb1413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 0}
+  Hole: {fileID: 0}
   HoverDistance: 1
 --- !u!1 &4406289548188747334
 GameObject:
