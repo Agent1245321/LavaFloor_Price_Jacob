@@ -212,7 +212,7 @@ public class Movement : MonoBehaviour
         switch(status)
         {
             case 2:
-                Debug.Log("PickUp");
+                TryInteract();
                 break;
 
                 default:
@@ -224,13 +224,13 @@ public class Movement : MonoBehaviour
 
     public GameObject targetObj;
    
-    public void TryPickUp()
+    public void TryInteract()
     {
         if (targetObj != null)
         {
-            if (targetObj.TryGetComponent(out IPickUpAble targetPickupable))
+            if (targetObj.TryGetComponent(out IEnteractable target))
             {
-                targetPickupable.PickUp();
+                target.Interact();
             }
             else
             {

@@ -25,6 +25,7 @@ public class PowerUpManager : MonoBehaviour
     public void SetStatus(int indx)
     {
         ball = GetComponent<Movement>();
+        ball.TryInteract();
         Debug.Log($"Setting Status to {indx}");
         indicator.SetActive( true );
         indicator.GetComponent<Renderer>().material = matts[indx];
