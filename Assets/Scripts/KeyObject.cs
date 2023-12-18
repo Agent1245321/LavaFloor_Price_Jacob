@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class KeyObject : MonoBehaviour, IEnteractable
 {
-    public Movement movement;
+    private Movement movement;
+    public KeyHoleObject Hole;
 
     private Rigidbody obj;
     private GameObject forwardObj;
@@ -30,8 +31,11 @@ public class KeyObject : MonoBehaviour, IEnteractable
         }
         else
         {
-            
+            this.transform.parent.position = movement.transform.position + new Vector3(0, 2* HoverDistance, 0);
+            Unlock();
+            Hole.IsKeyInHole = false;
             this.transform.parent.GetComponent<Collider>().enabled = false;
+           
             
             
             obj.useGravity = false;
@@ -50,7 +54,7 @@ public class KeyObject : MonoBehaviour, IEnteractable
         
         if (player.tag == "player")
         {
-            Debug.Log("In Range");
+            //Debug.Log("In Range");
             movement.targetObj = this.gameObject;
             
         }
@@ -62,7 +66,7 @@ public class KeyObject : MonoBehaviour, IEnteractable
 
         if (player.tag == "player")
         {
-            Debug.Log("Out Of Range");
+            //Debug.Log("Out Of Range");
             movement.targetObj = null;
         }
     }
@@ -75,5 +79,23 @@ public class KeyObject : MonoBehaviour, IEnteractable
         {
             this.transform.parent.position = movement.transform.position + new Vector3 (0, HoverDistance, 0);
         }
+    }
+
+    public void Lock(GameObject hole)
+    {
+        Debug.Log("Locking Key");
+        obj.useGravity = false;
+        obj.constraints = RigidbodyConstraints.FreezeAll;
+        this.transform.parent.position = hole.transform.position;
+        this.transform.parent.rotation = hole.transform.rotation;
+
+
+    }
+
+    public void Unlock()
+    {
+        Debug.Log("Unlocking Key");
+        obj.constraints = RigidbodyConstraints.None;
+        
     }
 }
