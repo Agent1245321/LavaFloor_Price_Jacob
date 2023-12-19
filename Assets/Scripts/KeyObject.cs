@@ -33,8 +33,13 @@ public class KeyObject : MonoBehaviour, IEnteractable
         {
             this.transform.parent.position = movement.transform.position + new Vector3(0, 2* HoverDistance, 0);
             Unlock();
-            Hole.IsKeyInHole = false;
+            
             this.transform.parent.GetComponent<Collider>().enabled = false;
+
+            if(Hole != null)
+            {
+                Hole.IsKeyInHole = false;
+            }
            
             
             
@@ -79,9 +84,13 @@ public class KeyObject : MonoBehaviour, IEnteractable
         {
             this.transform.parent.position = movement.transform.position + new Vector3 (0, HoverDistance, 0);
         }
-        if(Hole.IsKeyInHole)
+        if(Hole != null)
         {
-            this.transform.parent.rotation = Hole.transform.rotation;
+            if(Hole.IsKeyInHole)
+            {
+               
+                this.transform.parent.rotation = Hole.transform.rotation;
+            }
         }
     }
 

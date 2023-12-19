@@ -7,7 +7,7 @@ public class KeyHoleObject : MonoBehaviour
 
     public GameObject Connection;
     public GameObject Key;
-    public KeyObject keyScript;
+    private KeyObject keyScript;
     public IEvent connected;
     public Animator Gen;
    
@@ -16,7 +16,7 @@ public class KeyHoleObject : MonoBehaviour
     public void Start()
     {
         keyScript = Key.transform.GetChild(0).GetComponent<KeyObject>();
-        keyScript.Hole = this;
+        
         if ( Connection.TryGetComponent(out IEvent target))
         {
             connected = target;
@@ -34,6 +34,7 @@ public class KeyHoleObject : MonoBehaviour
         
         if(other.gameObject == Key) 
         {
+            keyScript.Hole = this;
             Debug.Log("Key Inserted");
             Gen.SetBool("IsOn", true);
             connected.IsActive = true;
