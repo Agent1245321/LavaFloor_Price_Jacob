@@ -301,7 +301,7 @@ public class Movement : MonoBehaviour
 
         if (collision.gameObject.tag == "Wall" && Detector.triggerOnWall == true)
         {
-            Debug.Log("Touching Wall");
+           // Debug.Log("Touching Wall");
             isOnWall = true;
             wallTouchPoint = collision.GetContact(0).point;
             wallOutVector = (ball.transform.position - wallTouchPoint).normalized;

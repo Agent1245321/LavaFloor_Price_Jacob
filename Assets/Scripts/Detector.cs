@@ -22,7 +22,7 @@ public class Detector : MonoBehaviour
             
             triggerOnWall = false;
             move.isOnWall = false;
-            Debug.Log($"Trigger Left Wall");
+            //Debug.Log($"Trigger Left Wall");
         }
         
     }
@@ -33,7 +33,7 @@ public class Detector : MonoBehaviour
         if (other.gameObject.tag == "Wall")
         {
             triggerOnWall = true;
-            Debug.Log($"Trigger Entered Wall");
+            //Debug.Log($"Trigger Entered Wall");
         }
 
     }
