@@ -3,94 +3,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyObject : MonoBehaviour, IEnteractable
+public class KeyObject : Grabable
 {
-    private Movement movement;
+   
     public KeyHoleObject Hole;
 
-    private Rigidbody obj;
-    private GameObject forwardObj;
-    public void Start()
-    {
-        movement = GameObject.FindWithTag("player").GetComponent<Movement>();
-        obj = this.transform.parent.GetComponent<Rigidbody>();
-        forwardObj = GameObject.FindWithTag("player").transform.parent.Find("ForwardObject").gameObject;
-    }
-
-    bool isPickUped = false;
-
     
-    public void Interact()
+    public  override void Interact()
     {
-        if (isPickUped) 
-        {
-            this.transform.parent.position = movement.transform.position + new Vector3(0, HoverDistance, 0);
-            obj.velocity = (forwardObj.transform.forward * 10) + movement.GetComponent<Rigidbody>().velocity;
-            obj.useGravity = true;
-            this.transform.parent.GetComponent<Collider>().enabled = true;
-        }
-        else
-        {
-            this.transform.parent.position = movement.transform.position + new Vector3(0, 2* HoverDistance, 0);
-            Unlock();
+        Unlock();
+        Grab();
             
-            this.transform.parent.GetComponent<Collider>().enabled = false;
-
             if(Hole != null)
             {
                 Hole.IsKeyInHole = false;
             }
-           
-            
-            
-            obj.useGravity = false;
-        }
-        isPickUped = !isPickUped;
 
-       
+        
     }
 
    
 
-    public void OnTriggerStay(Collider player)
-    {
-       // Debug.Log(player.name + "Has Entered Range");
-       
-        
-        if (player.tag == "player")
-        {
-            //Debug.Log("In Range");
-            movement.targetObj = this.gameObject;
-            
-        }
-    }
+   
 
-    public void OnTriggerExit(Collider player)
+   
+    public override void Update()
     {
-       // Debug.Log(player.name + "Has Left Range");
-
-        if (player.tag == "player")
+        Move();
+        if(Hole != null && Hole.IsKeyInHole)
         {
-            //Debug.Log("Out Of Range");
-            movement.targetObj = null;
-        }
-    }
-
-    public float HoverDistance;
-    public void Update()
-    {
-        this.transform.localPosition = Vector3.zero;
-        if(isPickUped)
-        {
-            this.transform.parent.position = movement.transform.position + new Vector3 (0, HoverDistance, 0);
-        }
-        if(Hole != null)
-        {
-            if(Hole.IsKeyInHole)
-            {
-               
-                this.transform.parent.rotation = Hole.transform.rotation;
-            }
+                this.transform.rotation = Hole.transform.rotation;  
         }
     }
 
@@ -99,8 +41,8 @@ public class KeyObject : MonoBehaviour, IEnteractable
         Debug.Log("Locking Key");
         obj.useGravity = false;
         obj.constraints = RigidbodyConstraints.FreezeAll;
-        this.transform.parent.position = hole.transform.position;
-        this.transform.parent.rotation = hole.transform.rotation;
+        this.transform.position = hole.transform.position;
+        this.transform.rotation = hole.transform.rotation;
 
 
     }
@@ -111,4 +53,5 @@ public class KeyObject : MonoBehaviour, IEnteractable
         obj.constraints = RigidbodyConstraints.None;
         
     }
+
 }

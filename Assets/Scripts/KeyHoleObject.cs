@@ -9,13 +9,13 @@ public class KeyHoleObject : MonoBehaviour
     public GameObject Key;
     private KeyObject keyScript;
     public IEvent connected;
-    public Animator Gen;
+    public Animator Anim;
    
     public bool IsKeyInHole;
 
     public void Start()
     {
-        keyScript = Key.transform.GetChild(0).GetComponent<KeyObject>();
+        keyScript = Key.transform.GetComponent<KeyObject>();
         
         if ( Connection.TryGetComponent(out IEvent target))
         {
@@ -36,7 +36,11 @@ public class KeyHoleObject : MonoBehaviour
         {
             keyScript.Hole = this;
             Debug.Log("Key Inserted");
-            Gen.SetBool("IsOn", true);
+            if(Anim != null) 
+            {
+                Anim.SetBool("IsOn", true); 
+            }
+            
             connected.IsActive = true;
             
             IsKeyInHole = true;
@@ -57,7 +61,10 @@ public class KeyHoleObject : MonoBehaviour
         {
             connected.IsActive = false;
             connected.Activate();
-            Gen.SetBool("IsOn", false);
+            if (Anim != null)
+            {
+                Anim.SetBool("IsOn", false);
+            }
         }
     }
 

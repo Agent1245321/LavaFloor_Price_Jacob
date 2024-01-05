@@ -13,6 +13,7 @@ TagManager:
   - panel
   - glass
   - Manager
+  - BallTrigger
   layers:
   - Default
   - TransparentFX
