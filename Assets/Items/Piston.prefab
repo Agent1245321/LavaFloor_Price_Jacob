@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 8406737919031230223}
   - component: {fileID: 1984465580513444721}
   - component: {fileID: 3993203909307264202}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piston
-  m_TagString: Untagged
+  m_TagString: piston
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -2207,9 +2207,10 @@ GameObject:
   - component: {fileID: 2221256685169005363}
   - component: {fileID: 85463903568028993}
   - component: {fileID: 2915324031597936052}
-  m_Layer: 0
+  - component: {fileID: 3454208587933507686}
+  m_Layer: 10
   m_Name: Piston Head (2)
-  m_TagString: Untagged
+  m_TagString: piston
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -4388,6 +4389,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 2
+--- !u!114 &3454208587933507686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111412245962847911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52d5e2f6d23c57449201460b3591e6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pistonForce: 0
 --- !u!1 &8071930101074276451
 GameObject:
   m_ObjectHideFlags: 0
@@ -4402,9 +4416,9 @@ GameObject:
   - component: {fileID: 7817706693053173046}
   - component: {fileID: 4393923600941281136}
   - component: {fileID: 3511427487438056174}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piston Head (1)
-  m_TagString: Untagged
+  m_TagString: piston
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1

@@ -24,14 +24,15 @@ public class ButtonBrain : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(!usePandH)
-        { 
-            connected.IsActive = !connected.IsActive; 
-        }
+        
         
         if (other.gameObject == cap)
         {
-            
+            if (!usePandH)
+            {
+                connected.IsActive = !connected.IsActive;
+            }
+
             Debug.Log("Button Pressed");
            
             connected.Activate();
