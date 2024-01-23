@@ -13,6 +13,8 @@ TagManager:
   - panel
   - glass
   - Manager
+  - BallTrigger
+  - piston
   layers:
   - Default
   - TransparentFX
@@ -23,8 +25,8 @@ TagManager:
   - NoLight
   - Player
   - Glass
-  - 
-  - 
+  - Floor
+  - Piston
   - 
   - 
   - 
