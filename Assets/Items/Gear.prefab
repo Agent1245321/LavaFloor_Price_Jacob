@@ -7812,5 +7812,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
-  HoverDistance: 0
+  HoverDistance: 0.5
   Hole: {fileID: 0}
