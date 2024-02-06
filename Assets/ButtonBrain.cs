@@ -33,7 +33,7 @@ public class ButtonBrain : MonoBehaviour
                 connected.IsActive = !connected.IsActive;
             }
 
-            Debug.Log("Button Pressed");
+           // Debug.Log("Button Pressed");
            
             connected.Activate();
 

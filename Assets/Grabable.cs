@@ -9,6 +9,7 @@ public class Grabable : MonoBehaviour , IEnteractable
     private GameObject forwardObj;
     bool isPickUped = false;
     public float HoverDistance;
+    public Vector3 rotation;
 
     
 
@@ -63,7 +64,7 @@ public class Grabable : MonoBehaviour , IEnteractable
         {
             this.transform.position = movement.transform.position + new Vector3(0, HoverDistance, 0);
             movement.targetObj = this.gameObject;
-            this.transform.rotation = forwardObj.transform.rotation;
+            this.transform.eulerAngles = (forwardObj.transform.eulerAngles + rotation);
         }
     }
 
@@ -74,7 +75,7 @@ public class Grabable : MonoBehaviour , IEnteractable
 
         if (player.tag == "BallTrigger")
         {
-            Debug.Log("In Range");
+            //Debug.Log("In Range");
             movement.targetObj = this.gameObject;
 
         }
@@ -82,7 +83,7 @@ public class Grabable : MonoBehaviour , IEnteractable
 
     public void OnTriggerExit(Collider player)
     {
-        Debug.Log(player.name + "Has Left Range");
+        //Debug.Log(player.name + "Has Left Range");
 
         if (player.tag == "BallTrigger")
         {

@@ -21,7 +21,7 @@ public class DoorEvent : MonoBehaviour, IEvent
 
     public void OpenDoor()
     {
-        Debug.Log("Opening Door");
+        //Debug.Log("Opening Door");
         //IsActive = true;
         animator.SetBool("IsOpen", true);
 
@@ -29,7 +29,7 @@ public class DoorEvent : MonoBehaviour, IEvent
 
     public void CloseDoor()
     {
-        Debug.Log("Closing Door");
+        //Debug.Log("Closing Door");
         //IsActive = false;
         animator.SetBool("IsOpen", false);
     }

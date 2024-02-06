@@ -38,7 +38,7 @@ public class KeyObject : Grabable
 
     public void Lock(GameObject hole)
     {
-        Debug.Log("Locking Key");
+       // Debug.Log("Locking Key");
         obj.useGravity = false;
         obj.constraints = RigidbodyConstraints.FreezeAll;
         this.transform.position = hole.transform.position;
@@ -49,7 +49,7 @@ public class KeyObject : Grabable
 
     public void Unlock()
     {
-        Debug.Log("Unlocking Key");
+        //Debug.Log("Unlocking Key");
         obj.constraints = RigidbodyConstraints.None;
         
     }

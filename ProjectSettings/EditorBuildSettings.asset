@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/THEBIGONE/Base 1.unity
+    guid: c219095fd7ebaad439a72de5fb1c0cd1
+  - enabled: 0
     path: Assets/Scenes/Factory1.unity
     guid: baa68b5ca720b4c488c62a06708583db
   - enabled: 0

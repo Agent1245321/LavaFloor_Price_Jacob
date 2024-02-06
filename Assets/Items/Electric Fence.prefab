@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 1790710306789920937}
   - component: {fileID: 8666476225431595723}
   - component: {fileID: 1204024661935626730}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 1840479261490686738}
   - component: {fileID: 5898168620378634868}
   - component: {fileID: 1139836893639070158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1258,7 +1258,7 @@ GameObject:
   - component: {fileID: 1200578871462747347}
   - component: {fileID: 1383438683770635748}
   - component: {fileID: 7520239548677168410}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Area Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3168622411035988865}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Electric Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1775,7 +1775,7 @@ GameObject:
   - component: {fileID: 5076295749073127495}
   - component: {fileID: 652266337777422779}
   - component: {fileID: 1227930153781043182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
