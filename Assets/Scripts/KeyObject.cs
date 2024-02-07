@@ -8,6 +8,7 @@ public class KeyObject : Grabable
    
     public KeyHoleObject Hole;
 
+
     
     public  override void Interact()
     {
@@ -53,5 +54,9 @@ public class KeyObject : Grabable
         obj.constraints = RigidbodyConstraints.None;
         
     }
+
+
+
+   
 
 }

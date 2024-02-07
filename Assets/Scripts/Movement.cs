@@ -245,6 +245,7 @@ public class Movement : MonoBehaviour
 
     public void OnReset()
     {
+       
         Death();
         
     }
@@ -364,6 +365,8 @@ public class Movement : MonoBehaviour
 
     void Death()
     {
+        TryInteract();
+        targetObj = null;
         ball.constraints = RigidbodyConstraints.FreezeAll;
         if (cannon != null) { cannon = null; this.transform.parent.parent = null; DontDestroyOnLoad(this.transform.parent); }
         Checkpoint.isDead = true;
