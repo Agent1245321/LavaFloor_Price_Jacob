@@ -243,6 +243,25 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public void TryTargetReset()
+    {
+        if (targetObj != null)
+        {
+            if (targetObj.TryGetComponent(out IEnteractable target))
+            {
+                target.Reset();
+            }
+            else
+            {
+                Debug.Log("cannotReset Obj");
+            }
+        }
+        else
+        {
+            Debug.Log("No Object To Pick Up");
+        }
+    }
+
     public void OnReset()
     {
        
@@ -365,8 +384,13 @@ public class Movement : MonoBehaviour
 
     void Death()
     {
-        TryInteract();
-        targetObj = null;
+        if(status == 2) 
+        {
+            
+            TryTargetReset();
+            targetObj = null;
+        }
+        
         ball.constraints = RigidbodyConstraints.FreezeAll;
         if (cannon != null) { cannon = null; this.transform.parent.parent = null; DontDestroyOnLoad(this.transform.parent); }
         Checkpoint.isDead = true;

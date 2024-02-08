@@ -55,13 +55,13 @@ public class Gate1 : MonoBehaviour
 
             if (crystalsCollected % 2 == 0)
             {
-            Debug.Log("Open The Gate");
+            
 
             bars.gameObject.SetActive(true);
         }
             else
         {
-            Debug.Log("Open The Gate");
+            
 
             bars.gameObject.SetActive(false);
         }

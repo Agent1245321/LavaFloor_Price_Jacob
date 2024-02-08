@@ -100,8 +100,17 @@ public class Grabable : MonoBehaviour , IEnteractable
     {
         if (collision.gameObject.tag == "lava" && destroyable)
         {
-            obj.velocity= Vector3.zero;
-            this.transform.position = spawn;
+            Reset();
         }
+    }
+
+    public void Reset()
+    {
+        isPickUped = false;
+        obj.velocity = Vector3.zero;
+        obj.useGravity = true;
+        this.transform.GetComponent<Collider>().enabled = true;
+        this.transform.position = spawn;
+        
     }
 }

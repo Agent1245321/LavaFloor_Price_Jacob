@@ -9,4 +9,6 @@ public interface IEnteractable
 
     void OnTriggerExit(Collider player);
 
+    public void Reset() { }
+
 }
