@@ -23,6 +23,9 @@ public static class PlayerData1
     public static PlayerData LoadGame()
     {
         string path = Application.persistentDataPath + "/player.fun";
+
+        //UnComment this to delete the saved data
+        //File.Delete(path);
         if(File.Exists(path)) 
         {
 

@@ -27,7 +27,7 @@ public static class SceneLoader
         LevelToLoad = scene;
         
         //Debug.Log($"Scene Index - {LevelToLoad}");
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
         Time.timeScale = 1.0f;
 
 #if (UNITY_WSA) || (UNITY_STANDALONE_WIN) || (UNITY_WEBGL)
