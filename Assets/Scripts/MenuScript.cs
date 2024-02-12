@@ -23,6 +23,7 @@ public class MenuScript : MonoBehaviour
     public GameObject Leaderboard1;
     public GameObject Leaderboard2;
     public GameObject Leaderboard3;
+    public GameObject Leaderboard4;
     public GameObject options;
     public GameObject bNButtons;
     public Slider masterVolumeSlider;
@@ -117,14 +118,14 @@ public class MenuScript : MonoBehaviour
 
     public void Next()
     {
-        if (screen < 1 || (screen >=5 && screen < 7)) screen++;
+        if (screen < 1 || (screen >=5 && screen < 8)) screen++;
         UpdateScreen();
 
     }
 
     public void Back()
     {
-        if (screen > 0 && 4 > screen || (screen > 5 && screen <= 7)) screen--;
+        if (screen > 0 && 4 > screen || (screen > 5 && screen <= 8)) screen--;
         UpdateScreen();
 
     }
@@ -180,6 +181,7 @@ public class MenuScript : MonoBehaviour
         Leaderboard1.SetActive(false);
         Leaderboard2.SetActive(false);
         Leaderboard3.SetActive(false);
+        Leaderboard4.SetActive(false);  
         
 
         options.SetActive(false);
@@ -222,7 +224,16 @@ public class MenuScript : MonoBehaviour
                 UpdateToggles();
                 UpdateLeaderboards(6);
                 UpdateLeaderboards(7);
+                UpdateLeaderboards(8);
                 
+                break;
+            case 8:
+                Leaderboard4.SetActive(true);
+                UpdateToggles();
+                UpdateLeaderboards(9);
+                UpdateLeaderboards(10);
+                UpdateLeaderboards(11);
+
                 break;
 
             default:
