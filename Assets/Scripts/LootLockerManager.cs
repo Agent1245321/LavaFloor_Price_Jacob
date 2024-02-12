@@ -22,7 +22,11 @@ public class LootLockerManager : MonoBehaviour
      "Level5Time",
      "Level6Time",
      "Level7Time",
-     "Level8Time"
+     "Level8Time",
+     "Level9Time",
+     "Level10Time",
+     "Level11Time",
+     "Level12Time"
     };
 
     public void SetPlayerName()
@@ -41,7 +45,7 @@ public class LootLockerManager : MonoBehaviour
         yield return LoginRoutine();
 
         Debug.Log("Beggining Fetch");
-        for (int i = 0; i < 8; i++) 
+        for (int i = 0; i < 12; i++) 
         {
             Debug.Log($"Fetching {i}");
             yield return leaderboard.FetchTopHighscoresRoutine(keys[i], i); 

@@ -265,7 +265,6 @@ public class MenuScript : MonoBehaviour
         
         
         StartTimer(indxOf  - 1);
-
 #if (UNITY_ANDROID || UNITY_IOS)
         mobileControls.SetActive(true);
 #endif
@@ -393,15 +392,19 @@ public class MenuScript : MonoBehaviour
     public string timerText = "Records:\n";
 
     //These are the keys for the leaderboards//
-    string[] keys = { 
-     "Level1Time",
+    string[] keys = {
+      "Level1Time",
      "Level2Time",
      "Level3Time",
      "Level4Time",
      "Level5Time",
      "Level6Time",
      "Level7Time",
-     "Level8Time" 
+     "Level8Time",
+     "Level9Time",
+     "Level10Time",
+     "Level11Time",
+     "Level12Time"
     };
     public void StopTimer()
     {
@@ -431,7 +434,7 @@ public class MenuScript : MonoBehaviour
             timerText += $"Level {i}: {time}\n";
             i++; }
         Debug.Log(timerText);
-
+        
     }
 
     void Update()

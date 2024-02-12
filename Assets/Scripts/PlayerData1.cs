@@ -25,7 +25,7 @@ public static class PlayerData1
         string path = Application.persistentDataPath + "/player.fun";
 
         //UnComment this to delete the saved data
-        //File.Delete(path);
+       // File.Delete(path);
         if(File.Exists(path)) 
         {
 
