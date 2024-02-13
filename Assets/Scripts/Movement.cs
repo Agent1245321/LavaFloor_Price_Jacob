@@ -403,13 +403,17 @@ public class Movement : MonoBehaviour
         
     }
 
-
+    
+    //sets everything while loading next scene
     public IEnumerator DoNotDestroy(int Scene)
     {
-        Console.WriteLine("DO Destroy");
+        isOnWall = false;
+        
         DontDestroyOnLoad (this.transform.parent.gameObject);
-        Console.WriteLine("DO NOT DESTROY");
+
+        
         SceneLoader.FinishLoading(Scene);
+
         yield return null;
     }
     void LevelComplete()
