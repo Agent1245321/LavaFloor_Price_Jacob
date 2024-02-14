@@ -176,8 +176,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6031869326950704928}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.63499516, y: -0, z: -0, w: 0.77251613}
-  m_LocalPosition: {x: -916.8135, y: -522.5155, z: 1167.6237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -638,6 +638,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 641586708911492801, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: vCam
+      value: 
+      objectReference: {fileID: 2095087913903777292}
+    - target: {fileID: 641586708911492801, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 6031869326950704928}
     - target: {fileID: 641586708911492801, guid: 6874a2f865c14d3469fe054a502449d6, type: 3}
       propertyPath: sensitivity
       value: 80
