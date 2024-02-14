@@ -27,7 +27,9 @@ public class LoadNextScene : MonoBehaviour
         
         AsyncOperation loading = SceneManager.LoadSceneAsync(SceneLoader.LevelToLoad);
 
-        manager.levelData[SceneLoader.LevelToLoad - 1] = true;
+        //FIX THIS PLEAS RAHHHHHHHHHHHHHHHH
+            manager.levelData[SceneLoader.LevelToLoad - 1] = true;
+        
         manager.SaveGame();
         manager.setButtonsTF();
         while (!loading.isDone)
