@@ -51,7 +51,7 @@ PlayerSettings:
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 1
+  m_ActiveColorSpace: 0
   m_SpriteBatchVertexThreshold: 300
   m_MTRendering: 1
   mipStripping: 0
@@ -137,7 +137,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 0.3.1
+  bundleVersion: 0.3.2
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -159,14 +159,14 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.GCTC.BavaLall
-    Standalone: com.DefaultCompany.LavaFloor-Price-Jacob
+    Standalone: com.GCTC.BavaLall
   buildNumber:
     Standalone: 0
     VisionOS: 0
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
-  AndroidBundleVersionCode: 5
+  AndroidBundleVersionCode: 6
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -824,8 +824,8 @@ PlayerSettings:
     Android: PROBUILDER_EXPERIMENTAL_FEATURES
     Server: PROBUILDER_EXPERIMENTAL_FEATURES
     Standalone: PROBUILDER_EXPERIMENTAL_FEATURES
-    WebGL: PROBUILDER_EXPERIMENTAL_FEATURES
-    Windows Store Apps: PROBUILDER_EXPERIMENTAL_FEATURES
+    WebGL: 
+    Windows Store Apps: 
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -858,24 +858,31 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: com.GCTC.BAVALALL
-  metroPackageVersion: 0.2.5.0
+  metroPackageName: GreenCountryTechnologyCen.BavaLall
+  metroPackageVersion: 0.3.2.0
   metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: GCTC
-  metroCertificateIssuer: GCTC
-  metroCertificateNotAfter: 80eb9eb4c624db01
+  metroCertificateSubject: 989AA074-DBED-422A-9835-BFF5F3F45FA0
+  metroCertificateIssuer: 989AA074-DBED-422A-9835-BFF5F3F45FA0
+  metroCertificateNotAfter: 00b992262c7fdb01
   metroApplicationDescription: Template_3D
   wsaImages:
-    65636: Assets/50-50.jpg
-    131272: Assets/1240-600.jpg
-    2031640: Assets/22-22.jpg
-    2031716: 
-    2031816: Assets/88-88.jpg
-    2097352: Assets/142-142.jpg
-    2162888: Assets/300-300.jpg
-    2293860: Assets/Image Sequence_013_0015.jpg
-    2293960: Assets/Image Sequence_014_0015.jpg
+    65636: Assets/Branding/50-50.jpg
+    65736: Assets/100-100.jpg
+    131172: Assets/Image Sequence_038_0001.jpg
+    131272: Assets/Image Sequence_039_0001.jpg
+    2031640: Assets/Image Sequence_040_0001.jpg
+    2031716: Assets/Branding/100%/Image Sequence_003_0015.jpg
+    2031816: Assets/Branding/88-88.jpg
+    2097252: Assets/Branding/100%/Image Sequence_004_0015.jpg
+    2097352: Assets/Branding/142-142.jpg
+    2162788: Assets/150-150.jpg
+    2162888: Assets/Branding/300-300.jpg
+    2228324: Assets/Branding/100%/Image Sequence_005_0015.jpg
+    2228424: Assets/Branding/Image Sequence_012_0015.jpg
+    2293860: Assets/Branding/Image Sequence_013_0015.jpg
+    2293960: Assets/Image Sequence_038_0001.jpg
+    2294160: Assets/Image Sequence_039_0001.jpg
   metroTileShortName: LavaFloor_Price_Jacob
   metroTileShowName: 0
   metroMediumTileShowName: 0
@@ -891,7 +898,9 @@ PlayerSettings:
   platformCapabilities:
     WindowsStoreApps:
       InternetClient: True
-  metroTargetDeviceFamilies: {}
+  metroTargetDeviceFamilies:
+    Desktop: False
+    Xbox: False
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
@@ -955,4 +964,4 @@ PlayerSettings:
   hmiLoadingImage: {fileID: 0}
   platformRequiresReadableAssets: 0
   virtualTexturingSupportEnabled: 0
-  insecureHttpOption: 0
+  insecureHttpOption: 2

@@ -35,6 +35,8 @@ public class MenuScript : MonoBehaviour
 
     public CamScript cam;
 
+
+    //fun data stuff
     public  bool[] levelData;
 
     [SerializeField]
@@ -374,6 +376,19 @@ public class MenuScript : MonoBehaviour
         recordsOutput.text = timerText;
 
         
+    }
+
+    public void code(string code)
+    {
+        if(code == "atpunpacbcefmnl")
+        Debug.Log("Unlocking Levels");
+        int level = 0;
+        foreach (Button button in buttons)
+        {
+
+            button.interactable = true;
+            level++;
+        };
     }
 
     public GameObject[] leaderboards;
