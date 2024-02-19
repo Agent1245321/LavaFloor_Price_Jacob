@@ -16,6 +16,7 @@ public class MenuScript : MonoBehaviour
     public LeaderBoard leaderBoard;
 
     public GameObject panel;
+    public GameObject panel2;
     public GameObject mobileControls;
     private int screen;
     public GameObject screen1;
@@ -275,6 +276,7 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(LevelStart());
         SceneLoader.LoadScene(indxOf);
         panel.SetActive(false);
+        panel2.SetActive(true);
         
         
         StartTimer(indxOf  - 1);
@@ -470,5 +472,11 @@ public class MenuScript : MonoBehaviour
             timeInSeconds += Time.deltaTime;
            // Debug.Log(timeInSeconds);
         }
+    }
+
+    public TextMeshProUGUI uiTimer;
+    private void LateUpdate()
+    {
+        uiTimer.text = timeInSeconds.ToString();
     }
 }

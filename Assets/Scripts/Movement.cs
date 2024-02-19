@@ -12,10 +12,7 @@ public class Movement : MonoBehaviour
     private AudioSource lavaSound;
     public AudioSource deathSound;
     private Rigidbody ball;
-    int xValue;
-    int yValue;
-    int zValue;
-    Wiggly wiggly;
+
     bool isGrouded;
     public bool isOnWall;
     Vector3 wallTouchPoint;
@@ -23,7 +20,7 @@ public class Movement : MonoBehaviour
     public int crystals;
 
     Vector3 lookingTransform;
-    Vector3 lookingTransformNoY;
+   
     public GameObject cam;
     private GameObject spawn;
     private SpawnScript spawnData;
@@ -34,6 +31,7 @@ public class Movement : MonoBehaviour
 
     private float stopping;
     public GameObject panel;
+    public GameObject panel2;
     public GameObject MobileControls;
     public LightLauncher cannon;
 
@@ -44,13 +42,14 @@ public class Movement : MonoBehaviour
     public int status = 1;
 
     public GameObject forwardObject;
-    // Start is called before the first frame update
+   
 
     private void Awake()
     {
         ball = this.GetComponent<Rigidbody>();
         lavaSound = this.transform.root.GetComponentInChildren<AudioSource>();
-        panel = GameObject.FindWithTag("panel");
+        
+       
         
     }
 
@@ -156,12 +155,14 @@ public class Movement : MonoBehaviour
         if(panel.gameObject.activeSelf) 
         {
             panel.SetActive(false);
+            panel2.SetActive(true);
             Time.timeScale = 1;
             DumbHideScript.hide = !DumbHideScript.hide;
             Cursor.lockState = CursorLockMode.Locked;
         }
         else {
             panel.SetActive(true);
+            panel2.SetActive(false);
             Time.timeScale = 0;
             DumbHideScript.hide = !DumbHideScript.hide;
         }
@@ -356,7 +357,7 @@ public class Movement : MonoBehaviour
                 menu.StopTimer();
                 status = 0;
                 DontDestroyOnLoad(this.transform.parent.gameObject);
-                SceneLoader.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                menu.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 StopAllCoroutines();
                 
                 yield return null;
@@ -372,7 +373,7 @@ public class Movement : MonoBehaviour
                 Debug.Log("Level Complete");
                 menu.StopTimer();
 
-                SceneLoader.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                menu.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 StopAllCoroutines();
                 yield return null;
             }
@@ -416,8 +417,5 @@ public class Movement : MonoBehaviour
 
         yield return null;
     }
-    void LevelComplete()
-    {
-
-    }
+    
 }
