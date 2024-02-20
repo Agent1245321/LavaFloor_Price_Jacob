@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public static class SceneLoader
 {
-    
+
     public static int LevelToLoad;
     // Start is called before the first frame update
   public static void LoadScene(int scene)
@@ -28,7 +28,7 @@ public static class SceneLoader
         
         //Debug.Log($"Scene Index - {LevelToLoad}");
         SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
-        Time.timeScale = 1.0f;
+        
 
 #if (UNITY_WSA) || (UNITY_STANDALONE_WIN) || (UNITY_WEBGL)
     Cursor.lockState = CursorLockMode.Locked;

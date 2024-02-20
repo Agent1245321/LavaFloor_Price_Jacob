@@ -9,7 +9,8 @@ using UnityEngine.InputSystem.Composites;
 using System.IO;
 using TMPro;
 using System;
-
+using UnityEditor;
+using UnityEngine.InputSystem;
 
 public class MenuScript : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class MenuScript : MonoBehaviour
     public Slider sensitivitySlider;
     public Toggle invertYToggle;
     public Toggle invertXToggle;
+    public PlayerInput input;
 
     public CamScript cam;
 
@@ -290,27 +292,53 @@ public class MenuScript : MonoBehaviour
    
     public void Exit()
     {
-        // Cursor.lockState = CursorLockMode.Locked;
+        if(!panel.gameObject.activeSelf || screen != 0)
+        { 
+        #if (UNITY_IOS || UNITY_ANDROID)
+          mobileControls.SetActive(false);
+        #endif
+       
+        #if (UNITY_WSA || UNITY_STANDALONE || UNITY_WEBGL)
+            Cursor.lockState = CursorLockMode.Confined;
+        #endif
 
-        if (screen == 2)
-        {
+            setButtonsTF();
+            input.SwitchCurrentActionMap("UI");
+            panel.SetActive(true);
+            panel2.SetActive(false);
+            Time.timeScale = 0;
+            DumbHideScript.hide = true;
             screen = 0;
             bNButtons.gameObject.SetActive(true);
-#if (UNITY_WSA || UNITY_STANDALONE || UNITY_WEBGL)
-            Cursor.lockState = CursorLockMode.Confined;
-#endif
-        }
-        else
+            }
+
+        //Resumes The Game
+        else if (panel.gameObject.activeSelf && screen == 0)
         {
-            panel.SetActive(false); Time.timeScale = 1;
-#if (UNITY_ANDROID || UNITY_IOS)
-        mobileControls.SetActive(true);
-#endif
-#if (UNITY_WSA || UNITY_STANDALONE || UNITY_WEBGL)
-            Cursor.lockState = CursorLockMode.Locked;
-#endif
+            ResumeGame();
         }
+
         UpdateScreen();
+    }
+
+    public void ResumeGame()
+    {
+        input.SwitchCurrentActionMap("Player");
+        panel.SetActive(false);
+        panel2.SetActive(true);
+        Time.timeScale = 1;
+        DumbHideScript.hide = false;
+        Time.timeScale = 1;
+
+        //Configure According to device
+
+            #if (UNITY_ANDROID || UNITY_IOS)
+                 mobileControls.SetActive(true);
+            #endif
+
+            #if (UNITY_WSA || UNITY_STANDALONE || UNITY_WEBGL)
+                 Cursor.lockState = CursorLockMode.Locked;
+            #endif
     }
 
     public IEnumerator LevelStart()

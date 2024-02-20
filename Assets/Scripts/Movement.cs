@@ -10,7 +10,7 @@ using LootLocker.Requests;
 public class Movement : MonoBehaviour
 {
     private AudioSource lavaSound;
-    public AudioSource deathSound;
+    
     private Rigidbody ball;
 
     bool isGrouded;
@@ -150,29 +150,7 @@ public class Movement : MonoBehaviour
 
     public void OnPause()
     {
-        menu.setButtonsTF();
-        Cursor.lockState = CursorLockMode.Confined;
-        if(panel.gameObject.activeSelf) 
-        {
-            panel.SetActive(false);
-            panel2.SetActive(true);
-            Time.timeScale = 1;
-            DumbHideScript.hide = !DumbHideScript.hide;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else {
-            panel.SetActive(true);
-            panel2.SetActive(false);
-            Time.timeScale = 0;
-            DumbHideScript.hide = !DumbHideScript.hide;
-        }
-        
-        
-
-#if (UNITY_IOS || UNITY_ANDROID)
-
-        MobileControls.SetActive(false);
-#endif
+        menu.Exit();   
     }
 
     private void MovePlayer()
@@ -396,7 +374,7 @@ public class Movement : MonoBehaviour
         if (cannon != null) { cannon = null; this.transform.parent.parent = null; DontDestroyOnLoad(this.transform.parent); }
         Checkpoint.isDead = true;
        
-        deathSound.Play();
+        
         ball.velocity = new Vector3(0, 0, 0);
         ball.angularVelocity = new Vector3(0, 0, 0);
         ball.constraints = RigidbodyConstraints.None;
@@ -412,7 +390,7 @@ public class Movement : MonoBehaviour
         
         DontDestroyOnLoad (this.transform.parent.gameObject);
 
-        
+        menu.ResumeGame();
         SceneLoader.FinishLoading(Scene);
 
         yield return null;
