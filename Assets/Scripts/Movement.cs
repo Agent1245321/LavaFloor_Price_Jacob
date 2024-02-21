@@ -9,7 +9,7 @@ using LootLocker.Requests;
 
 public class Movement : MonoBehaviour
 {
-    private AudioSource lavaSound;
+   
 
     public AudioManager audioMngr;
     
@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         ball = this.GetComponent<Rigidbody>();
-        lavaSound = this.transform.root.GetComponentInChildren<AudioSource>();
+        
         audioMngr = this.GetComponent<AudioManager>();
        
         
@@ -261,12 +261,13 @@ public class Movement : MonoBehaviour
        
         Death();
         
+        
     }
 
     private void FixedUpdate()
     {
        
-        lavaSound.volume = 10 / this.transform.position.y;
+        
         MovePlayer();
         SlowPlayer();
         

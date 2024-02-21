@@ -15,7 +15,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] hmm;
 
     public AudioClip[] actionSoundsA;
+
+    public AudioClip[] loops;
+
     public string[] actionSoundTags;
+
+
     public Dictionary<string, AudioClip> actionSounds = new Dictionary<string, AudioClip>();
 
     public void Awake()
@@ -23,9 +28,19 @@ public class AudioManager : MonoBehaviour
         for(int i = 0; i < actionSoundsA.Length; i++)
         {
             actionSounds.Add(actionSoundTags[i], actionSoundsA[i]);
+            movesound.Play();
+            movesound.loop = true;
         }
     }
+
+    public void Update()
+    {
+        UpdateMoveSound();
+    }
     public AudioSource sound;
+    public AudioSource aSound;
+    public AudioSource movesound;
+    public AudioSource music;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -50,7 +65,7 @@ public class AudioManager : MonoBehaviour
                 break;
 
             default:
-                sound.clip = hmm[0];
+                sound.clip = thump[0];
                 break;
         }
 
@@ -63,8 +78,22 @@ public class AudioManager : MonoBehaviour
         Debug.Log(sound);
         Debug.Log(actionSounds);
         Debug.Log(actionSounds[a]);
-       // Debug.Log("Playing action sound" + a + " " + actionSounds[a]);
-        sound.clip = actionSounds[a];
-        sound.Play();
+       
+        // Debug.Log("Playing action sound" + a + " " + actionSounds[a]);
+        aSound.clip = actionSounds[a];
+        aSound.Play();
+    }
+
+    float speed;
+    public Rigidbody rb;
+    public void UpdateMoveSound()
+    {
+        speed = rb.velocity.magnitude;
+        if (speed > 1)
+        {
+            movesound.volume = (speed + 50) / 500;
+            movesound.pitch = speed / 500;
+        }
+        else { movesound.volume = 0;  movesound.pitch = 0; }
     }
 }
