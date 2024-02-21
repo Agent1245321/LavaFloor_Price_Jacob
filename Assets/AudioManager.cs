@@ -14,7 +14,17 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] snap;
     public AudioClip[] hmm;
 
+    public AudioClip[] actionSoundsA;
+    public string[] actionSoundTags;
+    public Dictionary<string, AudioClip> actionSounds = new Dictionary<string, AudioClip>();
 
+    public void Awake()
+    {
+        for(int i = 0; i < actionSoundsA.Length; i++)
+        {
+            actionSounds.Add(actionSoundTags[i], actionSoundsA[i]);
+        }
+    }
     public AudioSource sound;
 
     private void OnCollisionEnter(Collision other)
@@ -44,6 +54,17 @@ public class AudioManager : MonoBehaviour
                 break;
         }
 
+        sound.Play();
+    }
+
+    public void PlayActionSound(string a)
+    {
+        Debug.Log("Playing Action Sound");
+        Debug.Log(sound);
+        Debug.Log(actionSounds);
+        Debug.Log(actionSounds[a]);
+       // Debug.Log("Playing action sound" + a + " " + actionSounds[a]);
+        sound.clip = actionSounds[a];
         sound.Play();
     }
 }

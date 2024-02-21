@@ -10,6 +10,8 @@ using LootLocker.Requests;
 public class Movement : MonoBehaviour
 {
     private AudioSource lavaSound;
+
+    public AudioManager audioMngr;
     
     private Rigidbody ball;
 
@@ -48,7 +50,7 @@ public class Movement : MonoBehaviour
     {
         ball = this.GetComponent<Rigidbody>();
         lavaSound = this.transform.root.GetComponentInChildren<AudioSource>();
-        
+        audioMngr = this.GetComponent<AudioManager>();
        
         
     }
@@ -167,13 +169,21 @@ public class Movement : MonoBehaviour
         {
 
             ball.AddForce(wallOutVector * 10 + new Vector3(0, 7, 0), ForceMode.VelocityChange);
-            Debug.Log("Added Force");
+
+            //Plays the wallJump sound effect from audio manager
+            audioMngr.PlayActionSound("wallJump");
 
         }
         else if (isGrouded)
         {
-            // Debug.Log("JUMPED");
+            
             ball.AddForce(0, 7, 0, ForceMode.VelocityChange);
+
+            Debug.Log(audioMngr);
+            Debug.Log(audioMngr.transform.gameObject);
+            //Plays the jump sound effect from audio manager
+            audioMngr.PlayActionSound("jump");
+
         }
         else if (doubleJump && status == 1) 
         {
@@ -209,7 +219,12 @@ public class Movement : MonoBehaviour
         {
             if (targetObj.TryGetComponent(out IEnteractable target))
             {
+                //calls the interact action on the object
                 target.Interact();
+
+                //Plays the interact sound effect from audio manager
+                audioMngr.PlayActionSound("interact");
+
             }
             else
             {

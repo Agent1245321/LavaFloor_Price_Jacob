@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2414,6 +2414,10 @@ PrefabInstance:
       propertyPath: panel
       value: 
       objectReference: {fileID: 94534735}
+    - target: {fileID: 6267849527415806325, guid: 24e283f7eef50284c8b7ce229c29ae43, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6267849527415806325, guid: 24e283f7eef50284c8b7ce229c29ae43, type: 3}
       propertyPath: panel2
       value: 
@@ -10714,9 +10718,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thump:
-  - {fileID: 8300000, guid: ccca165d97eee184184965ff04ccee77, type: 3}
   - {fileID: 8300000, guid: 0182813132a1c4049bbdbd3d7bdd6de6, type: 3}
   - {fileID: 8300000, guid: 13df2933eb365d54c93ecad6715e8545, type: 3}
+  - {fileID: 8300000, guid: ccca165d97eee184184965ff04ccee77, type: 3}
   tick:
   - {fileID: 8300000, guid: 8f2cdbc9fb9901545a3209508af26fd0, type: 3}
   - {fileID: 8300000, guid: eee4363acbba6354a83c2562b2f2c458, type: 3}
@@ -10736,6 +10740,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 341f1480f57479741a2c6b11a9fd5260, type: 3}
   hmm:
   - {fileID: 8300000, guid: ba2217e9686ca3a419369b0b4c676aaa, type: 3}
+  actionSoundsA:
+  - {fileID: 8300000, guid: 87571a89b20577648b93b6b0465e22d1, type: 3}
+  - {fileID: 8300000, guid: 0ffb5ac775ae1ba4ab995c14b6101750, type: 3}
+  - {fileID: 8300000, guid: 7f487ada0ae997b4e8b2b42ef9d5b4d5, type: 3}
+  actionSoundTags:
+  - jump
+  - wallJump
+  - interact
   sound: {fileID: 1453679370}
 --- !u!82 &1453679370 stripped
 AudioSource:
