@@ -15,6 +15,7 @@ TagManager:
   - Manager
   - BallTrigger
   - piston
+  - Toggle
   layers:
   - Default
   - TransparentFX

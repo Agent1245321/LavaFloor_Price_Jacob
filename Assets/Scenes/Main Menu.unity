@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1783,7 +1783,7 @@ GameObject:
   - component: {fileID: 195893038}
   m_Layer: 5
   m_Name: Toggle
-  m_TagString: Untagged
+  m_TagString: Toggle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1847,7 +1847,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1877150581}
   toggleTransition: 1
   graphic: {fileID: 612602491}
@@ -1882,6 +1882,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tgl: {fileID: 0}
   matt: {fileID: 2100000, guid: f0c050c0af997f642859eec675493949, type: 2}
+  cost: 10
+  buyBtn: {fileID: 0}
 --- !u!1 &204607870
 GameObject:
   m_ObjectHideFlags: 0
@@ -4678,11 +4680,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2008408741}
         m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
-        m_MethodName: SetSkin
+        m_MethodName: BuySkin
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 5994358fed29551439932823cec455ba, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_ObjectArgument: {fileID: 866615456}
+          m_ObjectArgumentAssemblyTypeName: ToggleSkin, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8369,9 +8371,10 @@ GameObject:
   m_Component:
   - component: {fileID: 866615454}
   - component: {fileID: 866615455}
+  - component: {fileID: 866615456}
   m_Layer: 5
   m_Name: Toggle (1)
-  m_TagString: Untagged
+  m_TagString: Toggle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8442,8 +8445,36 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2008408741}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: SetSkin
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 866615456}
+          m_ObjectArgumentAssemblyTypeName: ToggleSkin, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
+--- !u!114 &866615456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866615453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5552fd955964da743af2a5c10e2cedbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tgl: {fileID: 0}
+  matt: {fileID: 2100000, guid: 1b9d4275d7040b747a1d7e8572fb6627, type: 2}
+  cost: 20
+  buyBtn: {fileID: 0}
 --- !u!1 &922042569
 GameObject:
   m_ObjectHideFlags: 0
@@ -9450,11 +9481,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2008408741}
         m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
-        m_MethodName: SetSkin
+        m_MethodName: BuySkin
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: dbe7ad9fef7a38a48b61d13724edcc6b, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_ObjectArgument: {fileID: 195893038}
+          m_ObjectArgumentAssemblyTypeName: ToggleSkin, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11351,11 +11382,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2008408741}
         m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
-        m_MethodName: SetSkin
+        m_MethodName: BuySkin
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: f0c050c0af997f642859eec675493949, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_ObjectArgument: {fileID: 1302764236}
+          m_ObjectArgumentAssemblyTypeName: ToggleSkin, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11543,9 +11574,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1302764234}
   - component: {fileID: 1302764235}
+  - component: {fileID: 1302764236}
   m_Layer: 5
   m_Name: Toggle (2)
-  m_TagString: Untagged
+  m_TagString: Toggle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11616,8 +11648,36 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2008408741}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: SetSkin
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1302764236}
+          m_ObjectArgumentAssemblyTypeName: ToggleSkin, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
+--- !u!114 &1302764236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302764233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5552fd955964da743af2a5c10e2cedbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tgl: {fileID: 0}
+  matt: {fileID: -7771460051979775986, guid: 0440213376745014d9b4664561bdbfec, type: 2}
+  cost: 30
+  buyBtn: {fileID: 0}
 --- !u!1 &1315076238
 GameObject:
   m_ObjectHideFlags: 0
@@ -19266,6 +19326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1453679375}
   deflt: {fileID: 2100000, guid: 23144b3f0978b9b4987d8f66ec03ea81, type: 2}
+  crystalCount: 100
 --- !u!1 &2010381424
 GameObject:
   m_ObjectHideFlags: 0
