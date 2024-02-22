@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using TreeEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,20 +11,25 @@ public class ShopScript : MonoBehaviour
     public Material deflt;
     private GameObject[] toggles;
 
-    public int crystalCount;
+    public  int crystalCount;
+    public TextMeshProUGUI crystalCountT;
 
-    
+
+
+
     public void BuySkin(ToggleSkin tglScript)
     {
         if(crystalCount >= tglScript.cost)
         {
+            tglScript.costT.text = "PURCHASED";
             crystalCount -= tglScript.cost;
             tglScript.buyBtn.interactable = false;
             tglScript.tgl.interactable = true;
+            crystalCountT.text = $"Crystals: {crystalCount}";
         }
     }
 
-
+   
 
     public void SetSkin(ToggleSkin tglScript)
     {
