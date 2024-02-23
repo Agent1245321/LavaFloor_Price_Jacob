@@ -26,6 +26,13 @@ public class MenuScript : MonoBehaviour
     public GameObject Leaderboard2;
     public GameObject Leaderboard3;
     public GameObject Leaderboard4;
+
+
+    public GameObject shop1;
+    public GameObject shop2;
+    public GameObject shop3;
+    public GameObject shop4;
+
     public GameObject options;
     public GameObject bNButtons;
     public Slider masterVolumeSlider;
@@ -42,6 +49,10 @@ public class MenuScript : MonoBehaviour
     //fun data stuff
     public  bool[] levelData;
 
+    public bool[] skinData;
+
+    public int crystalsData;
+
     [SerializeField]
     public Button[] buttons;
 
@@ -54,6 +65,8 @@ public class MenuScript : MonoBehaviour
 
 
     public LeaderBoard leaderBoardi;
+
+    public ShopScript shopScript;
     
 
     
@@ -123,15 +136,17 @@ public class MenuScript : MonoBehaviour
 
     public void Next()
     {
-        if (screen < 1 || (screen >=5 && screen < 8)) screen++;
+        if (screen < 1 || (screen >=5 && screen < 8) || (screen >= 11 && screen < 14)) screen++;
         UpdateScreen();
+        Debug.Log(screen);
 
     }
 
     public void Back()
     {
-        if (screen > 0 && 4 > screen || (screen > 5 && screen <= 8)) screen--;
+        if (screen > 0 && 4 > screen || (screen > 5 && screen <= 8) || (screen > 11 && screen <= 14)) screen--;
         UpdateScreen();
+        Debug.Log(screen);
 
     }
     public void Options()
@@ -161,18 +176,38 @@ public class MenuScript : MonoBehaviour
         bNButtons.gameObject.SetActive(true);
         if (screen != 5)
         {
-            screen = 5;
-            
-            
+            screen = 5;         
+        }
+        else
+        {
+            screen = 0;          
+        }
+        UpdateScreen();
+    }
+
+    public void Shop()
+    {
+        shop1.SetActive(true);
+        shop2.SetActive(true);
+        shop3.SetActive(true);
+        shop4.SetActive(true);
+        shopScript.GetToggles();
+        bNButtons.gameObject.SetActive(true);
+        if (screen != 11)
+        {
+            screen = 11;
+
+
         }
 
         else
         {
             screen = 0;
-            
+
         }
 
         UpdateScreen();
+        Debug.Log(screen);
 
 
 
@@ -186,7 +221,11 @@ public class MenuScript : MonoBehaviour
         Leaderboard1.SetActive(false);
         Leaderboard2.SetActive(false);
         Leaderboard3.SetActive(false);
-        Leaderboard4.SetActive(false);  
+        Leaderboard4.SetActive(false);
+        shop1.SetActive(false);
+        shop2.SetActive(false);
+        shop3.SetActive(false);
+        shop4.SetActive(false);
         
 
         options.SetActive(false);
@@ -238,6 +277,24 @@ public class MenuScript : MonoBehaviour
                 UpdateLeaderboards(9);
                 UpdateLeaderboards(10);
                 UpdateLeaderboards(11);
+
+                break;
+
+            case 11:
+                shop1.SetActive(true);
+                break;
+
+            case 12:
+                shop2.SetActive(true);
+                break;
+            
+            case 13:
+                shop3.SetActive(true);
+
+                break;
+
+            case 14:
+                shop4.SetActive(true);
 
                 break;
 
@@ -362,12 +419,34 @@ public class MenuScript : MonoBehaviour
         Time.timeScale = 0;
     }
 
-
+    //load game method
     public void loadGame()
     {
-
+        //gathers the returned data types from the loadGame method;
         levelData = PlayerData1.LoadGame().unlockedLevels;
         timers = PlayerData1.LoadGame().timers;
+        skinData = PlayerData1.LoadGame().unlockedSkins;
+        crystalsData = PlayerData1.LoadGame().crystals;
+
+        shop1.SetActive(true);
+        shop2.SetActive(true);
+        shop3.SetActive(true);
+        shop4.SetActive(true);
+        shopScript.GetToggles();
+        Debug.Log("Length of skinData" + skinData.Length);
+        foreach (bool inyer in skinData)
+        {
+            Debug.Log("skindata : " + inyer);
+        }
+        
+        Debug.Log("Crystals : " + crystalsData);
+        shopScript.loadGame(skinData, crystalsData);
+
+        shop1.SetActive(false);
+        shop2.SetActive(false);
+        shop3.SetActive(false);
+        shop4.SetActive(false);
+
         Debug.Log("Loaded Player Save Data at:" + Application.persistentDataPath + "/player.fun");
         setButtonsTF();
         timerText = "Records:\n";
@@ -383,7 +462,7 @@ public class MenuScript : MonoBehaviour
     public void SaveGame() 
     {
         foreach (var level in levelData) { Debug.Log(level); }
-        
+        shopScript.save();
         PlayerData1.SaveGame(this);
         Debug.Log("Saved Game");
         

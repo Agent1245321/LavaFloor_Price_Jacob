@@ -32,9 +32,11 @@ public static class PlayerData1
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
+            //deserilizzes the data and stores it as a PlayerData object
             PlayerData data = formatter.Deserialize(stream) as PlayerData;
             stream.Close();
 
+            //returns the object
             return data;
         }
         else 
