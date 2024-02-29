@@ -33,10 +33,12 @@ public class LootLockerManager : MonoBehaviour
     {
         LootLockerSDKManager.SetPlayerName(inputField.text, (response) =>
         {
-            if (response.success) { Debug.Log("Succesfully Set Player Name"); }
+            if (response.success) {
+                //Debug.Log("Succesfully Set Player Name");
+                }
             else
             {
-                Debug.Log("Failed to change player name" + response.errorData);
+              //  Debug.Log("Failed to change player name" + response.errorData);
             }
         });
     }
@@ -44,10 +46,10 @@ public class LootLockerManager : MonoBehaviour
     {
         yield return LoginRoutine();
 
-        Debug.Log("Beggining Fetch");
+       // Debug.Log("Beggining Fetch");
         for (int i = 0; i < 12; i++) 
         {
-            Debug.Log($"Fetching {i}");
+           // Debug.Log($"Fetching {i}");
             yield return leaderboard.FetchTopHighscoresRoutine(keys[i], i); 
         }
         
@@ -60,13 +62,13 @@ public class LootLockerManager : MonoBehaviour
         {
             if(response.success) 
             {
-                Debug.Log("Player was logged in");
+              //  Debug.Log("Player was logged in");
                 PlayerPrefs.SetString("PlayerID", response.player_id.ToString());
                 done = true;
             }
             else
             {
-                Debug.Log("Could not start session");
+              //  Debug.Log("Could not start session");
                 done = true;
             }
         });

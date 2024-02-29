@@ -228,12 +228,12 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                Debug.Log("cannotPickupObj");
+               // Debug.Log("cannotPickupObj");
             }
         }
         else
         {
-            Debug.Log("No Object To Pick Up");
+          //  Debug.Log("No Object To Pick Up");
         }
     }
 

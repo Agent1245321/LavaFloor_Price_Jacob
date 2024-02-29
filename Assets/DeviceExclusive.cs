@@ -8,13 +8,7 @@ public class DeviceExclusive : MonoBehaviour
 
     void Start()
     {
-#if UNITY_WSA
-    Check(1);
-#endif
-
-#if (UNITY_ANDROID || UNITY_IOS)
-        Check(0);
-#endif
+        Check(MenuScript.scheme);
     }
 
     public void Check(int d)

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using TreeEditor;
+
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,9 +30,9 @@ public class ShopScript : MonoBehaviour
     {
         unlockedSkins = data;
         crystalCount = cCount;
-        Debug.Log("\n\n\n\n");
-        Debug.Log(data);
-        Debug.Log(cCount);
+      //  Debug.Log("\n\n\n\n");
+        //Debug.Log(data);
+       // Debug.Log(cCount);
 
         foreach (GameObject t in toggles)
         {
@@ -45,8 +45,8 @@ public class ShopScript : MonoBehaviour
 
 
         }
-        Debug.Log(unlockedSkins);
-        Debug.Log(crystalCount);
+       // Debug.Log(unlockedSkins);
+      //  Debug.Log(crystalCount);
     }
    public void GetToggles()
     {

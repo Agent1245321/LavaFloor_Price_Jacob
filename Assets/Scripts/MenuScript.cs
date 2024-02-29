@@ -41,7 +41,9 @@ public class MenuScript : MonoBehaviour
     public Slider sensitivitySlider;
     public Toggle invertYToggle;
     public Toggle invertXToggle;
+
     public PlayerInput input;
+    public static int scheme;
 
     public CamScript cam;
 
@@ -90,6 +92,9 @@ public class MenuScript : MonoBehaviour
         UpdateEffectsVolume(effectsVolumeSlider.value = PlayerPrefs.GetFloat("effectsVolume", 80));
         UpdateLavaVolume(lavaVolumeSlider.value = PlayerPrefs.GetFloat("lavaVolume", 80));
       cam.UpdateSensitivity(sensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity", 80));
+
+
+       
     }
 
     // Update is called once per frame
@@ -329,6 +334,25 @@ public class MenuScript : MonoBehaviour
     
     public void LoadScene(int indxOf)
     {
+        string schem = input.currentControlScheme;
+        switch (schem)
+        {
+            case "Touch":
+                scheme = 0;
+                break;
+
+            case "Keyboard&Mouse":
+                scheme = 1;
+                break;
+
+            case "Gamepad":
+                scheme= 2;
+                break;
+
+            default:
+                scheme = 2;
+                break;
+        }
 
         SaveGame();
         Debug.Log("LoadingScene");
@@ -433,13 +457,13 @@ public class MenuScript : MonoBehaviour
         shop3.SetActive(true);
         shop4.SetActive(true);
         shopScript.GetToggles();
-        Debug.Log("Length of skinData" + skinData.Length);
+       // Debug.Log("Length of skinData" + skinData.Length);
         foreach (bool inyer in skinData)
         {
-            Debug.Log("skindata : " + inyer);
+           // Debug.Log("skindata : " + inyer);
         }
         
-        Debug.Log("Crystals : " + crystalsData);
+        //Debug.Log("Crystals : " + crystalsData);
         shopScript.loadGame(skinData, crystalsData);
 
         shop1.SetActive(false);
@@ -447,7 +471,7 @@ public class MenuScript : MonoBehaviour
         shop3.SetActive(false);
         shop4.SetActive(false);
 
-        Debug.Log("Loaded Player Save Data at:" + Application.persistentDataPath + "/player.fun");
+      //  Debug.Log("Loaded Player Save Data at:" + Application.persistentDataPath + "/player.fun");
         setButtonsTF();
         timerText = "Records:\n";
         int i = 1;
@@ -456,7 +480,7 @@ public class MenuScript : MonoBehaviour
             timerText += $"Level {i}: {time}\n";
             i++;
         }
-        Debug.Log(timerText);
+     //   Debug.Log(timerText);
     }
 
     public void SaveGame() 
@@ -464,7 +488,7 @@ public class MenuScript : MonoBehaviour
         foreach (var level in levelData) { Debug.Log(level); }
         shopScript.save();
         PlayerData1.SaveGame(this);
-        Debug.Log("Saved Game");
+       // Debug.Log("Saved Game");
         
     }
 
@@ -472,7 +496,7 @@ public class MenuScript : MonoBehaviour
     public TextMeshProUGUI recordsOutput;
     public void setButtonsTF()
     {
-        Debug.Log("Setting Buttons");
+       // Debug.Log("Setting Buttons");
         
         int level = 0;
         foreach (Button button in buttons)
@@ -489,15 +513,19 @@ public class MenuScript : MonoBehaviour
 
     public void code(string code)
     {
-        if(code == "atpunpacbcefmnl")
-        Debug.Log("Unlocking Levels");
-        int level = 0;
-        foreach (Button button in buttons)
+        if (code == "atpunpacbcefmnl")
         {
 
-            button.interactable = true;
-            level++;
-        };
+
+            //Debug.Log("Unlocking Levels");
+            int level = 0;
+            foreach (Button button in buttons)
+            {
+
+                button.interactable = true;
+                level++;
+            };
+        }
     }
 
     public GameObject[] leaderboards;

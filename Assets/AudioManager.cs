@@ -45,7 +45,7 @@ public class AudioManager : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         string itm = other.gameObject.tag;
-        Debug.Log(itm);
+       // Debug.Log(itm);
         switch (itm)
         {
             case "Floor":

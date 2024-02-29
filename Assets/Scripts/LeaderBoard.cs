@@ -42,14 +42,14 @@ public class LeaderBoard : MonoBehaviour
 
     public IEnumerator FetchTopHighscoresRoutine(string key, int item)
     {
-        Debug.Log("Fetching High Scores");
+       // Debug.Log("Fetching High Scores");
         bool done = false;
-        Debug.Log($"Key {key}");
+       // Debug.Log($"Key {key}");
         LootLockerSDKManager.GetScoreList(key, 5, (response) =>
         {
             if(response.success)
             {
-                Debug.Log("Succeeded to get scorelist");
+                //Debug.Log("Succeeded to get scorelist");
                 string tempPlayerNames = "Names\n";
                 string tempPlayerScores = "Scores\n";
 
@@ -72,12 +72,12 @@ public class LeaderBoard : MonoBehaviour
                 }
                 done = true;
 
-                Debug.Log(item);
+                //Debug.Log(item);
                 leaderboardsNames[item] = tempPlayerNames;
                 leaderboardsScores[item] = tempPlayerScores;
 
-                Debug.Log(leaderboardsNames[item]);
-                Debug.Log(leaderboardsScores[item]);
+                //Debug.Log(leaderboardsNames[item]);
+                //Debug.Log(leaderboardsScores[item]);
             }
             else
             {

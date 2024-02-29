@@ -68,7 +68,7 @@ namespace LootLocker
                 //Build the URL that we will hit based on the specified endpoint, query params, etc
                 string url = BuildUrl(request.endpoint, request.queryParams, request.callerRole);
 #if UNITY_EDITOR
-                LootLockerLogger.GetForLogLevel(LootLockerLogger.LogLevel.Verbose)("ServerRequest " + request.httpMethod + " URL: " + url);
+               // LootLockerLogger.GetForLogLevel(LootLockerLogger.LogLevel.Verbose)("ServerRequest " + request.httpMethod + " URL: " + url);
 #endif
                 using (UnityWebRequest webRequest = CreateWebRequest(url, request))
                 {
@@ -98,7 +98,7 @@ namespace LootLocker
                         yield break;
                     }
 
-                    LogResponse(request, webRequest.responseCode, webRequest.downloadHandler.text, startTime);
+                   // LogResponse(request, webRequest.responseCode, webRequest.downloadHandler.text, startTime);
 
                     if (WebRequestSucceeded(webRequest))
                     {
@@ -457,7 +457,7 @@ namespace LootLocker
                     {
                         string json = (request.payload != null && request.payload.Count > 0) ? LootLockerJson.SerializeObject(request.payload) : request.jsonPayload;
 #if UNITY_EDITOR
-                        LootLockerLogger.GetForLogLevel(LootLockerLogger.LogLevel.Verbose)("REQUEST BODY = " + LootLockerObfuscator.ObfuscateJsonStringForLogging(json));
+                      //  LootLockerLogger.GetForLogLevel(LootLockerLogger.LogLevel.Verbose)("REQUEST BODY = " + LootLockerObfuscator.ObfuscateJsonStringForLogging(json));
 #endif
                         byte[] bytes = System.Text.Encoding.UTF8.GetBytes(string.IsNullOrEmpty(json) ? "{}" : json);
                         webRequest = UnityWebRequest.Put(url, bytes);

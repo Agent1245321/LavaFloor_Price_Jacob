@@ -26,14 +26,14 @@ public class PowerUpManager : MonoBehaviour
     {
         ball = GetComponent<Movement>();
         ball.TryInteract();
-        Debug.Log($"Setting Status to {indx}");
+       // Debug.Log($"Setting Status to {indx}");
         indicator.SetActive( true );
         indicator.GetComponent<Renderer>().material = matts[indx];
         ball.status = indx;
 
         if (indx == 0)
         {
-            Debug.Log("Disabling PowerUp");
+          //  Debug.Log("Disabling PowerUp");
            indicator.SetActive(false);
         }
 

@@ -380,7 +380,7 @@ namespace LootLocker
         [InitializeOnEnterPlayMode]
         static void OnEnterPlaymodeInEditor(EnterPlayModeOptions options)
         {
-            LootLockerLogger.GetForLogLevel(LootLockerLogger.LogLevel.Verbose)("Reset RateLimiter due to entering play mode");
+          //  LootLockerLogger.GetForLogLevel(LootLockerLogger.LogLevel.Verbose)("Reset RateLimiter due to entering play mode");
             Reset();
         }
 #endif
@@ -427,7 +427,7 @@ namespace LootLocker
             }
 
 #if UNITY_EDITOR
-            LootLockerLogger.GetForLogLevel(LootLockerLogger.LogLevel.Verbose)("Caller Type: " + callerRole);
+           // LootLockerLogger.GetForLogLevel(LootLockerLogger.LogLevel.Verbose)("Caller Type: " + callerRole);
 #endif
 
             Dictionary<string, string> headers = new Dictionary<string, string>();
