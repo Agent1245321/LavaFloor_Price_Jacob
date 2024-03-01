@@ -36,6 +36,7 @@ public static class PlayerData1
             PlayerData data = formatter.Deserialize(stream) as PlayerData;
             stream.Close();
 
+            
             //returns the object
             return data;
         }

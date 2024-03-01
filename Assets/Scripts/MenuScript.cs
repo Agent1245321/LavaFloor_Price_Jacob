@@ -447,11 +447,19 @@ public class MenuScript : MonoBehaviour
     public void loadGame()
     {
         //gathers the returned data types from the loadGame method;
-        levelData = PlayerData1.LoadGame().unlockedLevels;
-        timers = PlayerData1.LoadGame().timers;
-        skinData = PlayerData1.LoadGame().unlockedSkins;
+        bool[] oldLevelData = PlayerData1.LoadGame().unlockedLevels;
+        float[] oldtimers = PlayerData1.LoadGame().timers;
+       bool[] oldSkinData = PlayerData1.LoadGame().unlockedSkins;
+
+        oldLevelData.CopyTo(levelData, 0);
+        oldSkinData.CopyTo(skinData, 0);
+        oldtimers.CopyTo(timers, 0);
+
         crystalsData = PlayerData1.LoadGame().crystals;
 
+
+
+        panel.SetActive(true);
         shop1.SetActive(true);
         shop2.SetActive(true);
         shop3.SetActive(true);

@@ -759,7 +759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &94534736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8002,7 +8002,7 @@ MonoBehaviour:
   input: {fileID: 246560650}
   cam: {fileID: 244500809}
   levelData: 010000000000000000000000
-  skinData: 
+  skinData: 000000000000000000000000
   crystalsData: 0
   buttons:
   - {fileID: 1975125671}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -29,13 +30,16 @@ public class ShopScript : MonoBehaviour
     public void loadGame(bool[] data, int cCount)
     {
         unlockedSkins = data;
-        crystalCount = cCount;
+        //crystalCount = cCount;
       //  Debug.Log("\n\n\n\n");
-        //Debug.Log(data);
-       // Debug.Log(cCount);
+
+        foreach(bool b in data) { Debug.Log(b); }
+        
+        Debug.Log(cCount);
 
         foreach (GameObject t in toggles)
         {
+            Debug.Log(data[t.GetComponent<ToggleSkin>().skIndex]);
             t.GetComponent<ToggleSkin>().buyBtn.interactable = !data[t.GetComponent<ToggleSkin>().skIndex];
             t.GetComponent<ToggleSkin>().tgl.interactable = data[t.GetComponent<ToggleSkin>().skIndex];
             if(data[t.GetComponent<ToggleSkin>().skIndex])
