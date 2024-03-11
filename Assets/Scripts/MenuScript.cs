@@ -201,6 +201,7 @@ public class MenuScript : MonoBehaviour
         if (screen != 11)
         {
             screen = 11;
+           
 
 
         }
@@ -235,6 +236,8 @@ public class MenuScript : MonoBehaviour
 
         options.SetActive(false);
        // Debug.Log($"Current Screen is {screen}");
+
+
         switch (screen)
         {
 
@@ -373,7 +376,8 @@ public class MenuScript : MonoBehaviour
    
     public void Exit()
     {
-        if(!panel.gameObject.activeSelf || screen != 0)
+        shopScript.UpdateUI();
+        if (!panel.gameObject.activeSelf || screen != 0)
         { 
         #if (UNITY_IOS || UNITY_ANDROID)
           mobileControls.SetActive(false);
@@ -604,7 +608,7 @@ public class MenuScript : MonoBehaviour
             
             timerText += $"Level {i}: {time}\n";
             i++; }
-        Debug.Log(timerText);
+        //Debug.Log(timerText);
         
     }
 

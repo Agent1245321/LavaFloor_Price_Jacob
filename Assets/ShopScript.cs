@@ -30,7 +30,7 @@ public class ShopScript : MonoBehaviour
     public void loadGame(bool[] data, int cCount)
     {
         unlockedSkins = data;
-        //crystalCount = cCount;
+        crystalCount = cCount;
       //  Debug.Log("\n\n\n\n");
 
         foreach(bool b in data) { Debug.Log(b); }
@@ -103,4 +103,18 @@ public class ShopScript : MonoBehaviour
         }
         
     }
+
+    public void BankCrystals(Int32 crystals)
+    {
+        crystalCount += crystals;
+        Debug.Log($"Banked {crystals} crystals. \n Total: {crystalCount}");
+        
+}
+
+    public void UpdateUI()
+
+    {
+        crystalCountT.text = $"Crystals: {crystalCount.ToString()}";
+    }
+   
 }

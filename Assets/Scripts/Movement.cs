@@ -44,6 +44,8 @@ public class Movement : MonoBehaviour
     public int status = 1;
 
     public GameObject forwardObject;
+
+    public ShopScript shop;
    
 
     private void Awake()
@@ -351,7 +353,15 @@ public class Movement : MonoBehaviour
                 menu.StopTimer();
                 status = 0;
                 DontDestroyOnLoad(this.transform.parent.gameObject);
-                menu.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                shop.BankCrystals(crystals);
+                if (SceneManager.GetActiveScene().buildIndex != SceneManager.sceneCountInBuildSettings - 3)
+                {
+                    menu.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+                else
+                {
+                    menu.LoadScene(13);
+                }
                 StopAllCoroutines();
                 
                 yield return null;
@@ -365,9 +375,18 @@ public class Movement : MonoBehaviour
                 DontDestroyOnLoad(this.transform.parent.gameObject);
                 ball.velocity = new Vector3(0, 0, 0);
                 Debug.Log("Level Complete");
+                shop.BankCrystals(crystals);
                 menu.StopTimer();
 
-                menu.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+                if (SceneManager.GetActiveScene().buildIndex != SceneManager.sceneCountInBuildSettings - 3)
+                {
+                    menu.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+                else
+                {
+                    SceneManager.LoadScene(13);
+                }
                 StopAllCoroutines();
                 yield return null;
             }
