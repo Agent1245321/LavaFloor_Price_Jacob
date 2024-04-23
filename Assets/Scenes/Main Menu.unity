@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -576,9 +576,49 @@ PrefabInstance:
     m_TransformParent: {fileID: 1820506186}
     m_Modifications:
     - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2008408741}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1252811205}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetSelectedGameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ShopScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 611363999}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4211195190722023475, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: img
       value: 
@@ -674,6 +714,30 @@ PrefabInstance:
     - target: {fileID: 4922517660872926423, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.8636999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.99668217
       objectReference: {fileID: 0}
     - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1343,6 +1407,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &128296880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1451,6 +1527,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1771674945}
           m_ObjectArgumentAssemblyTypeName: ToggleSkin, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1252811205}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1771674943}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2249,9 +2337,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.99668217, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.8636999, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -5049,9 +5137,49 @@ PrefabInstance:
     m_TransformParent: {fileID: 266377032}
     m_Modifications:
     - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2008408741}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1252811205}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetSelectedGameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ShopScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 496884153}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4211195190722023475, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: img
       value: 
@@ -5147,6 +5275,30 @@ PrefabInstance:
     - target: {fileID: 4922517660872926423, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.8636999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.99668217
       objectReference: {fileID: 0}
     - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5304,6 +5456,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1462848234}
           m_ObjectArgumentAssemblyTypeName: ToggleSkin, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1252811205}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1462848232}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5596,6 +5760,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1252811205}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 866615453}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &496686639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5634,6 +5810,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496686636}
   m_CullTransparentMesh: 1
+--- !u!1 &496884153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3788845612335307278, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+  m_PrefabInstance: {fileID: 473363382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &497508850 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8803517679608742270, guid: 7484ce6f8ca3d81408c606b5ae8b9ff3, type: 3}
@@ -6511,6 +6692,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &552629101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7090,6 +7283,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604816869}
   m_CullTransparentMesh: 1
+--- !u!1 &611363999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3788845612335307278, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+  m_PrefabInstance: {fileID: 89805065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &614122264
 GameObject:
   m_ObjectHideFlags: 0
@@ -8605,9 +8803,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.99668217, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.8636999, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -9039,9 +9237,49 @@ PrefabInstance:
     m_TransformParent: {fileID: 1202992884}
     m_Modifications:
     - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2008408741}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1252811205}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetSelectedGameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ShopScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1413501319}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4211195190722023475, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: img
       value: 
@@ -9137,6 +9375,30 @@ PrefabInstance:
     - target: {fileID: 4922517660872926423, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.8636999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.99668217
       objectReference: {fileID: 0}
     - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -9984,9 +10246,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.99668217, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.8636999, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -11057,6 +11319,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1252811205}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1355323386}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1028801556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11630,6 +11904,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12785,6 +13071,22 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000061035156, y: -27.999947}
   m_SizeDelta: {x: 1428.4116, y: 490.60675}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1202997417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3788845612335307278, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+  m_PrefabInstance: {fileID: 26539242915418447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1202997419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4211195190722023475, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+  m_PrefabInstance: {fileID: 26539242915418447}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202997417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5552fd955964da743af2a5c10e2cedbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1212014168
 GameObject:
   m_ObjectHideFlags: 0
@@ -13460,6 +13762,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1252811205}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1302764233}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1275821812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13692,9 +14006,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.99668217, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.8636999, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -14289,9 +14603,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.99668217, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.8636999, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -15102,6 +15416,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403267451}
   m_CullTransparentMesh: 1
+--- !u!1 &1413501319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3788845612335307278, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+  m_PrefabInstance: {fileID: 783192295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1420577476
 GameObject:
   m_ObjectHideFlags: 0
@@ -16115,9 +16434,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.99668217, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.8636999, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -16767,6 +17086,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1252811205}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 173306196}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1541233989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17043,6 +17374,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1658468940}
           m_ObjectArgumentAssemblyTypeName: ToggleSkin, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1252811205}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1658468938}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -17607,9 +17950,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.99668217, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.8636999, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -18253,6 +18596,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 723555437}
           m_ObjectArgumentAssemblyTypeName: ToggleSkin, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1252811205}
+        m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 723555435}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -18944,6 +19299,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1743385926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19383,9 +19750,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.99668217, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.8636999, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -21907,9 +22274,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.72156864, b: 0.9843137, a: 1}
+    m_HighlightedColor: {r: 0.99668217, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 1, g: 0.8, b: 0.5058824, a: 1}
-    m_SelectedColor: {r: 1, g: 0.72156864, b: 0.9843137, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.8636999, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -22349,6 +22716,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1975125672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22517,6 +22896,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22930,7 +23321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1453679375}
   deflt: {fileID: 2100000, guid: 23144b3f0978b9b4987d8f66ec03ea81, type: 2}
-  crystalCount: 10000
+  crystalCount: 0
   crystalCountT: {fileID: 566887783}
   menu: {fileID: 677544665}
   unlockedSkins: 000000000000000000000000
@@ -23716,9 +24107,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.72156864, b: 0.9843137, a: 1}
+    m_HighlightedColor: {r: 0.99668217, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 1, g: 0.8, b: 0.5058824, a: 1}
-    m_SelectedColor: {r: 1, g: 0.72156864, b: 0.9843137, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.8636999, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -24925,9 +25316,85 @@ PrefabInstance:
     m_TransformParent: {fileID: 708533132}
     m_Modifications:
     - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2008408741}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1252811205}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1252811205}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuySkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetSelectedGameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetSelectedGameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShopScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1202997419}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1202997417}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1202997417}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ToggleSkin, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 217782850558541628, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4211195190722023475, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: img
       value: 
@@ -25015,6 +25482,30 @@ PrefabInstance:
     - target: {fileID: 4922517660872926423, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.8636999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.99668217
       objectReference: {fileID: 0}
     - target: {fileID: 6353148492017913989, guid: 18e2259687c63b84e919f0105c0221fb, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target

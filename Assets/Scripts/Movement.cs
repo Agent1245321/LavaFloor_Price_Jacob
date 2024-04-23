@@ -72,11 +72,7 @@ public class Movement : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
 
-#if UNITY_WSA
-        LightmapSettings.lightmaps = new LightmapData[0];
-        Resources.UnloadUnusedAssets();
 
-#endif
 
         collectedWin = false;
         ball.velocity = new Vector3(0, 0, 0);

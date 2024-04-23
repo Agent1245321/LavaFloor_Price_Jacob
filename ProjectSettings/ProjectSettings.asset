@@ -51,7 +51,7 @@ PlayerSettings:
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 0
+  m_ActiveColorSpace: 1
   m_SpriteBatchVertexThreshold: 300
   m_MTRendering: 1
   mipStripping: 0
@@ -138,8 +138,7 @@ PlayerSettings:
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.3.3
-  preloadedAssets:
-  - {fileID: 11400000, guid: 32b6f0211c748d34ea4102eff9da2bc6, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -860,7 +859,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: GreenCountryTechnologyCen.BavaLall
-  metroPackageVersion: 0.3.2.0
+  metroPackageVersion: 0.3.3.0
   metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: 989AA074-DBED-422A-9835-BFF5F3F45FA0
@@ -869,21 +868,21 @@ PlayerSettings:
   metroApplicationDescription: Template_3D
   wsaImages:
     65636: Assets/Branding/50-50.jpg
-    65736: Assets/100-100.jpg
-    131172: Assets/Image Sequence_038_0001.jpg
-    131272: Assets/Image Sequence_039_0001.jpg
-    2031640: Assets/Image Sequence_040_0001.jpg
+    65736: Assets/Branding/100-100.jpg
+    131172: Assets/Branding/Image Sequence_014_0015.jpg
+    131272: Assets/Branding/1240-600.jpg
+    2031640: Assets/Branding/22-22.jpg
     2031716: Assets/Branding/100%/Image Sequence_003_0015.jpg
     2031816: Assets/Branding/88-88.jpg
     2097252: Assets/Branding/100%/Image Sequence_004_0015.jpg
     2097352: Assets/Branding/142-142.jpg
-    2162788: Assets/150-150.jpg
+    2162788: 
     2162888: Assets/Branding/300-300.jpg
     2228324: Assets/Branding/100%/Image Sequence_005_0015.jpg
     2228424: Assets/Branding/Image Sequence_012_0015.jpg
     2293860: Assets/Branding/Image Sequence_013_0015.jpg
-    2293960: Assets/Image Sequence_038_0001.jpg
-    2294160: Assets/Image Sequence_039_0001.jpg
+    2293960: Assets/Branding/Image Sequence_038_0001.jpg
+    2294160: 
   metroTileShortName: LavaFloor_Price_Jacob
   metroTileShowName: 0
   metroMediumTileShowName: 0
