@@ -11,6 +11,7 @@ using TMPro;
 using System;
 using UnityEditor;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class MenuScript : MonoBehaviour
 {
@@ -156,6 +157,8 @@ public class MenuScript : MonoBehaviour
     }
     public void Options()
     {
+        
+
         if (screen != 2) 
         { 
             screen = 2;
@@ -222,6 +225,27 @@ public class MenuScript : MonoBehaviour
 
     private void UpdateScreen()
     {
+        EventSystem.current.SetSelectedGameObject(null);
+        string schem = input.currentControlScheme;
+        switch (schem)
+        {
+            case "Touch":
+                scheme = 0;
+                break;
+
+            case "Keyboard&Mouse":
+                scheme = 1;
+                break;
+
+            case "Gamepad":
+                scheme = 2;
+                break;
+
+            default:
+                scheme = 2;
+                break;
+        }
+
         screen1.SetActive(false);
         screen2.SetActive(false);
         Leaderboard1.SetActive(false);
@@ -349,7 +373,7 @@ public class MenuScript : MonoBehaviour
                 break;
 
             case "Gamepad":
-                scheme= 2;
+                scheme = 2;
                 break;
 
             default:
@@ -373,6 +397,16 @@ public class MenuScript : MonoBehaviour
 
     }
 
+    public bool CheckIfNoneSelected()
+    {
+       
+        if(EventSystem.current.currentSelectedGameObject == null && resumeButton.activeInHierarchy && scheme == 2)
+        {
+            return true;
+        }
+        
+        return false;
+    }
    
     public void Exit()
     {
@@ -614,12 +648,20 @@ public class MenuScript : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(CheckIfNoneSelected());  
         if (timerGo)
         {
             timeInSeconds += Time.deltaTime;
            // Debug.Log(timeInSeconds);
         }
+
+        if(CheckIfNoneSelected())
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(resumeButton);
+        }
     }
+    public GameObject resumeButton;
 
     public TextMeshProUGUI uiTimer;
     private void LateUpdate()
