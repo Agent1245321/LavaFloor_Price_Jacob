@@ -572,6 +572,11 @@ public class MenuScript : MonoBehaviour
                 level++;
             };
         }
+
+        if (code == "lcpnpsegtdhetyl")
+        {
+            Movement.flyMode = !Movement.flyMode;
+        }
     }
 
     public GameObject[] leaderboards;

@@ -9,8 +9,8 @@ using LootLocker.Requests;
 
 public class Movement : MonoBehaviour
 {
-   
 
+    public static bool flyMode;
     public AudioManager audioMngr;
     
     private Rigidbody ball;
@@ -172,7 +172,7 @@ public class Movement : MonoBehaviour
             audioMngr.PlayActionSound("wallJump");
 
         }
-        else if (isGrouded)
+        else if (isGrouded || flyMode)
         {
             
             ball.AddForce(0, 7, 0, ForceMode.VelocityChange);

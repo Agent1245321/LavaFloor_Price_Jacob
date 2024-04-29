@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 
@@ -36,12 +37,15 @@ public class LightLauncher : MonoBehaviour
 
     public void Launch()
     {
+        Vector3 worldTransform;
         if (player != null)
         {
             player.GetComponent<Movement>().cannon = null;
             canCollide = false;
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            worldTransform = player.transform.position;
             player.transform.parent.parent = null;
+            player.transform.position = worldTransform;
             player.GetComponent<Rigidbody>().AddForce(transform.parent.forward * power, ForceMode.VelocityChange);
             StartCoroutine(Count());
             
