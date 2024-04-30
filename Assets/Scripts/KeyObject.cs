@@ -22,11 +22,6 @@ public class KeyObject : Grabable
 
         
     }
-
-   
-
-   
-
    
     public override void Update()
     {

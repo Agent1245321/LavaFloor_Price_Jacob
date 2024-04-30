@@ -37,14 +37,14 @@ public class Grabable : MonoBehaviour , IEnteractable
     {
         if (isPickUped)
         {
-            this.transform.position = movement.transform.position + new Vector3(0, HoverDistance, 0);
+            this.transform.position = movement.gameObject.transform.position + new Vector3(0, HoverDistance, 0);
             obj.velocity = (forwardObj.transform.forward * 10) + movement.GetComponent<Rigidbody>().velocity;
             obj.useGravity = true;
             this.transform.GetComponent<Collider>().enabled = true;
         }
         else
         {
-            this.transform.position = movement.transform.position + new Vector3(0, 2 * HoverDistance, 0);
+            this.transform.position = movement.gameObject.transform.position + new Vector3(0, 1.3f * HoverDistance, 0);
             this.transform.GetComponent<Collider>().enabled = false;
             obj.useGravity = false;
         }
