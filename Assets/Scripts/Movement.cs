@@ -282,6 +282,7 @@ public class Movement : MonoBehaviour
             if(other.name == "win")
             {
                 collectedWin = true;
+
             }
             StartCoroutine(Ahaha());
         }

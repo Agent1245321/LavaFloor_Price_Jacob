@@ -21,7 +21,7 @@ public class Grabable : MonoBehaviour , IEnteractable
 
     public void Start()
     {
-        spawn= transform.position;
+        spawn = transform.position;
         movement = GameObject.FindWithTag("player").GetComponent<Movement>();
         obj = this.transform.GetComponent<Rigidbody>();
         forwardObj = GameObject.FindWithTag("player").transform.parent.Find("ForwardObject").gameObject;
@@ -37,14 +37,14 @@ public class Grabable : MonoBehaviour , IEnteractable
     {
         if (isPickUped)
         {
-            this.transform.position = movement.gameObject.transform.position + new Vector3(0, HoverDistance, 0);
+            movement.targetObj = null;
             obj.velocity = (forwardObj.transform.forward * 10) + movement.GetComponent<Rigidbody>().velocity;
             obj.useGravity = true;
             this.transform.GetComponent<Collider>().enabled = true;
         }
         else
         {
-            this.transform.position = movement.gameObject.transform.position + new Vector3(0, 1.3f * HoverDistance, 0);
+            
             this.transform.GetComponent<Collider>().enabled = false;
             obj.useGravity = false;
         }
@@ -106,6 +106,7 @@ public class Grabable : MonoBehaviour , IEnteractable
 
     public void Reset()
     {
+        Debug.Log("destoryed");
         isPickUped = false;
         obj.velocity = Vector3.zero;
         obj.useGravity = true;
